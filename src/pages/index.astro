@@ -1,14 +1,83 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Card from "../components/Card.astro";
-
-import { Button } from "@/components/ui/button";
-
 ---
 
 <Layout title="Jose Concha - Full Stack Developer">
 	<main>
+		<section class="py-16">
+			<div class="container py-16 mx-auto hero-bg relative z-10" style="">
+				<div class="grid grid-cols-2">
+					<div class="">
+						<h1 class="text-7xl font-bold mb-10">
+							Full Stack <br />Developer
+						</h1>
+						<p class="text-2xl mb-2">
+							Lógica operativa, Diseño y Construcción
+						</p>
+						<p>
+							Enfoque integral que aborda cada etapa del
+							desarrollo de software, desde la conceptualización
+							inicial hasta la implementación y el mantenimiento
+							continuo.
+						</p>
+					</div>
+					<div></div>
+				</div>
+				<!-- <img
+					src="img/rokt-connector-open.svg"
+					alt=""
+					class="absolute -z-10"
+				/> -->
+			</div>
+		</section>
+		<section class="py-16">
+			<div class="container mx-auto">
+				<h2 class="text-5xl font-bold mb-10">Expertiz</h2>
+				<div
+					class="grid grid-cols-3 border-2 border-slate-300
+				divide-x-2 divide-slate-300"
+				>
+				<div class="grid items-center justify-center p-6">
+					<h3>Lógica operativa</h3>
+					<p>
+						Diseño de procesos de x, y, z, optimizacion de
+						procesos, reduccion de tiempos de entrega
+					</p>
+					<p>Analsis de datos, analsis de problemas para diseñar soluciones informaticas</p>
+				</div>
+					<div class="grid items-center justify-center p-6">
+						<h3>Backend</h3>
+						<p>
+							Experiencia con Java usando Play, XML ,SOAP toda la
+							vaina NODEJS API
+						</p>
+					</div>
+					<div class="grid items-center justify-center p-6">
+						<h3>Frontend</h3>
+						<p>
+							Experiencia con VueJS react, react native, php en su
+							dia
+						</p>
+					</div>
+
+				</div>
+			</div>
+		</section>
+		<section class="py-16">
+			<div class="container mx-auto">
+				<h2 class="text-5xl font-bold mb-10">Proyectos</h2>
+				Su buen BENTO o algo
+			</div>
+		</section>
 	</main>
+	<footer> Un footer con algo bonito, datos de contacto?? quiza arriba tambien?</footer>
 </Layout>
 
-<style></style>
+<style>
+	.hero-bg {
+		background: url(img/dotgrid.png);
+		background-repeat: no-repeat;
+		background-position: center;
+		/* background-size: cover; */
+	}
+</style>

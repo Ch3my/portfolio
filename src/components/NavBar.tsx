@@ -24,12 +24,16 @@ const components: { title: string; href: string; description: string }[] = [
 export default function NavBar() {
     return (
         <NavigationMenu>
-            <NavigationMenuList>
+            <NavigationMenuList >
                 <NavigationMenuLink href="/"
                     className={navigationMenuTriggerStyle()}>
-                    Servicios
+                    Inicio
                 </NavigationMenuLink>
-                <NavigationMenuItem>
+                <NavigationMenuLink href="/"
+                    className={navigationMenuTriggerStyle()}>
+                    Proyectos
+                </NavigationMenuLink>
+                {/* <NavigationMenuItem>
                     <NavigationMenuTrigger>Item One</NavigationMenuTrigger>
                     <NavigationMenuContent>
                         <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
@@ -44,7 +48,7 @@ export default function NavBar() {
                             ))}
                         </ul>
                     </NavigationMenuContent>
-                </NavigationMenuItem>
+                </NavigationMenuItem> */}
             </NavigationMenuList>
         </NavigationMenu>
     )

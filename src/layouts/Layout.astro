@@ -10,7 +10,8 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<!-- ShadCN modifica el tailwind.config.mjs y es necesario usar class dark --><!-- Aunque esto nos permite manejarlo manualmente y no depender de color-scheme -->
+<html lang="es" class="dark">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
@@ -19,10 +20,46 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
-		<NavBar client:load />
+	<body class="dark:bg-slate-950 dark:text-slate-300 font-noto">
+		<div class="border-b p-2">
+			<div class="container mx-auto">
+				<div class="flex justify-between">
+					<div class="flex gap-4 items-center">
+						<img src="logo.svg" class="max-h-[40px]" />
+						<span class="font-black text-2xl text-logo">JoseM</span>
+					</div>
+					<NavBar client:load />
+				</div>
+			</div>
+		</div>
 		<slot />
 	</body>
 </html>
-<style>
+<style is:global>
+	@font-face {
+		font-family: "NotoSansMono";
+		src: url("/fonts/NotoSansMono-VariableFont_wdth,wght.ttf")
+			format("truetype");
+		font-weight: 100 900;
+		font-stretch: 50% 200%;
+		font-style: normal;
+		font-display: swap;
+	}
+	@font-face {
+		font-family: "DotGothic16";
+		src: url("/fonts/DotGothic16-Regular.ttf") format("truetype");
+		font-style: normal;
+		font-display: swap;
+	}
+	html {
+		font-size: 18px;
+	}
+	.font-noto {
+		font-family: NotoSansMono;
+	}
+	.text-logo {
+		background: #6de8ff;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
 </style>
