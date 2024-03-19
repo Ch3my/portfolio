@@ -20,7 +20,7 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body class="dark:bg-slate-950 dark:text-slate-300 font-noto">
+	<body class="dark:bg-slate-950 dark:text-slate-100 font-noto">
 		<div class="border-b p-2">
 			<div class="container mx-auto">
 				<div class="flex justify-between">
@@ -57,9 +57,60 @@ const { title } = Astro.props;
 	.font-noto {
 		font-family: NotoSansMono;
 	}
+	.font-dotgothic16 {
+		font-family: DotGothic16;
+	}
 	.text-logo {
 		background: #6de8ff;
 		background-clip: text;
 		-webkit-text-fill-color: transparent;
+	}
+	.chonky-underline-magenta::after {
+		transition: all 0.1s ease-in-out;
+		content: "";
+		position: absolute;
+		bottom: 7.5%;
+		z-index: -1;
+		height: 0.3em;
+		width: 104%;
+		left: -1%;
+		background: linear-gradient(
+			65deg,
+			#df058d 0%,
+			#df058d 100%,
+			rgba(255, 209, 0, 0) 100%
+		);
+	}
+	.chonky-underline-blue::after {
+		transition: all 0.1s ease-in-out;
+		content: "";
+		position: absolute;
+		bottom: 7.5%;
+		z-index: -1;
+		height: 0.3em;
+		width: 104%;
+		left: -1%;
+		background: linear-gradient(
+			65deg,
+			#2c49d8 0%,
+			#2c49d8 100%,
+			rgba(255, 209, 0, 0) 100%
+		);
+	}
+	.chonky-underline-orange::after {
+		transition: all 0.1s ease-in-out;
+		content: "";
+		position: absolute;
+		bottom: 7.5%;
+		z-index: -1;
+		height: 0.3em;
+		width: 104%;
+		left: -1%;
+		background: linear-gradient(
+			65deg,
+			#ff6b2b 0%,
+			#ff6b2b 100%,
+			rgba(255, 209, 0, 0) 100%
+		);
 	}
 </style>

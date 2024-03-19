@@ -1,5 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import DemucsCover from "@/img/demucs-cover.jpg";
+import MusicCodexCover from "@/img/music-codex-cover.jpg";
+import FoodManagerCover from "@/img/food-manager-cover.jpg";
+import SCPPCover from "@/img/scpp-cover.jpg";
+// import { DotLottiePlayer } from "@dotlottie/react-player";
 ---
 
 <Layout title="Jose Concha - Full Stack Developer">
@@ -29,48 +35,244 @@ import Layout from "../layouts/Layout.astro";
 					class="absolute -z-10"
 				/> -->
 			</div>
+			<div class="overflow-clip">
+				<svg
+					width="1750"
+					height="663"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+					class="absolute left-0 -z-10 opacity-10"
+				>
+					<g
+						clip-path="url(#a)"
+						fill-rule="evenodd"
+						clip-rule="evenodd"
+					>
+						<path
+							d="M3.851 579.899c-4.512-3.723-5.152-10.399-1.429-14.911L221.5 299.472c3.723-4.512 10.398-5.151 14.91-1.429 4.512 3.723 5.152 10.399 1.429 14.911L18.761 578.47c-3.723 4.512-10.398 5.151-14.91 1.429Z"
+							fill="#fff"></path>
+						<path
+							d="M235.135 294.49c7.142 1.565 11.663 8.624 10.098 15.766l-73.428 335.026c-1.565 7.143-8.624 11.664-15.767 10.098-7.142-1.565-11.663-8.624-10.097-15.766l73.427-335.026c1.566-7.143 8.625-11.664 15.767-10.098Z"
+							fill="#fff"></path>
+						<path
+							d="M156.111 660.589c-8.83-5.179-11.789-16.535-6.609-25.365l352.619-601.12c5.18-8.83 16.536-11.79 25.366-6.61 8.829 5.18 11.788 16.536 6.609 25.365L181.476 653.98c-5.179 8.83-16.536 11.789-25.365 6.609Z"
+							fill="#fff"></path>
+						<path
+							d="M506.651 30.906c9.941-7.462 24.049-5.453 31.511 4.488l418.734 557.824c7.462 9.941 5.453 24.049-4.488 31.511-9.941 7.463-24.049 5.453-31.511-4.488L502.163 62.417c-7.463-9.94-5.453-24.049 4.488-31.511Z"
+							fill="#fff"></path>
+						<path
+							d="M929.333 627.613c-11.346-8.018-14.043-23.715-6.026-35.06L1329.86 17.259c8.02-11.345 23.72-14.043 35.06-6.025 11.35 8.017 14.05 23.714 6.03 35.06L964.392 621.588c-8.017 11.345-23.714 14.043-35.059 6.025Z"
+							fill="#fff"></path>
+						<path
+							d="M1356.35 5.79c14.41 2.454 24.11 16.129 21.66 30.545l-54.16 318.322c-2.46 14.416-16.13 24.115-30.55 21.662-14.41-2.453-24.11-16.129-21.66-30.545l54.16-318.322c2.46-14.416 16.13-24.114 30.55-21.661Z"
+							fill="#fff"></path>
+						<path
+							d="M1281.21 375.12c-12.33-13.494-11.39-34.429 2.11-46.76L1694.3 8.665c13.49-12.331 34.43-11.388 46.76 2.107 12.33 13.494 11.39 34.43-2.11 46.76l-410.98 319.695c-13.49 12.331-34.43 11.387-46.76-2.107Z"
+							fill="#fff"></path>
+					</g><defs
+						><clipPath id="a"
+							><path fill="#fff" d="M0 0h1750v663H0z"
+							></path></clipPath
+						></defs
+					>
+				</svg>
+			</div>
 		</section>
 		<section class="py-16">
-			<div class="container mx-auto">
+			<div class="container mx-auto relative z-10">
 				<h2 class="text-5xl font-bold mb-10">Expertiz</h2>
 				<div
 					class="grid grid-cols-3 border-2 border-slate-300
 				divide-x-2 divide-slate-300"
 				>
-				<div class="grid items-center justify-center p-6">
-					<h3>Lógica operativa</h3>
-					<p>
-						Diseño de procesos de x, y, z, optimizacion de
-						procesos, reduccion de tiempos de entrega
-					</p>
-					<p>Analsis de datos, analsis de problemas para diseñar soluciones informaticas</p>
-				</div>
 					<div class="grid items-center justify-center p-6">
-						<h3>Backend</h3>
+						<h3 class="font-dotgothic16 text-4xl font-bold mb-4">
+							<span class="chonky-underline-orange relative"
+								>Lógica</span
+							> operativa
+						</h3>
+						<p class="mb-4">
+							Con experiencia en el diseño de procesos de control
+							administrativo y desarrollo de KPI, entre otros, mi
+							enfoque se centra en mejorar la eficiencia
+							operativa, reducir los tiempos de entrega y
+							maximizar los resultados
+						</p>
 						<p>
-							Experiencia con Java usando Play, XML ,SOAP toda la
-							vaina NODEJS API
+							Experiencia en análisis de datos para informar
+							decisiones comerciales y diseñar soluciones
+							informáticas efectivas
 						</p>
 					</div>
 					<div class="grid items-center justify-center p-6">
-						<h3>Frontend</h3>
+						<h3 class="font-dotgothic16 text-4xl font-bold mb-4">
+							<span
+								class="chonky-underline-magenta w-fit relative"
+								>Backend</span
+							>
+						</h3>
+						<p class="mb-4">
+							Desarrollo de aplicaciones utilizando Java, Play
+							Framework, Javascript, NodeJS, SailsJS.
+						</p>
 						<p>
-							Experiencia con VueJS react, react native, php en su
-							dia
+							Siempre priorizando el desarrollo de sistemas
+							robustos, manteniendo un alto nivel de calidad y
+							rendimiento. Actualmente manejan más de 50 usuarios
+							simultáneos, ya sea desde dispositivos móviles o
+							equipos de escritorio
 						</p>
 					</div>
-
+					<div class="grid items-center justify-center p-6">
+						<h3 class="font-dotgothic16 text-4xl font-bold mb-4">
+							<span class="relative chonky-underline-blue">
+								Frontend
+							</span>
+						</h3>
+						<p>
+							He trabajado con una variedad de tecnologías
+							incluyendo Vue.js, React y React Native. Desde la
+							creación de interfaces de usuario dinámicas y
+							responsivas hasta el desarrollo de aplicaciones
+							móviles nativas, mi enfoque se centra en aprovechar
+							al máximo estas herramientas para proporcionar
+							experiencias de usuario excepcionales y funcionales.
+						</p>
+					</div>
 				</div>
 			</div>
 		</section>
 		<section class="py-16">
 			<div class="container mx-auto">
-				<h2 class="text-5xl font-bold mb-10">Proyectos</h2>
-				Su buen BENTO o algo
+				<div class="grid grid-cols-2 mb-10">
+					<div>
+						<h2 class="text-5xl font-bold mb-4">Proyectos</h2>
+						<p class="mb-4">
+							Todos los proyectos presentados aquí son el
+							resultado de mi iniciativa personal y creatividad.
+							Surgieron de la necesidad de encontrar soluciones a
+							problemas específicos que enfrentaba en mi vida
+							cotidiana y que no tenían una opción disponible en
+							el mercado.
+						</p>
+						<p>
+							Cada proyecto refleja mi pasión por abordar desafíos
+							mediante la innovación tecnológica. Estos proyectos
+							personales no solo demuestran mis habilidades
+							técnicas, sino también mi capacidad para identificar
+							oportunidades y llevarlas a cabo con éxito.
+						</p>
+					</div>
+				</div>
+				<div class="grid grid-cols-2 gap-2">
+					<div class="flex flex-col gap-2">
+						<div class="grid grid-cols-2 gap-2">
+							<div class="bg-slate-900">
+								<Image src={DemucsCover} alt="Demucs Cover" />
+								<div class="p-6">
+									<h3
+										class="font-dotgothic16 text-4xl font-bold mb-4"
+									>
+										Demucs
+									</h3>
+									<p class="mb-4">
+										API con interfaz gráfica intuitiva y
+										fácil de usar
+									</p>
+									<p>
+										Utiliza un modelo de separación de
+										fuentes musicales de última generación,
+										actualmente capaz de separar batería,
+										bajo y voces del resto del
+										acompañamiento.
+									</p>
+								</div>
+							</div>
+							<div class="bg-slate-900">
+								<Image src={FoodManagerCover} alt="" />
+								<div class="p-6">
+									<h3
+										class="font-dotgothic16 text-4xl font-bold mb-4"
+									>
+										Food Manager
+									</h3>
+									<p>
+										Aplicación que facilita el control y la
+										gestión eficiente del almacenamiento de
+										alimentos. Registro de alimentos junto
+										con su fecha de vencimiento para
+										mantener un inventario organizado y
+										actualizado.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div>
+							<div class="bg-slate-900">
+								<Image src={MusicCodexCover} alt="" />
+								<div class="p-6">
+									<h3
+										class="font-dotgothic16 text-4xl font-bold mb-4"
+									>
+										Music Codex
+									</h3>
+									<p>
+										Para músicos y entusiastas de la música
+										que buscan dominar las complejidades de
+										las escalas y la teoría musical sin
+										tener que depender de la memoria.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div>
+						<div class="bg-slate-900">
+							<!-- <DotLottiePlayer
+								src="/img/money.lottie"
+								autoplay
+								className="w-full h-full"
+								client:load
+							/> -->
+							<Image src={SCPPCover} alt="" />
+							<div class="p-6">
+								<h3
+									class="font-dotgothic16 text-4xl font-bold mb-4"
+								>
+									SCPP
+								</h3>
+								<p class="mb-4">
+									Sistema de Control de Presupuesto Personal.
+									es la solución integral para gestionar tus
+									finanzas personales de manera eficiente y
+									conveniente. Con su aplicación para Android
+									y su versión de escritorio para Windows,
+									SCPP te ofrece la flexibilidad para
+									registrar tus gastos, ingresos y ahorros en
+									cualquier momento y desde cualquier lugar.
+								</p>
+								<p>
+									Con una interfaz intuitiva y fácil de usar,
+									SCPP te permite categorizar tus
+									transacciones y realizar un seguimiento
+									detallado de tu situación financiera. Ya sea
+									que estés administrando tus gastos diarios,
+									planificando para el futuro o simplemente
+									buscando optimizar tus hábitos financieros,
+									SCPP te brinda las herramientas necesarias
+									para tomar el control total de tus finanzas.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</section>
 	</main>
-	<footer> Un footer con algo bonito, datos de contacto?? quiza arriba tambien?</footer>
+	<footer>
+		Un footer con algo bonito, datos de contacto?? quiza arriba tambien?
+	</footer>
 </Layout>
 
 <style>
