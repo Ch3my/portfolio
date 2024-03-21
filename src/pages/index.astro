@@ -5,76 +5,51 @@ import DemucsCover from "@/img/demucs-cover.jpg";
 import MusicCodexCover from "@/img/music-codex-cover.jpg";
 import FoodManagerCover from "@/img/food-manager-cover.jpg";
 import SCPPCover from "@/img/scpp-cover.jpg";
-// import { DotLottiePlayer } from "@dotlottie/react-player";
+import LaptopHero from "@/img/laptop-hero.png";
+import PhoneHero from "@/img/phone-hero.png";
+import { DotLottiePlayer } from "@dotlottie/react-player";
+import { Button } from "@/components/ui/button";
 ---
 
 <Layout title="Jose Concha - Full Stack Developer">
 	<main>
-		<section class="py-16">
-			<div class="container py-16 mx-auto hero-bg relative z-10" style="">
+		<section class="pt-16 pb-10">
+			<div class="container mx-auto hero-bg relative z-10" style="">
 				<div class="grid grid-cols-2">
 					<div class="">
 						<h1 class="text-7xl font-bold mb-10">
 							Full Stack <br />Developer
 						</h1>
-						<p class="text-2xl mb-2">
+						<p class="text-2xl">
 							Lógica operativa, Diseño y Construcción
 						</p>
 						<p>
-							Enfoque integral que aborda cada etapa del
-							desarrollo de software, desde la conceptualización
-							inicial hasta la implementación y el mantenimiento
-							continuo.
+							Enfoque integral en todas las etapas del desarrollo
+							de software, garantizando una ejecución sin
+							interrupciones y resultados en cada etapa del
+							proyecto
 						</p>
 					</div>
-					<div></div>
+					<div class="relative">
+						<Image src={LaptopHero} alt="" class="" />
+						<Image
+							src={PhoneHero}
+							alt=""
+							class="absolute bottom-0 z-10"
+						/>
+					</div>
 				</div>
-				<!-- <img
-					src="img/rokt-connector-open.svg"
-					alt=""
-					class="absolute -z-10"
-				/> -->
 			</div>
 			<div class="overflow-clip">
 				<svg
-					width="1750"
-					height="663"
-					fill="none"
+					class="absolute left-0 top-72 -z-10 opacity-5 w-full"
 					xmlns="http://www.w3.org/2000/svg"
-					class="absolute left-0 -z-10 opacity-10"
+					viewBox="0 0 725.16 274.9"
 				>
-					<g
-						clip-path="url(#a)"
-						fill-rule="evenodd"
-						clip-rule="evenodd"
-					>
-						<path
-							d="M3.851 579.899c-4.512-3.723-5.152-10.399-1.429-14.911L221.5 299.472c3.723-4.512 10.398-5.151 14.91-1.429 4.512 3.723 5.152 10.399 1.429 14.911L18.761 578.47c-3.723 4.512-10.398 5.151-14.91 1.429Z"
-							fill="#fff"></path>
-						<path
-							d="M235.135 294.49c7.142 1.565 11.663 8.624 10.098 15.766l-73.428 335.026c-1.565 7.143-8.624 11.664-15.767 10.098-7.142-1.565-11.663-8.624-10.097-15.766l73.427-335.026c1.566-7.143 8.625-11.664 15.767-10.098Z"
-							fill="#fff"></path>
-						<path
-							d="M156.111 660.589c-8.83-5.179-11.789-16.535-6.609-25.365l352.619-601.12c5.18-8.83 16.536-11.79 25.366-6.61 8.829 5.18 11.788 16.536 6.609 25.365L181.476 653.98c-5.179 8.83-16.536 11.789-25.365 6.609Z"
-							fill="#fff"></path>
-						<path
-							d="M506.651 30.906c9.941-7.462 24.049-5.453 31.511 4.488l418.734 557.824c7.462 9.941 5.453 24.049-4.488 31.511-9.941 7.463-24.049 5.453-31.511-4.488L502.163 62.417c-7.463-9.94-5.453-24.049 4.488-31.511Z"
-							fill="#fff"></path>
-						<path
-							d="M929.333 627.613c-11.346-8.018-14.043-23.715-6.026-35.06L1329.86 17.259c8.02-11.345 23.72-14.043 35.06-6.025 11.35 8.017 14.05 23.714 6.03 35.06L964.392 621.588c-8.017 11.345-23.714 14.043-35.059 6.025Z"
-							fill="#fff"></path>
-						<path
-							d="M1356.35 5.79c14.41 2.454 24.11 16.129 21.66 30.545l-54.16 318.322c-2.46 14.416-16.13 24.115-30.55 21.662-14.41-2.453-24.11-16.129-21.66-30.545l54.16-318.322c2.46-14.416 16.13-24.114 30.55-21.661Z"
-							fill="#fff"></path>
-						<path
-							d="M1281.21 375.12c-12.33-13.494-11.39-34.429 2.11-46.76L1694.3 8.665c13.49-12.331 34.43-11.388 46.76 2.107 12.33 13.494 11.39 34.43-2.11 46.76l-410.98 319.695c-13.49 12.331-34.43 11.387-46.76-2.107Z"
-							fill="#fff"></path>
-					</g><defs
-						><clipPath id="a"
-							><path fill="#fff" d="M0 0h1750v663H0z"
-							></path></clipPath
-						></defs
-					>
+					<path
+						class="cls-1"
+						d="m720.58,23.94s-170.3,132.47-170.3,132.47c-5.59,5.11-14.26,4.72-19.37-.87-1.55-1.7-2.6-3.7-3.14-5.79,0,0,0,0,0-.01-.87-1.92-1.2-4.12-.82-6.36l14.76-86.76-142.08,201.05c-3.32,4.7-9.82,5.82-14.52,2.5-.28-.2-.55-.41-.8-.64-1.02-.6-1.94-1.41-2.7-2.42L214.21,34.12l-139.01,236.97c-1.25,2.13-3.38,3.44-5.65,3.74h-1.97c-.99-.13-1.98-.46-2.89-1-1.83-1.07-3.05-2.79-3.55-4.69h0c-.7-1.16-.97-2.58-.66-4l26.62-121.47L7.77,239.8c-1.54,1.87-4.3,2.14-6.17.59-1.05-.87-1.6-2.13-1.6-3.39,0-.98.33-1.97,1-2.78l90.79-110.03c.19-.22.39-.43.61-.6,1.28-1.26,3.15-1.87,5.04-1.46,2.96.64,4.83,3.57,4.18,6.53l-23.46,107.02L208.07,14.24c2.15-3.66,6.85-4.89,10.51-2.74.06.04.13.08.19.12h.01c1.63.6,3.1,1.66,4.22,3.15l166.25,221.47L550.9,7.49s.04-.08.07-.11c2.3-3.59,6.6-5.64,11.07-4.88h0c5.98,1.01,9.99,6.68,8.98,12.65l-17.74,104.29L702.08,3.69c2.35-2.14,4.87-3.26,7.34-3.59h3.2c10.07,1.31,17.82,14.76,7.96,23.84Z"
+					></path>
 				</svg>
 			</div>
 		</section>
@@ -91,12 +66,11 @@ import SCPPCover from "@/img/scpp-cover.jpg";
 								>Lógica</span
 							> operativa
 						</h3>
-						<p class="mb-4">
-							Con experiencia en el diseño de procesos de control
-							administrativo y desarrollo de KPI, entre otros, mi
-							enfoque se centra en mejorar la eficiencia
-							operativa, reducir los tiempos de entrega y
-							maximizar los resultados
+						<p>
+							Con experiencia en diseño de procesos
+							administrativos y KPIs, mi enfoque es mejorar la
+							eficiencia operativa, reducir tiempos de entrega y
+							maximizar resultados.
 						</p>
 						<p>
 							Experiencia en análisis de datos para informar
@@ -111,16 +85,15 @@ import SCPPCover from "@/img/scpp-cover.jpg";
 								>Backend</span
 							>
 						</h3>
-						<p class="mb-4">
+						<p>
 							Desarrollo de aplicaciones utilizando Java, Play
 							Framework, Javascript, NodeJS, SailsJS.
 						</p>
 						<p>
-							Siempre priorizando el desarrollo de sistemas
-							robustos, manteniendo un alto nivel de calidad y
-							rendimiento. Actualmente manejan más de 50 usuarios
-							simultáneos, ya sea desde dispositivos móviles o
-							equipos de escritorio
+							Priorizo sistemas robustos con alta calidad y
+							rendimiento, actualmente manejando más de 50
+							usuarios simultáneos en dispositivos móviles y de
+							escritorio.
 						</p>
 					</div>
 					<div class="grid items-center justify-center p-6">
@@ -130,12 +103,10 @@ import SCPPCover from "@/img/scpp-cover.jpg";
 							</span>
 						</h3>
 						<p>
-							He trabajado con una variedad de tecnologías
-							incluyendo Vue.js, React y React Native. Desde la
-							creación de interfaces de usuario dinámicas y
-							responsivas hasta el desarrollo de aplicaciones
-							móviles nativas, mi enfoque se centra en aprovechar
-							al máximo estas herramientas para proporcionar
+							He trabajado con Vue.js, React y React Native,
+							creando interfaces dinámicas y responsivas, así como
+							aplicaciones móviles nativas. Mi objetivo es
+							maximizar estas herramientas para ofrecer
 							experiencias de usuario excepcionales y funcionales.
 						</p>
 					</div>
@@ -144,126 +115,200 @@ import SCPPCover from "@/img/scpp-cover.jpg";
 		</section>
 		<section class="py-16">
 			<div class="container mx-auto">
-				<div class="grid grid-cols-2 mb-10">
+				<div class="grid grid-cols-3 mb-10">
+						<div class="col-span-2">
+							<div class="flex gap-2 items-center mb-4">
+								<img src="/img/ruler-icon.png" class="max-h-[40px]" />
+								<h2 class="text-5xl font-bold ">
+									Proyectos
+								</h2>
+							</div>
+							<p class="mb-0">
+								Todos los proyectos presentados aquí son el
+								resultado de mi iniciativa personal y
+								creatividad, surgidos para resolver problemas
+								cotidianos sin soluciones disponibles en el
+								mercado. Reflejan mi pasión por la innovación
+								tecnológica y mi capacidad para identificar y
+								aprovechar oportunidades con éxito.
+							</p>
+						</div>
 					<div>
-						<h2 class="text-5xl font-bold mb-4">Proyectos</h2>
-						<p class="mb-4">
-							Todos los proyectos presentados aquí son el
-							resultado de mi iniciativa personal y creatividad.
-							Surgieron de la necesidad de encontrar soluciones a
-							problemas específicos que enfrentaba en mi vida
-							cotidiana y que no tenían una opción disponible en
-							el mercado.
-						</p>
-						<p>
-							Cada proyecto refleja mi pasión por abordar desafíos
-							mediante la innovación tecnológica. Estos proyectos
-							personales no solo demuestran mis habilidades
-							técnicas, sino también mi capacidad para identificar
-							oportunidades y llevarlas a cabo con éxito.
-						</p>
+						<!-- EMPTY -->
 					</div>
 				</div>
-				<div class="grid grid-cols-2 gap-2">
-					<div class="flex flex-col gap-2">
-						<div class="grid grid-cols-2 gap-2">
-							<div class="bg-slate-900">
-								<Image src={DemucsCover} alt="Demucs Cover" />
-								<div class="p-6">
-									<h3
-										class="font-dotgothic16 text-4xl font-bold mb-4"
+				<div class="grid grid-cols-6 gap-4">
+					<div
+						class="bg-slate-900 col-span-4 flex flex-col gap-2 justify-between p-6"
+					>
+						<h3 class="font-dotgothic16 text-4xl font-bold mb-4">
+							SCPP
+						</h3>
+						<p>
+							Sistema de Control de Presupuesto Personal. Es la
+							solución integral para gestionar tus finanzas
+							personales de manera eficiente y conveniente. Con su
+							aplicación para Android y su versión de escritorio
+							para Windows, SCPP te ofrece la flexibilidad para
+							registrar tus gastos, ingresos y ahorros en
+							cualquier momento y desde cualquier lugar.
+						</p>
+						<div class="flex gap-4 mb-4">
+							<Button>Leer Más</Button>
+							<a href="">
+								<Button variant="outline">
+									<svg
+										viewBox="0 0 438.549 438.549"
+										class="mr-2 h-4 w-4"
+										><path
+											fill="currentColor"
+											d="M409.132 114.573c-19.608-33.596-46.205-60.194-79.798-79.8-33.598-19.607-70.277-29.408-110.063-29.408-39.781 0-76.472 9.804-110.063 29.408-33.596 19.605-60.192 46.204-79.8 79.8C9.803 148.168 0 184.854 0 224.63c0 47.78 13.94 90.745 41.827 128.906 27.884 38.164 63.906 64.572 108.063 79.227 5.14.954 8.945.283 11.419-1.996 2.475-2.282 3.711-5.14 3.711-8.562 0-.571-.049-5.708-.144-15.417a2549.81 2549.81 0 01-.144-25.406l-6.567 1.136c-4.187.767-9.469 1.092-15.846 1-6.374-.089-12.991-.757-19.842-1.999-6.854-1.231-13.229-4.086-19.13-8.559-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-.951-2.568-2.098-3.711-3.429-1.142-1.331-1.997-2.663-2.568-3.997-.572-1.335-.098-2.43 1.427-3.289 1.525-.859 4.281-1.276 8.28-1.276l5.708.853c3.807.763 8.516 3.042 14.133 6.851 5.614 3.806 10.229 8.754 13.846 14.842 4.38 7.806 9.657 13.754 15.846 17.847 6.184 4.093 12.419 6.136 18.699 6.136 6.28 0 11.704-.476 16.274-1.423 4.565-.952 8.848-2.383 12.847-4.285 1.713-12.758 6.377-22.559 13.988-29.41-10.848-1.14-20.601-2.857-29.264-5.14-8.658-2.286-17.605-5.996-26.835-11.14-9.235-5.137-16.896-11.516-22.985-19.126-6.09-7.614-11.088-17.61-14.987-29.979-3.901-12.374-5.852-26.648-5.852-42.826 0-23.035 7.52-42.637 22.557-58.817-7.044-17.318-6.379-36.732 1.997-58.24 5.52-1.715 13.706-.428 24.554 3.853 10.85 4.283 18.794 7.952 23.84 10.994 5.046 3.041 9.089 5.618 12.135 7.708 17.705-4.947 35.976-7.421 54.818-7.421s37.117 2.474 54.823 7.421l10.849-6.849c7.419-4.57 16.18-8.758 26.262-12.565 10.088-3.805 17.802-4.853 23.134-3.138 8.562 21.509 9.325 40.922 2.279 58.24 15.036 16.18 22.559 35.787 22.559 58.817 0 16.178-1.958 30.497-5.853 42.966-3.9 12.471-8.941 22.457-15.125 29.979-6.191 7.521-13.901 13.85-23.131 18.986-9.232 5.14-18.182 8.85-26.84 11.136-8.662 2.286-18.415 4.004-29.263 5.146 9.894 8.562 14.842 22.077 14.842 40.539v60.237c0 3.422 1.19 6.279 3.572 8.562 2.379 2.279 6.136 2.95 11.276 1.995 44.163-14.653 80.185-41.062 108.068-79.226 27.88-38.161 41.825-81.126 41.825-128.906-.01-39.771-9.818-76.454-29.414-110.049z"
+										></path></svg
 									>
-										Demucs
-									</h3>
-									<p class="mb-4">
-										API con interfaz gráfica intuitiva y
-										fácil de usar
-									</p>
-									<p>
-										Utiliza un modelo de separación de
-										fuentes musicales de última generación,
-										actualmente capaz de separar batería,
-										bajo y voces del resto del
-										acompañamiento.
-									</p>
-								</div>
-							</div>
-							<div class="bg-slate-900">
-								<Image src={FoodManagerCover} alt="" />
-								<div class="p-6">
-									<h3
-										class="font-dotgothic16 text-4xl font-bold mb-4"
-									>
-										Food Manager
-									</h3>
-									<p>
-										Aplicación que facilita el control y la
-										gestión eficiente del almacenamiento de
-										alimentos. Registro de alimentos junto
-										con su fecha de vencimiento para
-										mantener un inventario organizado y
-										actualizado.
-									</p>
-								</div>
-							</div>
+									Github
+								</Button>
+							</a>
 						</div>
-						<div>
-							<div class="bg-slate-900">
-								<Image src={MusicCodexCover} alt="" />
-								<div class="p-6">
-									<h3
-										class="font-dotgothic16 text-4xl font-bold mb-4"
-									>
-										Music Codex
-									</h3>
-									<p>
-										Para músicos y entusiastas de la música
-										que buscan dominar las complejidades de
-										las escalas y la teoría musical sin
-										tener que depender de la memoria.
-									</p>
-								</div>
-							</div>
+						<div class="flex gap-1 flex-wrap">
+							<span
+								class="bg-blue-100 zen-blue-txt text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300"
+							>
+								C#
+							</span><span
+								class="bg-blue-100 zen-blue-txt text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300"
+							>
+								React Native
+							</span><span
+								class="bg-blue-100 zen-blue-txt text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300"
+							>
+								NodeJS
+							</span>
 						</div>
 					</div>
-
-					<div>
-						<div class="bg-slate-900">
-							<!-- <DotLottiePlayer
-								src="/img/money.lottie"
-								autoplay
-								className="w-full h-full"
-								client:load
-							/> -->
-							<Image src={SCPPCover} alt="" />
-							<div class="p-6">
-								<h3
-									class="font-dotgothic16 text-4xl font-bold mb-4"
-								>
-									SCPP
-								</h3>
-								<p class="mb-4">
-									Sistema de Control de Presupuesto Personal.
-									es la solución integral para gestionar tus
-									finanzas personales de manera eficiente y
-									conveniente. Con su aplicación para Android
-									y su versión de escritorio para Windows,
-									SCPP te ofrece la flexibilidad para
-									registrar tus gastos, ingresos y ahorros en
-									cualquier momento y desde cualquier lugar.
-								</p>
-								<p>
-									Con una interfaz intuitiva y fácil de usar,
-									SCPP te permite categorizar tus
-									transacciones y realizar un seguimiento
-									detallado de tu situación financiera. Ya sea
-									que estés administrando tus gastos diarios,
-									planificando para el futuro o simplemente
-									buscando optimizar tus hábitos financieros,
-									SCPP te brinda las herramientas necesarias
-									para tomar el control total de tus finanzas.
-								</p>
-							</div>
+					<div
+						class="bg-slate-900 col-span-2 p-6 flex flex-col gap-2 justify-between"
+					>
+						<h3 class="font-dotgothic16 text-4xl font-bold mb-4">
+							Demucs
+						</h3>
+						<p>
+							Interfaz Web y API que habilita modelo de separación
+							para dividir batería, bajo y voces del resto del
+							acompañamiento de una canción
+						</p>
+						<div class="flex gap-4 mb-4">
+							<Button>Leer Más</Button>
+							<a href="">
+								<Button variant="outline">
+									<svg
+										viewBox="0 0 438.549 438.549"
+										class="mr-2 h-4 w-4"
+										><path
+											fill="currentColor"
+											d="M409.132 114.573c-19.608-33.596-46.205-60.194-79.798-79.8-33.598-19.607-70.277-29.408-110.063-29.408-39.781 0-76.472 9.804-110.063 29.408-33.596 19.605-60.192 46.204-79.8 79.8C9.803 148.168 0 184.854 0 224.63c0 47.78 13.94 90.745 41.827 128.906 27.884 38.164 63.906 64.572 108.063 79.227 5.14.954 8.945.283 11.419-1.996 2.475-2.282 3.711-5.14 3.711-8.562 0-.571-.049-5.708-.144-15.417a2549.81 2549.81 0 01-.144-25.406l-6.567 1.136c-4.187.767-9.469 1.092-15.846 1-6.374-.089-12.991-.757-19.842-1.999-6.854-1.231-13.229-4.086-19.13-8.559-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-.951-2.568-2.098-3.711-3.429-1.142-1.331-1.997-2.663-2.568-3.997-.572-1.335-.098-2.43 1.427-3.289 1.525-.859 4.281-1.276 8.28-1.276l5.708.853c3.807.763 8.516 3.042 14.133 6.851 5.614 3.806 10.229 8.754 13.846 14.842 4.38 7.806 9.657 13.754 15.846 17.847 6.184 4.093 12.419 6.136 18.699 6.136 6.28 0 11.704-.476 16.274-1.423 4.565-.952 8.848-2.383 12.847-4.285 1.713-12.758 6.377-22.559 13.988-29.41-10.848-1.14-20.601-2.857-29.264-5.14-8.658-2.286-17.605-5.996-26.835-11.14-9.235-5.137-16.896-11.516-22.985-19.126-6.09-7.614-11.088-17.61-14.987-29.979-3.901-12.374-5.852-26.648-5.852-42.826 0-23.035 7.52-42.637 22.557-58.817-7.044-17.318-6.379-36.732 1.997-58.24 5.52-1.715 13.706-.428 24.554 3.853 10.85 4.283 18.794 7.952 23.84 10.994 5.046 3.041 9.089 5.618 12.135 7.708 17.705-4.947 35.976-7.421 54.818-7.421s37.117 2.474 54.823 7.421l10.849-6.849c7.419-4.57 16.18-8.758 26.262-12.565 10.088-3.805 17.802-4.853 23.134-3.138 8.562 21.509 9.325 40.922 2.279 58.24 15.036 16.18 22.559 35.787 22.559 58.817 0 16.178-1.958 30.497-5.853 42.966-3.9 12.471-8.941 22.457-15.125 29.979-6.191 7.521-13.901 13.85-23.131 18.986-9.232 5.14-18.182 8.85-26.84 11.136-8.662 2.286-18.415 4.004-29.263 5.146 9.894 8.562 14.842 22.077 14.842 40.539v60.237c0 3.422 1.19 6.279 3.572 8.562 2.379 2.279 6.136 2.95 11.276 1.995 44.163-14.653 80.185-41.062 108.068-79.226 27.88-38.161 41.825-81.126 41.825-128.906-.01-39.771-9.818-76.454-29.414-110.049z"
+										></path></svg
+									>
+									Github
+								</Button>
+							</a>
+						</div>
+						<div class="flex gap-1 flex-wrap">
+							<span
+								class="bg-blue-100 zen-blue-txt text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300"
+							>
+								Python
+							</span><span
+								class="bg-blue-100 zen-blue-txt text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300"
+							>
+								IA
+							</span><span
+								class="bg-blue-100 zen-blue-txt text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300"
+							>
+								VueJS
+							</span>
+						</div>
+					</div>
+					<div
+						class="bg-slate-900 col-span-2 p-6 flex flex-col gap-2 justify-between"
+					>
+						<h3 class="font-dotgothic16 text-4xl font-bold mb-4">
+							Food Manager
+						</h3>
+						<p>
+							Aplicación que facilita el control y la gestión
+							eficiente del almacenamiento de alimentos. Registro
+							de alimentos junto con su fecha de vencimiento para
+							mantener un inventario organizado y actualizado.
+						</p>
+						<div class="flex gap-4 mb-4">
+							<Button>Leer Más</Button>
+							<a href="">
+								<Button variant="outline">
+									<svg
+										viewBox="0 0 438.549 438.549"
+										class="mr-2 h-4 w-4"
+										><path
+											fill="currentColor"
+											d="M409.132 114.573c-19.608-33.596-46.205-60.194-79.798-79.8-33.598-19.607-70.277-29.408-110.063-29.408-39.781 0-76.472 9.804-110.063 29.408-33.596 19.605-60.192 46.204-79.8 79.8C9.803 148.168 0 184.854 0 224.63c0 47.78 13.94 90.745 41.827 128.906 27.884 38.164 63.906 64.572 108.063 79.227 5.14.954 8.945.283 11.419-1.996 2.475-2.282 3.711-5.14 3.711-8.562 0-.571-.049-5.708-.144-15.417a2549.81 2549.81 0 01-.144-25.406l-6.567 1.136c-4.187.767-9.469 1.092-15.846 1-6.374-.089-12.991-.757-19.842-1.999-6.854-1.231-13.229-4.086-19.13-8.559-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-.951-2.568-2.098-3.711-3.429-1.142-1.331-1.997-2.663-2.568-3.997-.572-1.335-.098-2.43 1.427-3.289 1.525-.859 4.281-1.276 8.28-1.276l5.708.853c3.807.763 8.516 3.042 14.133 6.851 5.614 3.806 10.229 8.754 13.846 14.842 4.38 7.806 9.657 13.754 15.846 17.847 6.184 4.093 12.419 6.136 18.699 6.136 6.28 0 11.704-.476 16.274-1.423 4.565-.952 8.848-2.383 12.847-4.285 1.713-12.758 6.377-22.559 13.988-29.41-10.848-1.14-20.601-2.857-29.264-5.14-8.658-2.286-17.605-5.996-26.835-11.14-9.235-5.137-16.896-11.516-22.985-19.126-6.09-7.614-11.088-17.61-14.987-29.979-3.901-12.374-5.852-26.648-5.852-42.826 0-23.035 7.52-42.637 22.557-58.817-7.044-17.318-6.379-36.732 1.997-58.24 5.52-1.715 13.706-.428 24.554 3.853 10.85 4.283 18.794 7.952 23.84 10.994 5.046 3.041 9.089 5.618 12.135 7.708 17.705-4.947 35.976-7.421 54.818-7.421s37.117 2.474 54.823 7.421l10.849-6.849c7.419-4.57 16.18-8.758 26.262-12.565 10.088-3.805 17.802-4.853 23.134-3.138 8.562 21.509 9.325 40.922 2.279 58.24 15.036 16.18 22.559 35.787 22.559 58.817 0 16.178-1.958 30.497-5.853 42.966-3.9 12.471-8.941 22.457-15.125 29.979-6.191 7.521-13.901 13.85-23.131 18.986-9.232 5.14-18.182 8.85-26.84 11.136-8.662 2.286-18.415 4.004-29.263 5.146 9.894 8.562 14.842 22.077 14.842 40.539v60.237c0 3.422 1.19 6.279 3.572 8.562 2.379 2.279 6.136 2.95 11.276 1.995 44.163-14.653 80.185-41.062 108.068-79.226 27.88-38.161 41.825-81.126 41.825-128.906-.01-39.771-9.818-76.454-29.414-110.049z"
+										></path></svg
+									>
+									Github
+								</Button>
+							</a>
+						</div>
+						<div class="flex gap-1 flex-wrap">
+							<span
+								class="bg-blue-100 zen-blue-txt text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300"
+							>
+								Supabase
+							</span><span
+								class="bg-blue-100 zen-blue-txt text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300"
+							>
+								React Native
+							</span>
+						</div>
+					</div>
+					<div
+						class="bg-slate-900 col-span-4 p-6 flex flex-col gap-2 justify-between"
+					>
+						<h3 class="font-dotgothic16 text-4xl font-bold mb-4">
+							Music Codex
+						</h3>
+						<p>
+							La solución perfecta para músicos y aficionados que
+							desean explorar las escalas y la teoría musical sin
+							frustraciones. Con su diseño intuitivo y fácil de
+							usar, permite a los usuarios concentrarse en la
+							práctica, sin preocuparse por la complejidad del
+							aprendizaje.
+						</p>
+						<div class="flex gap-4 mb-4">
+							<Button>Leer Más</Button>
+							<a href="">
+								<Button variant="outline">
+									<svg
+										viewBox="0 0 438.549 438.549"
+										class="mr-2 h-4 w-4"
+										><path
+											fill="currentColor"
+											d="M409.132 114.573c-19.608-33.596-46.205-60.194-79.798-79.8-33.598-19.607-70.277-29.408-110.063-29.408-39.781 0-76.472 9.804-110.063 29.408-33.596 19.605-60.192 46.204-79.8 79.8C9.803 148.168 0 184.854 0 224.63c0 47.78 13.94 90.745 41.827 128.906 27.884 38.164 63.906 64.572 108.063 79.227 5.14.954 8.945.283 11.419-1.996 2.475-2.282 3.711-5.14 3.711-8.562 0-.571-.049-5.708-.144-15.417a2549.81 2549.81 0 01-.144-25.406l-6.567 1.136c-4.187.767-9.469 1.092-15.846 1-6.374-.089-12.991-.757-19.842-1.999-6.854-1.231-13.229-4.086-19.13-8.559-5.898-4.473-10.085-10.328-12.56-17.556l-2.855-6.57c-1.903-4.374-4.899-9.233-8.992-14.559-4.093-5.331-8.232-8.945-12.419-10.848l-1.999-1.431c-1.332-.951-2.568-2.098-3.711-3.429-1.142-1.331-1.997-2.663-2.568-3.997-.572-1.335-.098-2.43 1.427-3.289 1.525-.859 4.281-1.276 8.28-1.276l5.708.853c3.807.763 8.516 3.042 14.133 6.851 5.614 3.806 10.229 8.754 13.846 14.842 4.38 7.806 9.657 13.754 15.846 17.847 6.184 4.093 12.419 6.136 18.699 6.136 6.28 0 11.704-.476 16.274-1.423 4.565-.952 8.848-2.383 12.847-4.285 1.713-12.758 6.377-22.559 13.988-29.41-10.848-1.14-20.601-2.857-29.264-5.14-8.658-2.286-17.605-5.996-26.835-11.14-9.235-5.137-16.896-11.516-22.985-19.126-6.09-7.614-11.088-17.61-14.987-29.979-3.901-12.374-5.852-26.648-5.852-42.826 0-23.035 7.52-42.637 22.557-58.817-7.044-17.318-6.379-36.732 1.997-58.24 5.52-1.715 13.706-.428 24.554 3.853 10.85 4.283 18.794 7.952 23.84 10.994 5.046 3.041 9.089 5.618 12.135 7.708 17.705-4.947 35.976-7.421 54.818-7.421s37.117 2.474 54.823 7.421l10.849-6.849c7.419-4.57 16.18-8.758 26.262-12.565 10.088-3.805 17.802-4.853 23.134-3.138 8.562 21.509 9.325 40.922 2.279 58.24 15.036 16.18 22.559 35.787 22.559 58.817 0 16.178-1.958 30.497-5.853 42.966-3.9 12.471-8.941 22.457-15.125 29.979-6.191 7.521-13.901 13.85-23.131 18.986-9.232 5.14-18.182 8.85-26.84 11.136-8.662 2.286-18.415 4.004-29.263 5.146 9.894 8.562 14.842 22.077 14.842 40.539v60.237c0 3.422 1.19 6.279 3.572 8.562 2.379 2.279 6.136 2.95 11.276 1.995 44.163-14.653 80.185-41.062 108.068-79.226 27.88-38.161 41.825-81.126 41.825-128.906-.01-39.771-9.818-76.454-29.414-110.049z"
+										></path></svg
+									>
+									Github
+								</Button>
+							</a>
+						</div>
+						<div class="flex gap-1 flex-wrap">
+							<span
+								class="bg-blue-100 zen-blue-txt text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300"
+							>
+								React Native
+							</span>
+							<span
+								class="bg-blue-100 zen-blue-txt text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300"
+							>
+								Expo
+							</span>
 						</div>
 					</div>
 				</div>
@@ -281,5 +326,8 @@ import SCPPCover from "@/img/scpp-cover.jpg";
 		background-repeat: no-repeat;
 		background-position: center;
 		/* background-size: cover; */
+	}
+	.cls-1 {
+		fill: #fff;
 	}
 </style>
