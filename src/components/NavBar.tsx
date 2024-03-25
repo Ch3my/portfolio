@@ -29,7 +29,7 @@ export default function NavBar() {
                     className={navigationMenuTriggerStyle()}>
                     Inicio
                 </NavigationMenuLink>
-                <NavigationMenuLink href="/"
+                <NavigationMenuLink href="/#proyectos"
                     className={navigationMenuTriggerStyle()}>
                     Proyectos
                 </NavigationMenuLink>
