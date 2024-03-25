@@ -10,7 +10,9 @@ import PhoneHero from "@/img/phone-hero.png";
 import { DotLottiePlayer } from "@dotlottie/react-player";
 import { Button } from "@/components/ui/button";
 
-import Accordion from "@/components/HomeAccordion"
+import Accordion from "@/components/HomeAccordion";
+import OtraExpCarousel from "@/components/OtraExpCarousel";
+import Waves from "@/components/Waves.astro";
 ---
 
 <Layout title="Jose Concha - Full Stack Developer">
@@ -31,6 +33,38 @@ import Accordion from "@/components/HomeAccordion"
 							interrupciones y resultados en cada etapa del
 							proyecto
 						</p>
+						<a
+							href="https://www.linkedin.com/in/jose-miguel-concha/"
+							target="_blank"
+						>
+							<Button className="flex justify-between gap-2">
+								<svg
+									xmlns="http://www.w3.org/2000/svg"
+									class="icon icon-tabler icon-tabler-brand-linkedin max-w-6"
+									width="44"
+									height="44"
+									viewBox="0 0 24 24"
+									stroke-width="1.5"
+									stroke="#2c3e50"
+									fill="none"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								>
+									<path
+										stroke="none"
+										d="M0 0h24v24H0z"
+										fill="none"></path>
+									<path
+										d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"
+									></path>
+									<path d="M8 11l0 5"></path>
+									<path d="M8 8l0 .01"></path>
+									<path d="M12 16l0 -5"></path>
+									<path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+								</svg>
+								LinkedIn
+							</Button>
+						</a>
 					</div>
 					<div class="relative overflow-hidden">
 						<Image src={LaptopHero} alt="" class="fade-in" />
@@ -122,19 +156,22 @@ import Accordion from "@/components/HomeAccordion"
 				<div class="grid grid-cols-3 mb-10">
 					<div class="col-span-2">
 						<a href="/#proyectos"></a>
-						<div class="flex gap-2 items-center mb-4 fade-in-fwd" style="animation-timeline: view(70% 0%);">
+						<div
+							class="flex gap-2 items-center mb-4 fade-in-fwd"
+							style="animation-timeline: view(70% 0%);"
+						>
 							<img
 								src="/img/ruler-icon.png"
 								class="max-h-[40px]"
 							/>
-							<h2
-								class="text-5xl font-bold proyectos-h2"
-								
-							>
+							<h2 class="text-5xl font-bold proyectos-h2">
 								Proyectos
 							</h2>
 						</div>
-						<p class="mb-0 fade-in-fwd" style="animation-timeline: view(70% 0%);">
+						<p
+							class="mb-0 fade-in-fwd"
+							style="animation-timeline: view(70% 0%);"
+						>
 							Todos los proyectos presentados aquí son el
 							resultado de mi iniciativa personal y creatividad,
 							surgidos para resolver problemas cotidianos sin
@@ -157,7 +194,8 @@ import Accordion from "@/components/HomeAccordion"
 				<div class="flex flex-col lg:grid grid-cols-6 gap-6">
 					<div
 						class="bg-slate-900 col-span-4 flex flex-col gap-2 justify-between p-6 hover:scale-105 transition-all
-						hover:bg-sky-950 slide-in-bck-bottom" style="animation-timeline: view(90% 0%);"
+						hover:bg-sky-950 slide-in-bck-bottom"
+						style="animation-timeline: view(90% 0%);"
 					>
 						<h3 class="font-dotgothic16 text-4xl font-bold mb-4">
 							SCPP
@@ -192,7 +230,8 @@ import Accordion from "@/components/HomeAccordion"
 					</div>
 					<div
 						class="bg-slate-900 col-span-2 p-6 flex flex-col gap-2 justify-between hover:scale-105 transition-all
-						hover:bg-sky-950 slide-in-bck-bottom" style="animation-timeline: view(90% 0%); animation-delay: 100ms"
+						hover:bg-sky-950 slide-in-bck-bottom"
+						style="animation-timeline: view(90% 0%); animation-delay: 100ms"
 					>
 						<h3 class="font-dotgothic16 text-4xl font-bold mb-4">
 							Demucs
@@ -204,7 +243,10 @@ import Accordion from "@/components/HomeAccordion"
 						</p>
 						<div class="flex gap-4 mb-4">
 							<Button>Leer Más</Button>
-							<a href="https://github.com/Ch3my/demucs" target="_blank">
+							<a
+								href="https://github.com/Ch3my/demucs"
+								target="_blank"
+							>
 								<Button variant="outline">
 									<svg
 										viewBox="0 0 438.549 438.549"
@@ -236,7 +278,8 @@ import Accordion from "@/components/HomeAccordion"
 					</div>
 					<div
 						class="bg-slate-900 col-span-2 p-6 flex flex-col gap-2 justify-between hover:scale-105 transition-all
-						hover:bg-sky-950 slide-in-bck-bottom" style="animation-timeline: view(90% 0%);"
+						hover:bg-sky-950 slide-in-bck-bottom"
+						style="animation-timeline: view(90% 0%);"
 					>
 						<h3 class="font-dotgothic16 text-4xl font-bold mb-4">
 							Food Manager
@@ -249,7 +292,10 @@ import Accordion from "@/components/HomeAccordion"
 						</p>
 						<div class="flex gap-4 mb-4">
 							<Button>Leer Más</Button>
-							<a href="https://github.com/Ch3my/FoodManager" target="_blank">
+							<a
+								href="https://github.com/Ch3my/FoodManager"
+								target="_blank"
+							>
 								<Button variant="outline">
 									<svg
 										viewBox="0 0 438.549 438.549"
@@ -277,7 +323,8 @@ import Accordion from "@/components/HomeAccordion"
 					</div>
 					<div
 						class="bg-slate-900 col-span-4 p-6 flex flex-col gap-2 justify-between hover:scale-105 transition-all
-						hover:bg-sky-950 slide-in-bck-bottom" style="animation-timeline: view(90% 0%); animation-delay: 200ms"
+						hover:bg-sky-950 slide-in-bck-bottom"
+						style="animation-timeline: view(90% 0%); animation-delay: 200ms"
 					>
 						<h3 class="font-dotgothic16 text-4xl font-bold mb-4">
 							Music Codex
@@ -292,7 +339,10 @@ import Accordion from "@/components/HomeAccordion"
 						</p>
 						<div class="flex gap-4 mb-4">
 							<Button>Leer Más</Button>
-							<a href="https://github.com/Ch3my/MusicBuddy" target="_blank">
+							<a
+								href="https://github.com/Ch3my/MusicBuddy"
+								target="_blank"
+							>
 								<Button variant="outline">
 									<svg
 										viewBox="0 0 438.549 438.549"
@@ -322,23 +372,62 @@ import Accordion from "@/components/HomeAccordion"
 				</div>
 			</div>
 		</section>
-		<section>
-			<div class="p-6">
-				<div class="container mx-auto">
-					<h2 class="text-5xl font-bold mb-4 text-center">
+	</main>
+	<footer class="p-6">
+		<div class="container mx-auto">
+			<div class="grid grid-cols-2 gap-16">
+				<div>
+					<h2 class="text-5xl font-bold mb-4">Contactame</h2>
+					<p>
+						¿Tienes un proyecto emocionante en el que necesitas
+						ayuda? Contáctame a	través de mensaje
+					</p>
+					<a
+						href="https://www.linkedin.com/in/jose-miguel-concha/"
+						target="_blank"
+					>
+						<Button className="flex justify-between gap-2">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								class="icon icon-tabler icon-tabler-brand-linkedin max-w-6"
+								width="44"
+								height="44"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="#2c3e50"
+								fill="none"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							>
+								<path
+									stroke="none"
+									d="M0 0h24v24H0z"
+									fill="none"></path>
+								<path
+									d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"
+								></path>
+								<path d="M8 11l0 5"></path>
+								<path d="M8 8l0 .01"></path>
+								<path d="M12 16l0 -5"></path>
+								<path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+							</svg>
+							LinkedIn
+						</Button>
+					</a>
+				</div>
+				<div>
+					<h2 class="text-5xl font-bold mb-4">
 						Experiencia Adicional
 					</h2>
-					<div class="max-w-prose mx-auto">
-						<Accordion client:visible>
-					</div>
+					<!-- <Accordion client:visible /> -->
+					<OtraExpCarousel client:visible />
 				</div>
 			</div>
-		</section>
-		
-	</main>
-	<footer>
-		Un footer con algo bonito, datos de contacto?? quiza arriba tambien?
+		</div>
 	</footer>
+	<div class="relative">
+		<Waves />
+	</div>
 </Layout>
 
 <style>
