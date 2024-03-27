@@ -2,13 +2,18 @@
 import Layout from "@/layouts/Layout.astro";
 import { Button } from "@/components/ui/button";
 import DemucsSamples from "@/components/DemucsSamples.astro";
+import { Image } from "astro:assets";
+import Demucs2 from "@/img/demucs-2.jpg";
+import DemucsLangGraph from "@/img/demucs-lang-graph.jpg";
+import CrazyLine from "@/components/CrazyLine.astro";
+import { DotLottiePlayer } from "@dotlottie/react-player";
 ---
 
 <Layout title="Sistema de Presupuestos Personales">
-    <section class="p-6">
+    <section class="mt-16 pb-16 px-6 hero-bg">
         <div class="container mx-auto">
-            <div class="grid grid-cols-2">
-                <div>
+            <div class="grid grid-cols-3">
+                <div class="col-span-2">
                     <h1 class="text-7xl font-bold mb-10 font-dotgothic16">
                         Demucs
                     </h1>
@@ -31,7 +36,7 @@ import DemucsSamples from "@/components/DemucsSamples.astro";
                         </Button>
                     </a>
                 </div>
-                <div class="grid items-center justify-center">
+                <div class="grid items-center justify-center relative">
                     <DemucsSamples />
                 </div>
             </div>
@@ -39,47 +44,68 @@ import DemucsSamples from "@/components/DemucsSamples.astro";
     </section>
     <section class="p-6">
         <div class="container mx-auto">
-            <h2 class="text-5xl font-bold mb-10">El Problema</h2>
-            <p>
-                Como apasionado de la música, me enfrentaba al obstáculo de
-                encontrar pistas de acompañamiento adecuadas para practicar o
-                grabar mis propias versiones de canciones. La aparición del
-                modelo Demucs de Facebook llegó en un momento crucial, ya que
-                ofrecía la capacidad de separar las pistas, satisfaciendo
-                exactamente mis necesidades.
-            </p>
-            <p>
-                Aunque existían aplicaciones similares en el mercado, muchas de
-                ellas requerían suscripciones pagas, lo cual no encajaba con mi
-                enfoque de progresar en mi hobby sin depender de costosos pagos
-                recurrentes. Demucs, con su enfoque gratuito y de código
-                abierto, se convirtió en la solución perfecta para mejorar mis
-                habilidades musicales y disfrutar de mi pasión sin obstáculos
-                financieros.
-            </p>
+            <div class="grid grid-cols-3 gap-10">
+                <Image src={Demucs2} alt="Man Playing guitar" />
+                <div class="col-span-2 self-center">
+                    <h2 class="text-5xl font-bold mb-10">El Problema</h2>
+                    <p>
+                        Como amante de la música, encontré en Demucs de Facebook
+                        la solución ideal para separar pistas y así practicar y
+                        grabar mis propias versiones de canciones.
+                    </p>
+                    <p>
+                        A pesar de las opciones de pago en el mercado, prefería
+                        progresar en mi hobby sin suscripciones. Demucs, siendo
+                        gratuito y de código abierto, fue la solución perfecta
+                        para mejorar mis habilidades musicales sin preocuparme
+                        por los costos recurrentes.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
-    <section class="p-6">
-        <div class="container mx-auto">
+    <section class="py-16">
+        <div class="container mx-auto relative">
+            <img
+                src="/img/music-bg.png"
+                class="absolute h-full -top-40 right-20 overflow-clip opacity-10 -z-10"
+                alt=""
+            />
             <h2 class="text-5xl font-bold mb-10">La Arquitectura</h2>
-            <p>
-                esta solución cuenta con una aplicación en Python que expone una
-                API para interactuar con el modelo de inteligencia artificial,
-                junto con un frontend desarrollado en Vue.js que facilita la
-                interacción con el modelo para cargar canciones y descargar las
-                pistas separadas de forma intuitiva. Ambas partes de la
-                aplicación están gestionadas por el mismo script en Python, el
-                cual se encarga de coordinar todas las operaciones necesarias.
-            </p>
-            <p>
-                Este script puede ser ejecutado de manera flexible, ya sea
-                dentro de un contenedor Docker o a través de Google Colab, lo
-                que proporciona opciones versátiles para implementar la
-                aplicación según las necesidades del usuario. Esta arquitectura
-                unificada permite una integración fluida entre el backend y el
-                frontend, garantizando una experiencia de usuario cohesiva y
-                eficiente.
-            </p>
+            <div class="grid grid-cols-2 gap-10">
+                <div class="flex flex-col gap-4">
+                    <p>
+                        Esta solución cuenta con una aplicación en Python que
+                        expone una API para interactuar con el modelo de
+                        inteligencia artificial, junto con un frontend
+                        desarrollado en Vue.js que facilita la interacción con
+                        el modelo para cargar canciones y descargar las pistas
+                        separadas de forma intuitiva. Ambas partes de la
+                        aplicación están gestionadas por el mismo script en
+                        Python, el cual se encarga de coordinar todas las
+                        operaciones necesarias.
+                    </p>
+                    <Image src={DemucsLangGraph} alt="" class="border-2 border-slate-300 self-center"/>
+                </div>
+                <div  class="flex flex-col gap-4">
+
+                    <p>
+                        Este script puede ser ejecutado de manera flexible, ya sea
+                        dentro de un contenedor Docker o a través de Google Colab,
+                        asi que hay una opcion para todos los usuarios. Esta
+                        arquitectura asegura una integración perfecta entre el
+                        backend y el frontend, ofreciendo una experiencia de usuario
+                        eficiente.
+                    </p>
+                    <DotLottiePlayer
+                    src="/img/rock-lata.lottie"
+                    autoplay
+                    loop
+                    client:visible
+                    className="w-full max-w-96 self-center"
+                />
+                </div>
+            </div>
         </div>
     </section>
 </Layout>
