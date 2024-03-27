@@ -210,7 +210,9 @@ import Waves from "@/components/Waves.astro";
 							cualquier momento y desde cualquier lugar.
 						</p>
 						<div class="flex gap-4 mb-4">
-							<Button>Leer Más</Button>
+							<a href="/proyectos/scpp">
+								<Button>Leer Más</Button>
+							</a>
 						</div>
 						<div class="flex gap-1 flex-wrap">
 							<span
@@ -242,7 +244,10 @@ import Waves from "@/components/Waves.astro";
 							acompañamiento de una canción
 						</p>
 						<div class="flex gap-4 mb-4">
-							<Button>Leer Más</Button>
+							<a href="/proyectos/demucs">
+								<Button>Leer Más</Button>
+							</a>
+
 							<a
 								href="https://github.com/Ch3my/demucs"
 								target="_blank"
@@ -380,7 +385,7 @@ import Waves from "@/components/Waves.astro";
 					<h2 class="text-5xl font-bold mb-4">Contactame</h2>
 					<p>
 						¿Tienes un proyecto emocionante en el que necesitas
-						ayuda? Contáctame a	través de mensaje
+						ayuda? Contáctame a través de mensaje
 					</p>
 					<a
 						href="https://www.linkedin.com/in/jose-miguel-concha/"
@@ -425,9 +430,7 @@ import Waves from "@/components/Waves.astro";
 			</div>
 		</div>
 	</footer>
-	<div class="relative">
-		<Waves />
-	</div>
+	<Waves wavesOpacity={[0.1, 0.2, 0.3]} />
 </Layout>
 
 <style>
