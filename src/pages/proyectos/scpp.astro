@@ -2,126 +2,134 @@
 import Layout from "@/layouts/Layout.astro";
 import { Button } from "@/components/ui/button";
 import Waves from "@/components/Waves.astro";
+import { DotLottiePlayer } from "@dotlottie/react-player";
+import { Image } from "astro:assets";
+import ScppArch from "@/img/scpp-arch.png";
+import ScppCover from "@/img/scpp-cover-transparent.png";
+import ScppPhoneShowcase from "@/img/scpp-phone-showcase.png";
+import CrazyLine from "@/components/CrazyLine.astro";
 ---
 
 <Layout title="Sistema de Presupuestos Personales">
-    <section class="p-6">
+    <section class="py-16">
         <div class="container mx-auto">
-            <div class="grid grid-cols-2">
+            <div class="flex flex-col md:grid grid-cols-2">
                 <div>
                     <h1 class="text-7xl font-bold mb-10 font-dotgothic16">
                         SCPP
                     </h1>
                     <p>
-                        Sistema de Control de Presupuesto Personal. Con su aplicación
-                        para Android y su versión de escritorio para Windows,
-                        SCPP te ofrece la flexibilidad para registrar tus
-                        gastos, ingresos y ahorros en cualquier momento y desde
-                        cualquier lugar.
+                        Sistema de Control de Presupuesto Personal. Con su
+                        aplicación para Android y su versión de escritorio para
+                        Windows, SCPP te ofrece la flexibilidad para registrar
+                        tus gastos, ingresos y ahorros en cualquier momento y
+                        desde cualquier lugar.
                     </p>
                 </div>
                 <div>
-                    VIDEO, puede haber como un degradado o algo quizas atras 
+                    VIDEO, puede haber como un degradado o algo quizas atras
                 </div>
             </div>
         </div>
     </section>
-
-    <section class="p-6">
+    <CrazyLine />
+    <section class="py-8">
         <div class="container mx-auto">
-            <h2 class="text-5xl font-bold mb-10">El Problema</h2>
-            <p>
-                SCPP, abreviatura de Sistema de Presupuestos Personales, surgió
-                de la necesidad de contar con una solución sencilla para
-                controlar los gastos de manera eficiente. La idea detrás de su
-                creación fue tener una herramienta fácil de utilizar y de
-                mantener actualizada, permitiendo así llevar un registro preciso
-                de las finanzas personales en todo momento.
-            </p>
-            <p>
-                A pesar de la disponibilidad de aplicaciones en el mercado,
-                ninguna cumplía exactamente con los requisitos específicos que
-                se buscaban, ya sea por su complejidad o por requerir
-                suscripciones con costos asociados. Por ello, SCPP se erige como
-                una alternativa diseñada para ofrecer simplicidad, accesibilidad
-                y funcionalidad óptima en el manejo de presupuestos
-                individuales.
-            </p>
+            <div class="flex flex-col-reverse md:grid grid-cols-3">
+                <DotLottiePlayer
+                    src="/img/money-2.lottie"
+                    autoplay
+                    client:visible
+                    className="max-w-72 self-center"
+                />
+                <div class="col-span-2">
+                    <h2 class="text-5xl font-bold mb-10">El Problema</h2>
+                    <p>
+                        SCPP, abreviatura de Sistema de Presupuestos Personales,
+                        surgió de la necesidad de contar con una solución
+                        sencilla para controlar los gastos de manera eficiente.
+                        Es una herramienta simple y actualizada para un registro
+                        preciso de las finanzas personales.
+                    </p>
+                    <p>
+                        Aunque existen muchas aplicaciones en el mercado,
+                        ninguna cumplía con los requisitos específicos buscados
+                        debido a su complejidad o suscripciones costosas. Por
+                        eso, creé una opción personalizada para la gestión de
+                        mis finanzas.
+                    </p>
+                </div>
+            </div>
         </div>
     </section>
-    <section class="p-6">
+    <section class="pt-8 pb-16">
         <div class="container mx-auto">
-            <h2 class="text-5xl font-bold mb-10">La Arquitectura</h2>
-            <p>
-                La arquitectura de SCPP se fundamenta en una API desarrollada en
-                Node.js, concebida como un microservicio que facilita el acceso
-                a las operaciones de la base de datos MySQL. Esta API actúa como
-                el núcleo central del sistema, proporcionando una interfaz
-                robusta para la gestión de datos financieros.
-            </p>
-            <p>
-                Además, SCPP presenta una aplicación móvil para Android
-                desarrollada con React Native, diseñada para visualizar, agregar
-                y editar información relacionada con los gastos. Esta aplicación
-                ofrece gráficos sobre los registros financieros y permite
-                realizar búsquedas por categoría o palabras clave, brindando así
-                una experiencia completa para el seguimiento de las finanzas
-                personales.
-            </p>
-            <p>
-                Por otro lado, la plataforma también incluye una aplicación de
-                escritorio escrita en C# con WinUI3, que replica las
-                funcionalidades de la versión móvil y agrega la capacidad de
-                interactuar con los gráficos y visualizar la información de
-                manera más detallada. Esta aplicación de escritorio proporciona
-                una experiencia aún más completa para el análisis y la gestión
-                de los datos financieros, permitiendo a los usuarios realizar un
-                seguimiento exhaustivo de sus presupuestos desde sus
-                computadoras.
-            </p>
-        </div>
-    </section>
-    <section class="p-6">
-        <div class="container mx-auto">
-            <h2 class="text-5xl font-bold mb-10">La Evolución</h2>
-            <p>
-                La aplicación experimentó una notable evolución desde su versión
-                anterior desarrollada en React Native. Se optó por reescribirla
-                por completo utilizando las últimas tecnologías disponibles,
-                aprovechando la experiencia acumulada durante la creación de la
-                primera versión. Esta reescritura permitió una reestructuración
-                completa del código, lo que resultó en una base más sólida y
-                organizada. Además, habilitó la incorporación de nuevas
-                funcionalidades que antes no eran posibles, expandiendo así las
-                capacidades de la aplicación. Se destacó especialmente la
-                decisión de volver a escribir la aplicación en React Native, lo
-                que permitió aprovechar al máximo las características y ventajas
-                de esta tecnología, garantizando una mejor experiencia de
-                desarrollo y una mayor compatibilidad con dispositivos móviles.
-                Como resultado de estos esfuerzos, se logró un aumento
-                significativo en la velocidad y rendimiento general de la
-                aplicación, mejorando la experiencia del usuario y garantizando
-                un funcionamiento óptimo en todas las áreas.
-            </p>
-            <p>
-                Con el paso del tiempo, se identificó la necesidad de poder
-                almacenar copias de documentos importantes, como los registros
-                de mantenimiento del vehículo, de una manera más eficiente. Esto
-                incluía la posibilidad de adjuntar fotos para registrar
-                visualmente cuándo se realizó cada mantenimiento, eliminando así
-                la dependencia de notas manuscritas o archivos de Excel
-                dispersos. Como respuesta a esta demanda, se implementó una
-                sección especial dentro de SCPP que permite a los usuarios subir
-                fotos junto con una fecha y una descripción detallada. Esta
-                funcionalidad simplifica la gestión de documentos importantes al
-                centralizarlos en una plataforma única, facilitando su consulta
-                posterior y brindando una solución integral para el seguimiento
-                y registro de actividades relevantes.
-            </p>
+            <div class="flex flex-col md:grid grid-cols-3 gap-10">
+                <div class="col-span-2">
+                    <h2 class="text-5xl font-bold mb-10">La Arquitectura</h2>
+                    <p>
+                        La arquitectura de SCPP se basa en una API en Node.js,
+                        un microservicio que facilita el acceso a la base de
+                        datos MySQL.
+                    </p>
+                    <p>
+                        SCPP cuenta con una aplicación móvil para Android
+                        desarrollada en React Native. Permite visualizar,
+                        agregar y editar información de gastos, ofrece gráficos
+                        financieros y funciones de búsqueda por categoría o
+                        palabras clave, brindando una experiencia completa para
+                        el seguimiento financiero personal.
+                    </p>
+                    <p>
+                        La plataforma también ofrece una aplicación de
+                        escritorio en C# con WinUI3 que replica las funciones de
+                        la versión móvil y agrega interacción con gráficos y
+                        visualización detallada. Proporciona una experiencia
+                        completa para análisis y gestión financiera, permitiendo
+                        a los usuarios hacer un seguimiento a traves de la
+                        computadora.
+                    </p>
+                </div>
+                <Image src={ScppArch} alt="" class="self-center" />
+            </div>
         </div>
     </section>
     <Waves wavesOpacity={[0.5, 0.7, 0.9]} />
-    <section class="bg-sky-950">
-        Carousel con Imagenes?
+    <section class="bg-sky-950 py-10">
+        <div class="container mx-auto">
+            <div class="lg:w-3/4">
+                <h2 class="text-5xl font-bold mb-10">La Evolución</h2>
+                <p>
+                    La aplicación ha evolucionado notablemente desde su versión
+                    anterior. Se reescribió por completo utilizando la ultima
+                    version de React Native y de acuerdo a la experiencia previa se
+                    optimizo el diseño.
+                </p>
+                <p>
+                    Esta actualización permitió agregar nuevas funcionalidades y
+                    mejorar el rendimiento y mejoró la experiencia de desarrollo.
+                    Como resultado, la aplicación es más rápida y eficiente,
+                    brindando una mejor experiencia al usuario en todas las áreas.
+                </p>
+                <p>
+                    Con el tiempo, surgió la necesidad de almacenar copias de
+                    documentos importantes, como registros de mantenimiento del
+                    vehículo, de manera más eficiente. Esto incluía la posibilidad
+                    de adjuntar fotos para registrar visualmente cada mantenimiento,
+                    eliminando la dependencia de notas manuscritas o archivos de
+                    Excel dispersos. En respuesta, se implementó una sección
+                    especial en SCPP que permite a los usuarios subir fotos con
+                    fecha y descripción. Esto simplifica la gestión de documentos al
+                    centralizarlos, facilitando su consulta y brindando una solución
+                    integral para el seguimiento y registro de actividades
+                    relevantes.
+                </p>
+            </div>
+            <div class="flex flex-col gap-10 justify-around lg:flex-row mt-10">
+                <Image src={ScppCover} alt="" class="lg:max-w-[50%] h-full object-contain" />
+                <Image src={ScppPhoneShowcase} alt="" class="lg:max-w-[25%] h-full object-contain" />
+            </div>
+        </div>
+
     </section>
 </Layout>

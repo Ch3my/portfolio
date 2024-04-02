@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import DemucsSamples from "@/components/DemucsSamples.astro";
 import { Image } from "astro:assets";
 import Demucs2 from "@/img/demucs-2.jpg";
+import Demucs3 from "@/img/demucs-3.png";
 import DemucsLangGraph from "@/img/demucs-lang-graph.jpg";
 import CrazyLine from "@/components/CrazyLine.astro";
 import { DotLottiePlayer } from "@dotlottie/react-player";
@@ -12,7 +13,7 @@ import { DotLottiePlayer } from "@dotlottie/react-player";
 <Layout title="Sistema de Presupuestos Personales">
     <section class="mt-16 pb-16 px-6 hero-bg">
         <div class="container mx-auto">
-            <div class="grid grid-cols-3">
+            <div class="flex flex-col lg:grid grid-cols-3 gap-10">
                 <div class="col-span-2">
                     <h1 class="text-7xl font-bold mb-10 font-dotgothic16">
                         Demucs
@@ -20,7 +21,8 @@ import { DotLottiePlayer } from "@dotlottie/react-player";
                     <p>
                         Interfaz Web y API que habilita modelo de separación
                         para dividir batería, bajo y voces del resto del
-                        acompañamiento de una canción
+                        acompañamiento de una canción. Escucha unos ejemplos en
+                        el reproductor.
                     </p>
                     <a href="https://github.com/Ch3my/demucs" target="_blank">
                         <Button variant="outline">
@@ -42,9 +44,9 @@ import { DotLottiePlayer } from "@dotlottie/react-player";
             </div>
         </div>
     </section>
-    <section class="p-6">
+    <section class="py-6">
         <div class="container mx-auto">
-            <div class="grid grid-cols-3 gap-10">
+            <div class="flex flex-col lg:grid grid-cols-3 gap-10">
                 <Image src={Demucs2} alt="Man Playing guitar" />
                 <div class="col-span-2 self-center">
                     <h2 class="text-5xl font-bold mb-10">El Problema</h2>
@@ -72,8 +74,8 @@ import { DotLottiePlayer } from "@dotlottie/react-player";
                 alt=""
             />
             <h2 class="text-5xl font-bold mb-10">La Arquitectura</h2>
-            <div class="grid grid-cols-2 gap-10">
-                <div class="flex flex-col gap-4">
+            <div class="flex flex-col lg:grid grid-cols-5 gap-10">
+                <div class="flex flex-col gap-4 col-span-3">
                     <p>
                         Esta solución cuenta con una aplicación en Python que
                         expone una API para interactuar con el modelo de
@@ -85,25 +87,28 @@ import { DotLottiePlayer } from "@dotlottie/react-player";
                         Python, el cual se encarga de coordinar todas las
                         operaciones necesarias.
                     </p>
-                    <Image src={DemucsLangGraph} alt="" class="border-2 border-slate-300 self-center"/>
-                </div>
-                <div  class="flex flex-col gap-4">
-
                     <p>
-                        Este script puede ser ejecutado de manera flexible, ya sea
-                        dentro de un contenedor Docker o a través de Google Colab,
-                        asi que hay una opcion para todos los usuarios. Esta
-                        arquitectura asegura una integración perfecta entre el
-                        backend y el frontend, ofreciendo una experiencia de usuario
-                        eficiente.
+                        Este script puede ser ejecutado de manera flexible, ya
+                        sea dentro de un contenedor Docker o a través de Google
+                        Colab, asi que hay una opcion para todos los usuarios.
+                        Esta arquitectura asegura una integración perfecta entre
+                        el backend y el frontend, ofreciendo una experiencia de
+                        usuario eficiente.
                     </p>
-                    <DotLottiePlayer
-                    src="/img/rock-lata.lottie"
-                    autoplay
-                    loop
-                    client:visible
-                    className="w-full max-w-96 self-center"
-                />
+                </div>
+                <div class="flex flex-col gap-4 col-span-2">
+                    <Image
+                        src={DemucsLangGraph}
+                        alt=""
+                        class="border-2 border-slate-300 self-center slide-in-bottom"
+                        style="animation-timeline: view(90% 0%);"
+                    />
+                    <Image
+                        src={Demucs3}
+                        alt="Sample in Phone"
+                        class="max-h-96 w-auto object-contain self-center slide-in-bottom"
+                        style="animation-timeline: view(90% 0%);"
+                    />
                 </div>
             </div>
         </div>
