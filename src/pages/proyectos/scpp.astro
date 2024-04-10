@@ -11,7 +11,8 @@ import CrazyLine from "@/components/CrazyLine.astro";
 ---
 
 <Layout title="Sistema de Presupuestos Personales">
-    <section class="py-16">
+    <section class="py-16 relative">
+        <div class="absolute top-48 left-96 w-96 h-full bg-center bg-no-repeat -z-10" style="background: url(/img/dotgrid.png);"></div>
         <div class="container mx-auto">
             <div class="flex flex-col md:grid grid-cols-2">
                 <div>
@@ -27,13 +28,13 @@ import CrazyLine from "@/components/CrazyLine.astro";
                     </p>
                 </div>
                 <div>
-                    VIDEO, puede haber como un degradado o algo quizas atras
+                    <video src="/video/scpp.mp4" autoplay muted></video>
                 </div>
             </div>
         </div>
     </section>
     <CrazyLine />
-    <section class="py-8">
+    <section class="py-6">
         <div class="container mx-auto">
             <div class="flex flex-col-reverse md:grid grid-cols-3">
                 <DotLottiePlayer
@@ -62,7 +63,7 @@ import CrazyLine from "@/components/CrazyLine.astro";
             </div>
         </div>
     </section>
-    <section class="pt-8 pb-16">
+    <section class="py-16">
         <div class="container mx-auto">
             <div class="flex flex-col md:grid grid-cols-3 gap-10">
                 <div class="col-span-2">

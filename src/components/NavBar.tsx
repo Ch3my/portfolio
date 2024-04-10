@@ -14,10 +14,22 @@ import React from "react"
 
 const components: { title: string; href: string; description: string }[] = [
     {
-        title: "Jelouda",
-        href: "/",
+        title: "SCPP",
+        href: "/proyectos/scpp",
         description:
-            "Lorem ipsum amet",
+            "WinUI3 y React Native",
+    },
+    {
+        title: "Demucs",
+        href: "/proyectos/demucs",
+        description:
+            "IA separacion de Pistas",
+    },
+    {
+        title: "Music Codex",
+        href: "/proyectos/music-codex",
+        description:
+            "Conocimiento Musical",
     }
 ]
 
@@ -29,14 +41,14 @@ export default function NavBar() {
                     className={navigationMenuTriggerStyle()}>
                     Inicio
                 </NavigationMenuLink>
-                <NavigationMenuLink href="/#proyectos"
+                {/* <NavigationMenuLink href="/#proyectos"
                     className={navigationMenuTriggerStyle()}>
                     Proyectos
-                </NavigationMenuLink>
-                {/* <NavigationMenuItem>
-                    <NavigationMenuTrigger>Item One</NavigationMenuTrigger>
+                </NavigationMenuLink> */}
+                <NavigationMenuItem>
+                    <NavigationMenuTrigger>Proyectos</NavigationMenuTrigger>
                     <NavigationMenuContent>
-                        <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+                        <ul className="flex flex-col gap-4 p-4 w-full md:w-52">
                             {components.map((component) => (
                                 <ListItem
                                     key={component.title}
@@ -48,7 +60,7 @@ export default function NavBar() {
                             ))}
                         </ul>
                     </NavigationMenuContent>
-                </NavigationMenuItem> */}
+                </NavigationMenuItem>
             </NavigationMenuList>
         </NavigationMenu>
     )

@@ -41,7 +41,7 @@ export default function () {
                     </p>
                 </CarouselItem>
                 <CarouselItem>
-                    <h3 className="text-xl font-bold mb-4">Dirección de Equipos de Trabajo</h3>
+                    <h3 className="text-xl font-bold mb-4">Actualización de Sistemas</h3>
                     <p>
                         Gestioné la completa reescritura de aplicaciones heredadas en Java
                         y las dividí en microservicios.
