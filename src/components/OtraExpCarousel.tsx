@@ -5,15 +5,23 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from "@/components/ui/carousel"
-
+import Autoplay from "embla-carousel-autoplay"
+import React from "react"
 
 export default function () {
+    const plugin = React.useRef(
+        Autoplay({ delay: 4000, stopOnInteraction: true })
+    )
+
     return (
         <Carousel
-        opts={{
-            align: "start",
-            loop: true,
-          }}>
+            plugins={[plugin.current]}
+            onMouseEnter={plugin.current.stop}
+            onMouseLeave={plugin.current.reset}
+            opts={{
+                align: "start",
+                loop: true,
+            }}>
             <CarouselContent>
                 <CarouselItem>
                     <h3 className="text-xl font-bold mb-4">Emisión de Documentos Electrónicos (DTE) Chile</h3>

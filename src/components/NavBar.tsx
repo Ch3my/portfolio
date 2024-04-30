@@ -30,6 +30,12 @@ const components: { title: string; href: string; description: string }[] = [
         href: "/proyectos/music-codex",
         description:
             "Conocimiento Musical",
+    },
+    {
+        title: "Food Manager",
+        href: "/proyectos/food-manager",
+        description:
+            "Almacenamiento alimentos",
     }
 ]
 
