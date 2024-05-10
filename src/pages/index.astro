@@ -9,14 +9,15 @@ import { Button } from "@/components/ui/button";
 import OtraExpCarousel from "@/components/OtraExpCarousel";
 import Waves from "@/components/Waves.astro";
 import CrazyLine from "@/components/CrazyLine.astro";
+import HomeAccordion from "@/components/HomeAccordion";
 ---
 
 <Layout title="Jose Concha - Full Stack Developer">
 	<main>
 		<section class="pt-16 pb-10">
-			<div class="container mx-auto hero-bg relative z-10" style="">
+			<div class="container mx-auto hero-bg relative z-10">
 				<div class="flex flex-col md:grid grid-cols-2 gap-4">
-					<div class="">
+					<div>
 						<h1 class="text-7xl font-bold mb-10">
 							Full Stack <br />Developer
 						</h1>
@@ -107,7 +108,7 @@ import CrazyLine from "@/components/CrazyLine.astro";
 						</h3>
 						<p>
 							Desarrollo de aplicaciones utilizando Java, Play
-							Framework, Javascript, NodeJS, SailsJS.
+							Framework, Javascript, NodeJS, SailsJS, MySQL.
 						</p>
 						<p>
 							Priorizo sistemas robustos con alta calidad y
@@ -371,7 +372,12 @@ import CrazyLine from "@/components/CrazyLine.astro";
 		<div class="container mx-auto">
 			<div class="flex flex-col md:grid md:grid-cols-2 gap-16">
 				<div>
-					<h2 class="text-5xl font-bold mb-4">Contactame</h2>
+					<h2
+						class="text-5xl font-bold chonky-drop-line font-dotgothic16 mb-4 
+						relative chonky-underline-magenta w-fit"
+					>
+						Contactame
+					</h2>
 					<p>
 						¿Tienes un proyecto emocionante en el que necesitas
 						ayuda? Contáctame a través de mensaje
@@ -408,6 +414,9 @@ import CrazyLine from "@/components/CrazyLine.astro";
 							LinkedIn
 						</Button>
 					</a>
+					<div class="mt-8">
+						<HomeAccordion client:visible />
+					</div>
 				</div>
 				<div>
 					<h2 class="text-5xl font-bold mb-4">

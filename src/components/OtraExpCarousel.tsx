@@ -4,6 +4,8 @@ import {
     CarouselItem,
     CarouselNext,
     CarouselPrevious,
+    CarouselNextCustom,
+    CarouselPreviousCustom
 } from "@/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
 import React from "react"
@@ -60,9 +62,19 @@ export default function () {
                         sin afectar el funcionamiento global del sistema.
                     </p>
                 </CarouselItem>
+                <CarouselItem>
+                    <h3 className="text-xl font-bold mb-4">Experiencia en Cloud</h3>
+                    <p>
+                        Lideré proyectos de implementación de aplicaciones en la nube utilizando Elastic Beanstalk y
+                        Lightsail de AWS. Esta experiencia me ha permitido trabajar en el despliegue y la gestión de aplicaciones,
+                        garantizando escalabilidad y alta disponibilidad.
+                    </p>
+                </CarouselItem>
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <div className="flex justify-center gap-6">
+                <CarouselPreviousCustom />
+                <CarouselNextCustom />
+            </div>
         </Carousel>
     )
 }

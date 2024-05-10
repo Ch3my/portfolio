@@ -1,5 +1,7 @@
-# build output
-dist/
+# dist/ lo necesitamos para deploy en github
+# dist/
+
+.vscode/
 
 # generated types
 .astro/
