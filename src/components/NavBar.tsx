@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/navigation-menu"
 import { cn } from "@/lib/utils"
 import React from "react"
+import BuildAssetUrl from "./BuildAssetUrl"
 
 const components: { title: string; href: string; description: string }[] = [
     {
@@ -43,7 +44,7 @@ export default function NavBar() {
     return (
         <NavigationMenu>
             <NavigationMenuList >
-                <NavigationMenuLink href="/"
+                <NavigationMenuLink href={BuildAssetUrl("/")}
                     className={navigationMenuTriggerStyle()}>
                     Inicio
                 </NavigationMenuLink>
