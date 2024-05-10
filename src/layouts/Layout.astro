@@ -3,7 +3,6 @@ import NavBar from "@/components/NavBar";
 import { ViewTransitions } from 'astro:transitions';
 import "@/styles/globals.css";
 import "@/styles/animista.css";
-import BuildAssetUrl from "@/components/BuildAssetUrl";
 
 interface Props {
 	title: string;
@@ -28,8 +27,8 @@ const { title } = Astro.props;
 		<div class="border-b p-2">
 			<div class="container mx-auto">
 				<div class="flex justify-between">
-					<a href="/" class="flex gap-4 items-center">
-							<img src={BuildAssetUrl("/logo.svg")} class="max-h-[40px]" />
+					<a href="/portfolio" class="flex gap-4 items-center">
+							<img src={"/portfolio/logo.svg"} class="max-h-[40px]" />
 							<span class="font-black text-2xl text-logo">JoseM._</span>
 					</a>
 					<NavBar client:load />
@@ -42,7 +41,7 @@ const { title } = Astro.props;
 <style is:global>
 	@font-face {
 		font-family: "NotoSansMono";
-		src: url("/fonts/NotoSansMono-VariableFont_wdth,wght.ttf")
+		src: url("/portfolio/fonts/NotoSansMono-VariableFont_wdth,wght.ttf")
 			format("truetype");
 		font-weight: 100 900;
 		font-stretch: 50% 200%;
@@ -51,7 +50,7 @@ const { title } = Astro.props;
 	}
 	@font-face {
 		font-family: "DotGothic16";
-		src: url("/fonts/DotGothic16-Regular.ttf") format("truetype");
+		src: url("/portfolio/fonts/DotGothic16-Regular.ttf") format("truetype");
 		font-style: normal;
 		font-display: swap;
 	}
@@ -121,7 +120,7 @@ const { title } = Astro.props;
 		margin-bottom: 1rem;
 	}
 	.hero-bg {
-		background: url(/img/dotgrid.png);
+		background: url(/portfolio/img/dotgrid.png);
 		background-repeat: no-repeat;
 		background-position: center;
 		/* background-size: cover; */

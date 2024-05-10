@@ -1,5 +1,4 @@
-# dist/ lo necesitamos para deploy en github
-# dist/
+dist/
 
 .vscode/
 
