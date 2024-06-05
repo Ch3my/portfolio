@@ -9,5 +9,9 @@ export default defineConfig({
   base: 'portfolio',
   integrations: [tailwind({
     applyBaseStyles: false,
-  }), , react()]
+  }), , react()],
+  i18n: {
+    defaultLocale: "es",
+    locales: ["es", "en"]
+  }
 });

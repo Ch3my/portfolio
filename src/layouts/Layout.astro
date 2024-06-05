@@ -9,6 +9,7 @@ interface Props {
 }
 
 const { title } = Astro.props;
+const astroLocale = Astro.currentLocale
 ---
 
 <!doctype html>
@@ -18,7 +19,7 @@ const { title } = Astro.props;
 		<meta charset="UTF-8" />
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="/portfolio/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<ViewTransitions />
@@ -36,8 +37,18 @@ const { title } = Astro.props;
 			</div>
 		</div>
 		<slot />
+		<input type="hidden" name="astro-locale" value={astroLocale}>
 	</body>
 </html>
+<script>
+	// Guarda la local que astro entrego
+	if(window.localStorage){
+		if(!window.localStorage.getItem("locale")) {
+			const localeElement = document.querySelector("[name='astro-locale']") as HTMLInputElement 
+				window.localStorage.setItem("locale", localeElement.value)
+		}
+	}
+</script>
 <style is:global>
 	@font-face {
 		font-family: "NotoSansMono";
