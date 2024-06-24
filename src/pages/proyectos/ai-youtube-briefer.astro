@@ -2,26 +2,27 @@
 import CrazyLine from "@/components/CrazyLine.astro";
 import Layout from "@/layouts/Layout.astro";
 import { Image } from "astro:assets";
-import MusicCodex1 from "@/img/music-codex-1.png";
-import MusicCodex2 from "@/img/music-codex-2.png";
+import MainWindowImg from "@/img/ia-youtube-briefer-main-window-example.jpg";
+import ResultWindowImg from "@/img/ia-youtube-briefer-result-window-example.jpg";
 import Waves from "@/components/Waves.astro";
 import { Button } from "@/components/ui/button";
 ---
 
-<Layout title="Music Codex">
+<Layout title="AI Youtube Briefer">
     <section class="pt-16 pb-8">
         <div class="container mx-auto hero-bg">
             <div class="flex flex-col md:grid grid-cols-2">
                 <div>
                     <h1 class="text-7xl font-bold mb-10 font-dotgothic16">
-                        Music Codex
+                        AI Youtube Briefer
                     </h1>
                     <p>
-                        Tu referencia musical, encuentra los acordes de todas
-                        las escalas sin tener que memorizar.
+                        Transcribe un video de Youtube y lo procesa con IA para
+                        obtener un resumen completo del contenido con un solo
+                        click
                     </p>
                     <a
-                        href="https://github.com/Ch3my/MusicBuddy"
+                        href="https://github.com/Ch3my/Youtube-AI-Briefer"
                         target="_blank"
                     >
                         <Button variant="outline">
@@ -39,15 +40,9 @@ import { Button } from "@/components/ui/button";
                 </div>
                 <div class="flex justify-center overflow-hidden">
                     <Image
-                        src={MusicCodex1}
-                        alt="Music Codex Hero"
+                        src={ResultWindowImg}
+                        alt="Main Window Example"
                         class="max-h-96 w-auto slide-in-right"
-                    />
-                    <Image
-                        src={MusicCodex2}
-                        alt="Music Codex Hero"
-                        class="max-h-96 w-auto slide-in-right"
-                        style="animation-delay: 100ms"
                     />
                 </div>
             </div>
@@ -57,28 +52,46 @@ import { Button } from "@/components/ui/button";
     <section class="pb-6">
         <div class="container mx-auto">
             <div class="flex flex-col-reverse md:grid grid-cols-3 items-center">
-                <video src="/portfolio/video/music-codex-showcase.mp4" autoplay muted loop class=""></video>
+                <Image
+                    src={MainWindowImg}
+                    alt="Result Window Example"
+                    class="max-h-80 w-auto slide-in-left"
+                />
                 <div class="col-span-2">
                     <h2 class="text-5xl font-bold mb-10">El Problema</h2>
                     <p>
-                        Para mi, un musico aficionado a veces es dificil poder
-                        recordar todas las reglas y nombres de los conceptos
-                        musicales. Asi que cree una aplicacion que me asiste en
-                        el conocimiento, me entrega las herramientas para apoyar
-                        la practica del instrumento y contiene material de
-                        referencia cuando olvido algo.
+                        En el mundo digital actual, hay tanto contenido y tantos
+                        títulos engañosos que es difícil saber si un video
+                        realmente nos interesa. Nuestra aplicación soluciona
+                        este problema transcribiendo automáticamente cualquier
+                        video de YouTube y usando inteligencia artificial para
+                        crear un resumen completo del contenido. Con un solo
+                        clic, los usuarios pueden ver de qué trata el video de
+                        manera rápida y clara, ahorrando tiempo y evitando los
+                        títulos engañosos. Esta herramienta ayuda a tomar
+                        decisiones informadas y a disfrutar de una mejor
+                        experiencia al ver videos.
                     </p>
-                    <h2 class="text-5xl font-bold mt-16 mb-10">La Arquitectura</h2>
                     <p>
-                        La aplicación esta desarrollada con React Native usando
-                        Expo y Expo Router en Typescript. No depende de bases de
-                        datos ni acceso a servidores por lo que todo el
-                        contenido se encuentra detro de la aplicación.
+                        Ademas de obtener el resumen, puedes copiar el markdown
+                        para agregarlo a tu propia aplicacion de notas y hacer
+                        un estudio
+                    </p>
+
+                    <h2 class="text-5xl font-bold mt-16 mb-10">
+                        La Arquitectura
+                    </h2>
+                    <p>
+                        Aplicacion desarrollada con Python y Tkinter,
+                        dependencias minimas para su facil mantenimiento. La
+                        aplicación accede a las API de OpenAI para el
+                        procesamiento de los datos
                     </p>
                 </div>
             </div>
         </div>
     </section>
+    <br /><br /><br />
     <Waves wavesOpacity={[0.5, 0.7, 0.9]} />
 </Layout>
 
@@ -98,4 +111,3 @@ import { Button } from "@/components/ui/button";
         animation: draw 5s linear forwards;
     }
 </style>
-

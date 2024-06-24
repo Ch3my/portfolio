@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/navigation-menu"
 import { cn } from "@/lib/utils"
 import React from "react"
+import I18nSelector from "./I18nSelector";
 
 const components: { title: string; href: string; description: string }[] = [
     {
@@ -68,6 +69,7 @@ export default function NavBar() {
                     </NavigationMenuContent>
                 </NavigationMenuItem>
             </NavigationMenuList>
+            <I18nSelector className={navigationMenuTriggerStyle()} />
         </NavigationMenu>
     )
 }

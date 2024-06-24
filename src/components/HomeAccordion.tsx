@@ -53,7 +53,7 @@ export default function () {
                             Design and Develpment
                         </p>
                         <img
-                            src="/img/byui-medallion.svg"
+                            src="/portfolio/img/byui-medallion.svg"
                             alt="BYUI Emblem"
                             className="max-w-24"
                         />
