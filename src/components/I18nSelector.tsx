@@ -27,7 +27,6 @@ export default function I18nSelector(props: I18nSelectorProps) {
                 window.location.href = '/portfolio/en'
             }
         } else if (selectedLanguage === 'es') {
-            console.log("REferesh")
             if (currentPath.startsWith('/portfolio/en')) {
                 window.location.href = '/portfolio';
             }

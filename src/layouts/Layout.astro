@@ -49,6 +49,10 @@ const astroLocale = Astro.currentLocale
 			const localeElement = document.querySelector("[name='astro-locale']") as HTMLInputElement 
 				window.localStorage.setItem("locale", localeElement.value)
 		}
+		// Revisa si localStorage tiene un idioma ya selecionado, si tiene ingles y no esta viendo ingles lo redirecciona
+		if(window.localStorage.getItem("language") == "en" && !window.location.pathname.startsWith('/portfolio/en')) {
+			window.location.href = '/portfolio/en'
+		}
 	}
 </script>
 <style is:global>
