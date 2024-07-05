@@ -11,7 +11,11 @@ import CrazyLine from "@/components/CrazyLine.astro";
 
 <Layout title="Sistema de Presupuestos Personales">
     <section class="py-16 relative">
-        <div class="absolute top-48 left-96 w-96 h-full bg-center bg-no-repeat -z-10" style="background: url(/portfolio/img/dotgrid.png);"></div>
+        <div
+            class="absolute top-48 left-96 w-96 h-full bg-center bg-no-repeat -z-10"
+            style="background: url(/portfolio/img/dotgrid.png);"
+        >
+        </div>
         <div class="container mx-auto">
             <div class="flex flex-col md:grid grid-cols-2">
                 <div>
@@ -27,7 +31,8 @@ import CrazyLine from "@/components/CrazyLine.astro";
                     </p>
                 </div>
                 <div>
-                    <video src="/portfolio/video/scpp.mp4" autoplay muted></video>
+                    <video src="/portfolio/video/scpp.mp4" autoplay muted
+                    ></video>
                 </div>
             </div>
         </div>
@@ -96,40 +101,415 @@ import CrazyLine from "@/components/CrazyLine.astro";
     </section>
     <Waves wavesOpacity={[0.5, 0.7, 0.9]} />
     <section class="bg-sky-950 py-10">
+        <div id="bubbles">
+            <div class="bubble x1"></div>
+            <div class="bubble x2"></div>
+            <div class="bubble x3"></div>
+            <div class="bubble x4"></div>
+            <div class="bubble x5"></div>
+            <div class="bubble x6"></div>
+            <div class="bubble x7"></div>
+            <div class="bubble x8"></div>
+            <div class="bubble x9"></div>
+            <div class="bubble x10"></div>
+        </div>
         <div class="container mx-auto">
-            <div class="lg:w-3/4">
-                <h2 class="text-5xl font-bold mb-10">La Evolución</h2>
-                <p>
-                    La aplicación ha evolucionado notablemente desde su versión
-                    anterior. Se reescribió por completo utilizando la ultima
-                    version de React Native y de acuerdo a la experiencia previa se
-                    optimizo el diseño.
-                </p>
-                <p>
-                    Esta actualización permitió agregar nuevas funcionalidades y
-                    mejorar el rendimiento y mejoró la experiencia de desarrollo.
-                    Como resultado, la aplicación es más rápida y eficiente,
-                    brindando una mejor experiencia al usuario en todas las áreas.
-                </p>
-                <p>
-                    Con el tiempo, surgió la necesidad de almacenar copias de
-                    documentos importantes, como registros de mantenimiento del
-                    vehículo, de manera más eficiente. Esto incluía la posibilidad
-                    de adjuntar fotos para registrar visualmente cada mantenimiento,
-                    eliminando la dependencia de notas manuscritas o archivos de
-                    Excel dispersos. En respuesta, se implementó una sección
-                    especial en SCPP que permite a los usuarios subir fotos con
-                    fecha y descripción. Esto simplifica la gestión de documentos al
-                    centralizarlos, facilitando su consulta y brindando una solución
-                    integral para el seguimiento y registro de actividades
-                    relevantes.
-                </p>
+            <div class="flex flex-col lg:grid grid-cols-3 gap-10">
+                <div class="col-span-2 backdrop-blur-md p-2">
+                    <h2 class="text-5xl font-bold mb-10">La Evolución</h2>
+                    <p>
+                        La aplicación ha evolucionado notablemente desde su
+                        versión anterior. Se reescribió por completo utilizando
+                        la ultima version de React Native y de acuerdo a la
+                        experiencia previa se optimizo el diseño.
+                    </p>
+                    <p>
+                        Esta actualización permitió agregar nuevas
+                        funcionalidades y mejorar el rendimiento y mejoró la
+                        experiencia de desarrollo. Como resultado, la aplicación
+                        es más rápida y eficiente, brindando una mejor
+                        experiencia al usuario en todas las áreas.
+                    </p>
+                    <p>
+                        Con el tiempo, surgió la necesidad de almacenar copias
+                        de documentos importantes, como registros de
+                        mantenimiento del vehículo, de manera más eficiente.
+                        Esto incluía la posibilidad de adjuntar fotos para
+                        registrar visualmente cada mantenimiento, eliminando la
+                        dependencia de notas manuscritas o archivos de Excel
+                        dispersos. En respuesta, se implementó una sección
+                        especial en SCPP que permite a los usuarios subir fotos
+                        con fecha y descripción. Esto simplifica la gestión de
+                        documentos al centralizarlos, facilitando su consulta y
+                        brindando una solución integral para el seguimiento y
+                        registro de actividades relevantes.
+                    </p>
+                </div>
+                <div class="submarine-box items-center justify-end flex">
+                   
+                    <svg
+                        id="submarine"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 677.21 358.19"
+                        class="hidden lg:block"
+                        ><defs
+                            ><style>
+                                .cls-1 {
+                                    fill: #d8bc8b;
+                                }
+                                .cls-1,
+                                .cls-2,
+                                .cls-3,
+                                .cls-4 {
+                                    stroke: #e79a7f;
+                                    stroke-miterlimit: 10;
+                                    stroke-width: 5px;
+                                }
+                                .cls-2 {
+                                    fill: #e9d196;
+                                }
+                                .cls-3 {
+                                    fill: #d4d8da;
+                                }
+                                .cls-4 {
+                                    fill: none;
+                                }
+                            </style></defs
+                        ><title>Untitled-5</title><path
+                            class="cls-1"
+                            d="M978.64,467.44l-36,.1a50,50,0,0,1-50-49.74l-.25-85.53a50,50,0,0,1,49.67-50l36-.1a10.13,10.13,0,0,1,10.12,10.08S964,353.3,964.08,374.82s24.63,82.47,24.63,82.47A10.13,10.13,0,0,1,978.64,467.44Z"
+                            transform="translate(-314 -139)"></path><path
+                            class="cls-2"
+                            d="M484.5,154.5h-53a10,10,0,0,0-10,10v6a10,10,0,0,0,10,10h35v90a12,12,0,0,0,12,12h4a12,12,0,0,0,12-12v-106A10,10,0,0,0,484.5,154.5Z"
+                            transform="translate(-314 -139)"></path><circle
+                            class="cls-1"
+                            cx="165.5"
+                            cy="157.5"
+                            r="51"></circle><path
+                            class="cls-1"
+                            d="M414,494.5H743.26c17.83,2.6,63.66-21.74,103.49-50l-513.4,1.59C350.93,475.26,380.59,494.5,414,494.5Z"
+                            transform="translate(-314 -139)"></path><path
+                            class="cls-2"
+                            d="M743.26,274.5H414c-53.64,0-97.53,49.5-97.53,110h0a119.2,119.2,0,0,0,16.85,61.6l513.4-1.59c12.71-9,24.81-18.43,35.19-27.49L882.4,339C838.09,308.17,762.18,274.5,743.26,274.5Z"
+                            transform="translate(-314 -139)"></path><path
+                            class="cls-1"
+                            d="M915,374.5c0-9.29-13.31-22.14-32.6-35.54L881.94,417C901.51,399.93,915,384.09,915,374.5Z"
+                            transform="translate(-314 -139)"></path><ellipse
+                            class="cls-3"
+                            cx="154.48"
+                            cy="218.24"
+                            rx="41.98"
+                            ry="41.76"></ellipse><ellipse
+                            class="cls-3"
+                            cx="284.27"
+                            cy="218.24"
+                            rx="41.98"
+                            ry="41.76"></ellipse><ellipse
+                            class="cls-3"
+                            cx="414.02"
+                            cy="217.26"
+                            rx="41.98"
+                            ry="41.76"></ellipse><path
+                            class="cls-4"
+                            d="M331.5,374.5"
+                            transform="translate(-314 -139)"></path><path
+                            class="cls-4"
+                            d="M387.75,297.78s-16.07,6.83-26.18,16.72-21.37,34.77-21.37,34.77"
+                            transform="translate(-314 -139)"></path><line
+                            class="cls-4"
+                            x1="20.61"
+                            y1="220.6"
+                            x2="18.39"
+                            y2="232.4"></line><rect
+                            class="cls-2"
+                            x="92.5"
+                            y="2.5"
+                            width="24"
+                            height="50"
+                            rx="12"
+                            ry="12"></rect><line
+                            class="cls-4"
+                            x1="567.5"
+                            y1="199.5"
+                            x2="567.5"
+                            y2="278.5"></line><line
+                            class="cls-4"
+                            x1="660.5"
+                            y1="162.5"
+                            x2="643.5"
+                            y2="210.5"></line><line
+                            class="cls-4"
+                            x1="661.96"
+                            y1="157.72"
+                            x2="663.04"
+                            y2="154.28"></line><line
+                            class="cls-4"
+                            x1="19.5"
+                            y1="307.5"
+                            x2="532.5"
+                            y2="305.5"></line></svg
+                    >
+                </div>
             </div>
+
             <div class="flex flex-col gap-10 justify-around lg:flex-row mt-10">
-                <Image src={ScppCover} alt="" class="lg:max-w-[50%] h-full object-contain" />
-                <Image src={ScppPhoneShowcase} alt="" class="lg:max-w-[25%] h-full object-contain" />
+                <Image
+                    src={ScppCover}
+                    alt=""
+                    class="lg:max-w-[50%] h-full object-contain"
+                />
+                <Image
+                    src={ScppPhoneShowcase}
+                    alt=""
+                    class="lg:max-w-[25%] h-full object-contain"
+                />
             </div>
         </div>
-
     </section>
 </Layout>
+
+<style>
+    /* .submarine-box{
+ position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display:block;
+} */
+    svg {
+        height: 150px;
+    }
+    #submarine {
+        animation: MoveUpDown 10s easeInOut infinite;
+        -webkit-animation: MoveUpDown 10s ease-In-Out infinite;
+        transform-origin: 50% 50%;
+        overflow: hidden;
+    }
+    #bubbles {
+        height: 50%;
+        padding: 150px 0;
+        position: absolute;
+        /* height: 100%; */
+        width: 100%;
+        overflow: hidden;
+        /* top: 50%; */
+        /* left: 0; */
+    }
+    .bubble {
+        width: 30px;
+        height: 30px;
+        background: lightblue;
+        border-radius: 200px;
+        -moz-border-radius: 200px;
+        -webkit-border-radius: 200px;
+        position: absolute;
+    }
+
+    .x1 {
+        -webkit-transform: scale(0.9);
+        -moz-transform: scale(0.9);
+        transform: scale(0.9);
+        opacity: 0.2;
+        -webkit-animation:
+            moveBubblesX 15s linear infinite,
+            moveBubblesY 6s ease-in-out infinite alternate;
+        -moz-animation:
+            moveBubblesX 15s linear infinite,
+            moveBubblesY 6s ease-in-out infinite alternate;
+        -o-animation:
+            moveBubblesX 15s linear infinite,
+            moveBubblesY 6s ease-in-out infinite alternate;
+    }
+
+    .x2 {
+        left: 200px;
+        -webkit-transform: scale(0.6);
+        -moz-transform: scale(0.6);
+        transform: scale(0.6);
+        opacity: 0.5;
+        -webkit-animation:
+            moveBubblesX 25s linear infinite,
+            moveBubblesY 8s ease-in-out infinite alternate;
+        -moz-animation:
+            moveBubblesX 25s linear infinite,
+            moveBubblesY 8s ease-in-out infinite alternate;
+        -o-animation:
+            moveBubblesX 25s linear infinite,
+            moveBubblesY 8s ease-in-out infinite alternate;
+    }
+    .x3 {
+        left: 350px;
+        -webkit-transform: scale(0.8);
+        -moz-transform: scale(0.8);
+        transform: scale(0.8);
+        opacity: 0.3;
+        -webkit-animation:
+            moveBubblesX 20s linear infinite,
+            moveBubblesY 4s ease-in-out infinite alternate;
+        -moz-animation:
+            moveBubblesX 20s linear infinite,
+            moveBubblesY 4s ease-in-out infinite alternate;
+        -o-animation:
+            moveBubblesX 20s linear infinite,
+            moveBubblesY 4s ease-in-out infinite alternate;
+    }
+
+    .x4 {
+        left: 470px;
+        -webkit-transform: scale(0.75);
+        -moz-transform: scale(0.75);
+        transform: scale(0.75);
+        opacity: 0.35;
+        -webkit-animation:
+            moveBubblesX 18s linear infinite,
+            moveBubblesY 3s ease-in-out infinite alternate;
+        -moz-animation:
+            moveBubblesX 18s linear infinite,
+            moveBubblesY 3s ease-in-out infinite alternate;
+        -o-animation:
+            moveBubblesX 18s linear infinite,
+            moveBubblesY 3s ease-in-out infinite alternate;
+    }
+    .x5 {
+        left: 150px;
+        -webkit-transform: scale(0.8);
+        -moz-transform: scale(0.8);
+        transform: scale(0.8);
+        opacity: 0.3;
+        -webkit-animation:
+            moveBubblesX 17s linear infinite,
+            moveBubblesY 5s ease-in-out infinite alternate;
+        -moz-animation:
+            moveBubblesX 17s linear infinite,
+            moveBubblesY 5s ease-in-out infinite alternate;
+        -o-animation:
+            moveBubblesX 17s linear infinite,
+            moveBubblesY 5s ease-in-out infinite alternate;
+    }
+
+    .x6 {
+        -webkit-transform: scale(0.9);
+        -moz-transform: scale(0.9);
+        transform: scale(0.9);
+        opacity: 0.2;
+        -webkit-animation:
+            moveBubblesX 15s linear infinite,
+            moveBubblesYOpposite 4s ease-in-out infinite alternate;
+        -moz-animation:
+            moveBubblesX 15s linear infinite,
+            moveBubblesYOpposite 4s ease-in-out infinite alternate;
+        -o-animation:
+            moveBubblesX 15s linear infinite,
+            moveBubblesYOpposite 4s ease-in-out infinite alternate;
+    }
+
+    .x7 {
+        left: 200px;
+        -webkit-transform: scale(0.6);
+        -moz-transform: scale(0.6);
+        transform: scale(0.6);
+        opacity: 0.5;
+        -webkit-animation:
+            moveBubblesX 21s linear infinite,
+            moveBubblesYOpposite 3s ease-in-out infinite alternate;
+        -moz-animation:
+            moveBubblesX 21s linear infinite,
+            moveBubblesYOpposite 3s ease-in-out infinite alternate;
+        -o-animation:
+            moveBubblesX 21s linear infinite,
+            moveBubblesYOpposite 3s ease-in-out infinite alternate;
+    }
+    .x8 {
+        left: 350px;
+        -webkit-transform: scale(0.8);
+        -moz-transform: scale(0.8);
+        transform: scale(0.8);
+        opacity: 0.3;
+        -webkit-animation:
+            moveBubblesX 16s linear infinite,
+            moveBubblesYOpposite 6s ease-in-out infinite alternate;
+        -moz-animation:
+            moveBubblesX 16s linear infinite,
+            moveBubblesYOpposite 6s ease-in-out infinite alternate;
+        -o-animation:
+            moveBubblesX 16s linear infinite,
+            moveBubblesYOpposite 6s ease-in-out infinite alternate;
+    }
+
+    .x9 {
+        left: 470px;
+        -webkit-transform: scale(0.75);
+        -moz-transform: scale(0.75);
+        transform: scale(0.75);
+        opacity: 0.35;
+        -webkit-animation:
+            moveBubblesX 24s linear infinite,
+            moveBubblesYOpposite 5s ease-in-out infinite alternate;
+        -moz-animation:
+            moveBubblesX 24s linear infinite,
+            moveBubblesYOpposite 5s ease-in-out infinite alternate;
+        -o-animation:
+            moveBubblesX 24s linear infinite,
+            moveBubblesYOpposite 5s ease-in-out infinite alternate;
+    }
+    .x10 {
+        left: 150px;
+        -webkit-transform: scale(0.8);
+        -moz-transform: scale(0.8);
+        transform: scale(0.8);
+        opacity: 0.3;
+        -webkit-animation:
+            moveBubblesX 17s linear infinite,
+            moveBubblesYOpposite 5s ease-in-out infinite alternate;
+        -moz-animation:
+            moveBubblesX 17s linear infinite,
+            moveBubblesYOpposite 5s ease-in-out infinite alternate;
+        -o-animation:
+            moveBubblesX 17s linear infinite,
+            moveBubblesYOpposite 5s ease-in-out infinite alternate;
+    }
+    @keyframes MoveUpDown {
+        0% {
+            transform: none;
+        }
+        25% {
+            transform: translateY(-50px) translateX(20px) rotate(5deg);
+        }
+        50% {
+            transform: translateY(25px) translateX(-25px) rotate(-5deg);
+        }
+        75% {
+            transform: translateY(-50px) translateX(25px) rotate(-5deg);
+        }
+        100% {
+            transform: translateY(0px) translateX(0px) rotate(0deg);
+        }
+    }
+
+    @keyframes moveBubblesX {
+        0% {
+            left: -1%;
+        }
+        100% {
+            left: 101%;
+        }
+    }
+
+    @keyframes moveBubblesY {
+        0% {
+            margin-top: 0px;
+        }
+        100% {
+            margin-top: 150px;
+        }
+    }
+
+    @keyframes moveBubblesYOpposite {
+        0% {
+            margin-top: 0px;
+        }
+        100% {
+            margin-top: -100px;
+        }
+    }
+</style>

@@ -2,7 +2,9 @@
 import CrazyLine from "@/components/CrazyLine.astro";
 import Layout from "@/layouts/Layout.astro";
 import { Image } from "astro:assets";
-import MainWindowImg from "@/img/ia-youtube-briefer-main-window-example.jpg";
+import Img1 from "@/img/conversational_retrieval_chain-5c7a96abe29e582bc575a0a0d63f86b0.png";
+import Img2 from "@/img/1_hfEfKvvNg2rVG-X_vr_V1g.jpg";
+import Img3 from "@/img/langchain-logo.png";
 import ResultWindowImg from "@/img/ia-youtube-briefer-result-window-example.jpg";
 import Waves from "@/components/Waves.astro";
 import { Button } from "@/components/ui/button";
@@ -49,7 +51,98 @@ import { Button } from "@/components/ui/button";
         </div>
     </section>
     <CrazyLine />
-    <section class="pb-6">
+    <div class="container mx-auto">
+        <div class="flex flex-col md:grid grid-cols-3 gap-10 py-10">
+            <div>
+                <h2 class="text-2xl font-bold mb-4">
+                    1.- Obtiene el <span
+                        class="relative chonky-underline-orange"
+                        >transcript</span
+                    >
+                </h2>
+                <p>
+                    Obtiene el transcript de un video de youtube y rompiendolo
+                    en secciones mas pequeñas analiza cada seccion y toma notas.
+                </p>
+            </div>
+            <div>
+                <h2 class="text-2xl font-bold mb-4">
+                    2.- Crea <span class="relative chonky-underline-magenta"
+                        >RAG</span
+                    >
+                </h2>
+                <p>
+                    Genera un RAG del texto, permitiendo al usuario hacer
+                    preguntas sobre el video y la AI le responde utilizando el
+                    contexto
+                </p>
+            </div>
+            <div>
+                <h2 class="text-2xl font-bold mb-4">
+                    3.- Resumen y <span class="relative chonky-underline-blue"
+                        >preguntas</span
+                    >
+                </h2>
+                <p>
+                    Condensa todas las notas y las organiza en un solo documento
+                    en una interfaz que te permite interactuar con el texto
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto">
+        <div class="flex flex-col gap-10 pt-10 pb-20 lg:flex-row">
+            <Image
+                src={Img1}
+                alt="Main Window Example"
+                class="max-h-96 w-auto slide-in-left relative"
+            />
+
+            <div class="border-2 border-slate-300 p-6">
+                <p>
+                    Utilizando LangChain creamos un flujo donde puedes conversar
+                    con el video (transcript) e incluye memoria. Recuerda cosas
+                    que ya han hablado porque es una conversacion.
+                </p>
+                <p>
+                    Por configuracion puedes ajustar diferentes parametros como
+                    los modelos a utilizar en cada paso. Permitiendo un control
+                    fino sobre tu presupuesto y estilo de uso
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container mx-auto">
+        <div class="flex flex-col gap-10 pt-10 pb-20 lg:flex-row">
+            <div class="p-6">
+                <h2 class="text-2xl font-bold mb-4">
+                    Aprovecha las ventajas de busqueda híbrida
+                </h2>
+                <p>
+                    <strong>Búsqueda por palabras clave</strong>, introduces una
+                    palabra o una frase, y esta búsqueda se centra en esos
+                    términos exactos o en los que están estrechamente
+                    relacionados en la base de datos o en la colección de
+                    documentos.
+                </p>
+                <p>
+                    <strong>Búsqueda vectorial, </strong>funciona utilizando el
+                    significado semántico, con el objetivo de discernir el
+                    contexto o significado subyacente de la consulta. Esto
+                    asegura que, incluso si tus palabras no coinciden
+                    exactamente con un documento, si el significado es
+                    relevante, se recuperará.
+                </p>
+                <div class="flex p-10">
+                    <Image src={Img3} alt="Langchain +  Chroma DB" />
+                </div>
+            </div>
+            <Image src={Img2} alt="Hybrid Search Schema" class="self-center" />
+        </div>
+    </div>
+
+    <!-- <section class="pb-6">
         <div class="container mx-auto">
             <div class="flex flex-col-reverse md:grid grid-cols-3 items-center">
                 <Image
@@ -91,7 +184,7 @@ import { Button } from "@/components/ui/button";
             </div>
         </div>
     </section>
-    <br /><br /><br />
+    <br /><br /><br /> -->
     <Waves wavesOpacity={[0.5, 0.7, 0.9]} />
 </Layout>
 
