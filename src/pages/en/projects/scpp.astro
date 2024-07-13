@@ -11,11 +11,7 @@ import CrazyLine from "@/components/CrazyLine.astro";
 
 <Layout title="Sistema de Presupuestos Personales">
     <section class="py-16 relative">
-        <div
-            class="absolute top-48 left-96 w-96 h-full bg-center bg-no-repeat -z-10"
-            style="background: url(/portfolio/img/dotgrid.png);"
-        >
-        </div>
+        <div class="absolute top-48 left-96 w-96 h-full hero-bg -z-10"></div>
         <div class="container mx-auto">
             <div class="flex flex-col md:grid grid-cols-2">
                 <div>
@@ -23,11 +19,10 @@ import CrazyLine from "@/components/CrazyLine.astro";
                         SCPP
                     </h1>
                     <p>
-                        Sistema de Control de Presupuesto Personal. Con su
-                        aplicación para Android y su versión de escritorio para
-                        Windows, SCPP te ofrece la flexibilidad para registrar
-                        tus gastos, ingresos y ahorros en cualquier momento y
-                        desde cualquier lugar.
+                        Personal Budget Control System. With its Android app and
+                        Windows desktop version, SCPP offers you the flexibility
+                        to record your expenses, income, and savings anytime and
+                        anywhere.
                     </p>
                 </div>
                 <div>
@@ -48,20 +43,18 @@ import CrazyLine from "@/components/CrazyLine.astro";
                     className="max-w-72 self-center"
                 />
                 <div class="col-span-2">
-                    <h2 class="text-5xl font-bold mb-10">El Problema</h2>
+                    <h2 class="text-5xl font-bold mb-10">The Problem</h2>
                     <p>
-                        SCPP, abreviatura de Sistema de Presupuestos Personales,
-                        surgió de la necesidad de contar con una solución
-                        sencilla para controlar los gastos de manera eficiente.
-                        Es una herramienta simple y actualizada para un registro
-                        preciso de las finanzas personales.
+                        SCPP arose from the need for a simple solution to
+                        efficiently control expenses. It is a straightforward
+                        and up-to-date tool for accurate personal finance
+                        tracking.
                     </p>
                     <p>
-                        Aunque existen muchas aplicaciones en el mercado,
-                        ninguna cumplía con los requisitos específicos buscados
-                        debido a su complejidad o suscripciones costosas. Por
-                        eso, creé una opción personalizada para la gestión de
-                        mis finanzas.
+                        Although there are many applications on the market, none
+                        met the specific requirements sought due to their
+                        complexity or costly subscriptions. That's why I created
+                        a customized option for managing my finances.
                     </p>
                 </div>
             </div>
@@ -71,28 +64,27 @@ import CrazyLine from "@/components/CrazyLine.astro";
         <div class="container mx-auto">
             <div class="flex flex-col md:grid grid-cols-3 gap-10">
                 <div class="col-span-2">
-                    <h2 class="text-5xl font-bold mb-10">La Arquitectura</h2>
+                    <h2 class="text-5xl font-bold mb-10">Architecture</h2>
                     <p>
-                        La arquitectura de SCPP se basa en una API en Node.js,
-                        un microservicio que facilita el acceso a la base de
-                        datos MySQL.
+                        The architecture of SCPP is based on a Node.js API, a
+                        microservice that facilitates access to the MySQL
+                        database.
                     </p>
                     <p>
-                        SCPP cuenta con una aplicación móvil para Android
-                        desarrollada en React Native. Permite visualizar,
-                        agregar y editar información de gastos, ofrece gráficos
-                        financieros y funciones de búsqueda por categoría o
-                        palabras clave, brindando una experiencia completa para
-                        el seguimiento financiero personal.
+                        SCPP includes a mobile application for Android developed
+                        in React Native. It allows you to view, add, and edit
+                        expense information, offers financial graphs, and
+                        provides search functions by category or keywords,
+                        delivering a comprehensive experience for personal
+                        financial tracking.
                     </p>
                     <p>
-                        La plataforma también ofrece una aplicación de
-                        escritorio en C# con WinUI3 que replica las funciones de
-                        la versión móvil y agrega interacción con gráficos y
-                        visualización detallada. Proporciona una experiencia
-                        completa para análisis y gestión financiera, permitiendo
-                        a los usuarios hacer un seguimiento a traves de la
-                        computadora.
+                        The platform also offers a desktop application in C#
+                        with WinUI3 that replicates the functions of the mobile
+                        version and adds interaction with graphs and detailed
+                        visualization. It provides a comprehensive experience
+                        for financial analysis and management, allowing users to
+                        track their finances through their computer.
                     </p>
                 </div>
                 <Image src={ScppArch} alt="" class="self-center" />
@@ -116,37 +108,35 @@ import CrazyLine from "@/components/CrazyLine.astro";
         <div class="container mx-auto">
             <div class="flex flex-col lg:grid grid-cols-3 gap-10">
                 <div class="col-span-2 backdrop-blur-md p-2">
-                    <h2 class="text-5xl font-bold mb-10">La Evolución</h2>
+                    <h2 class="text-5xl font-bold mb-10">Evolution</h2>
                     <p>
-                        La aplicación ha evolucionado notablemente desde su
-                        versión anterior. Se reescribió por completo utilizando
-                        la ultima version de React Native y de acuerdo a la
-                        experiencia previa se optimizo el diseño.
+                        The application has evolved significantly from its
+                        previous version. It was completely rewritten using the
+                        latest version of React Native, and based on previous
+                        experience, the design was optimized.
                     </p>
                     <p>
-                        Esta actualización permitió agregar nuevas
-                        funcionalidades y mejorar el rendimiento y mejoró la
-                        experiencia de desarrollo. Como resultado, la aplicación
-                        es más rápida y eficiente, brindando una mejor
-                        experiencia al usuario en todas las áreas.
+                        This update allowed for the addition of new features,
+                        improved performance, and enhanced the development
+                        experience. As a result, the application is faster and
+                        more efficient, providing a better user experience in
+                        all areas.
                     </p>
                     <p>
-                        Con el tiempo, surgió la necesidad de almacenar copias
-                        de documentos importantes, como registros de
-                        mantenimiento del vehículo, de manera más eficiente.
-                        Esto incluía la posibilidad de adjuntar fotos para
-                        registrar visualmente cada mantenimiento, eliminando la
-                        dependencia de notas manuscritas o archivos de Excel
-                        dispersos. En respuesta, se implementó una sección
-                        especial en SCPP que permite a los usuarios subir fotos
-                        con fecha y descripción. Esto simplifica la gestión de
-                        documentos al centralizarlos, facilitando su consulta y
-                        brindando una solución integral para el seguimiento y
-                        registro de actividades relevantes.
+                        Over time, the need arose to store copies of important
+                        documents, such as vehicle maintenance records, more
+                        efficiently. This included the ability to attach photos
+                        to visually document each maintenance event, eliminating
+                        the reliance on handwritten notes or scattered Excel
+                        files. In response, a special section was implemented in
+                        SCPP that allows users to upload photos with dates and
+                        descriptions. This simplifies document management by
+                        centralizing them, making them easier to access, and
+                        providing a comprehensive solution for tracking and
+                        recording relevant activities.
                     </p>
                 </div>
                 <div class="submarine-box items-center justify-end flex">
-                   
                     <svg
                         id="submarine"
                         xmlns="http://www.w3.org/2000/svg"

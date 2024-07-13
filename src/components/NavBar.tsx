@@ -10,7 +10,7 @@ import {
     navigationMenuTriggerStyle
 } from "@/components/ui/navigation-menu"
 import { cn } from "@/lib/utils"
-import React from "react"
+import React, { useEffect, useState } from "react"
 import I18nSelector from "./I18nSelector";
 
 const components: { title: string; href: string; description: string }[] = [
@@ -41,18 +41,30 @@ const components: { title: string; href: string; description: string }[] = [
 ]
 
 export default function NavBar() {
+    const [language, setLanguage] = useState<string>("es");
+
+    const menuOptions: { [key: string]: string[] } = { es: ["Inicio"], en: ["Home"] };
+
+    useEffect(() => {
+        // Read language preference from localStorage
+        const savedLanguage = localStorage.getItem('language');
+        if (savedLanguage) {
+            setLanguage(savedLanguage);
+        }
+    }, []);
+    
     return (
         <NavigationMenu>
             <NavigationMenuList >
                 <NavigationMenuLink href={"/portfolio"}
                     className={navigationMenuTriggerStyle()}>
-                    Inicio
+                    {menuOptions[language][0]}
                 </NavigationMenuLink>
                 {/* <NavigationMenuLink href="/#proyectos"
                     className={navigationMenuTriggerStyle()}>
                     Proyectos
                 </NavigationMenuLink> */}
-                <NavigationMenuItem>
+                {/* <NavigationMenuItem>
                     <NavigationMenuTrigger>Proyectos</NavigationMenuTrigger>
                     <NavigationMenuContent>
                         <ul className="flex flex-col gap-4 p-4 w-full md:w-52">
@@ -67,7 +79,7 @@ export default function NavBar() {
                             ))}
                         </ul>
                     </NavigationMenuContent>
-                </NavigationMenuItem>
+                </NavigationMenuItem> */}
             </NavigationMenuList>
             <I18nSelector className={navigationMenuTriggerStyle()} />
         </NavigationMenu>
