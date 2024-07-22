@@ -1,17 +1,15 @@
 ---
 import NavBar from "@/components/NavBar";
-import { ViewTransitions } from 'astro:transitions';
+import { ViewTransitions } from "astro:transitions";
 import "@/styles/globals.css";
 import "@/styles/animista.css";
-import I18nSelector from "@/components/I18nSelector";
-import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
 
 interface Props {
 	title: string;
 }
 
 const { title } = Astro.props;
-const astroLocale = Astro.currentLocale
+const astroLocale = Astro.currentLocale;
 ---
 
 <!doctype html>
@@ -30,130 +28,156 @@ const astroLocale = Astro.currentLocale
 		<div class="border-b p-2">
 			<div class="container mx-auto">
 				<div class="flex justify-between">
-					<a href="/portfolio" class="flex gap-4 items-center">
-							<img src={"/portfolio/logo.svg"} class="max-h-[40px]" />
-							<span class="font-black text-2xl text-logo">JoseM._</span>
+					<a
+						href="/portfolio"
+						class="flex gap-4 items-center logo-href"
+					>
+						<img src={"/portfolio/logo.svg"} class="max-h-[40px]" />
+						<span class="font-black text-2xl text-logo"
+							>JoseM._</span
+						>
 					</a>
 					<NavBar client:load />
 				</div>
 			</div>
 		</div>
 		<slot />
-		<input type="hidden" name="astro-locale" value={astroLocale}>
+		<input type="hidden" name="astro-locale" value={astroLocale} />
+		<script>
+			document.addEventListener("astro:page-load", () => {
+				// Guarda la local que astro entrego
+				if (window.localStorage) {
+					if (!window.localStorage.getItem("locale")) {
+						const localeElement = document.querySelector(
+							"[name='astro-locale']",
+						) as HTMLInputElement;
+						window.localStorage.setItem(
+							"locale",
+							localeElement.value,
+						);
+					}
+					// Revisa si localStorage tiene un idioma ya selecionado, si tiene ingles y no esta viendo ingles lo redirecciona
+					if (
+						window.localStorage.getItem("language") == "en" &&
+						!window.location.pathname.startsWith("/portfolio/en")
+					) {
+						window.location.href = "/portfolio/en";
+					}
+					// Actualiza el HREF del logo para que sea ingles si corresponde ingles
+					if (window.localStorage.getItem("language") == "en") {
+						const logoHref = document.querySelector(
+							".logo-href",
+						) as HTMLAnchorElement;
+
+						if (logoHref) {
+							logoHref.href = "/portfolio/en";
+						}
+					}
+				}
+			});
+		</script>
+		<style is:global>
+			@font-face {
+				font-family: "NotoSansMono";
+				src: url("/portfolio/fonts/NotoSansMono-VariableFont_wdth,wght.ttf")
+					format("truetype");
+				font-weight: 100 900;
+				font-stretch: 50% 200%;
+				font-style: normal;
+				font-display: swap;
+			}
+			@font-face {
+				font-family: "DotGothic16";
+				src: url("/portfolio/fonts/DotGothic16-Regular.ttf")
+					format("truetype");
+				font-style: normal;
+				font-display: swap;
+			}
+			.font-noto {
+				font-family: NotoSansMono;
+			}
+			.font-dotgothic16 {
+				font-family: DotGothic16;
+			}
+			.text-logo {
+				background: #6de8ff;
+				background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+			.chonky-underline-magenta::after {
+				transition: all 0.1s ease-in-out;
+				content: "";
+				position: absolute;
+				bottom: 7.5%;
+				z-index: -1;
+				height: 0.3em;
+				width: 104%;
+				left: -1%;
+				background: linear-gradient(
+					65deg,
+					#df058d 0%,
+					#df058d 100%,
+					rgba(255, 209, 0, 0) 100%
+				);
+			}
+			.chonky-drop-line::after {
+				bottom: -12.5%;
+			}
+			.chonky-underline-blue::after {
+				transition: all 0.1s ease-in-out;
+				content: "";
+				position: absolute;
+				bottom: 7.5%;
+				z-index: -1;
+				height: 0.3em;
+				width: 104%;
+				left: -1%;
+				background: linear-gradient(
+					65deg,
+					#2c49d8 0%,
+					#2c49d8 100%,
+					rgba(255, 209, 0, 0) 100%
+				);
+			}
+			.chonky-underline-orange::after {
+				transition: all 0.1s ease-in-out;
+				content: "";
+				position: absolute;
+				bottom: 7.5%;
+				z-index: -1;
+				height: 0.3em;
+				width: 104%;
+				left: -1%;
+				background: linear-gradient(
+					65deg,
+					#ff6b2b 0%,
+					#ff6b2b 100%,
+					rgba(255, 209, 0, 0) 100%
+				);
+			}
+			p {
+				margin-bottom: 1rem;
+			}
+			.hero-bg {
+				background: url(/portfolio/img/dotgrid.png);
+				background-repeat: no-repeat;
+				background-position: center;
+				/* background-size: cover; */
+				z-index: -10;
+			}
+			.grid-flares-bg {
+				background-image: url(/portfolio/img/grid-flares.png);
+			}
+			.grid-lines-bg {
+				background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(241 245 249 / 0.03)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+			}
+			.bg-color-morph {
+				background-image: url("/portfolio/img/HeroBackground.png");
+				background-size: auto 100%;
+			}
+			.logo-text-color {
+				color: #6de8ff;
+			}
+		</style>
 	</body>
 </html>
-<script>
-	// Guarda la local que astro entrego
-	if(window.localStorage){
-		if(!window.localStorage.getItem("locale")) {
-			const localeElement = document.querySelector("[name='astro-locale']") as HTMLInputElement 
-				window.localStorage.setItem("locale", localeElement.value)
-		}
-		// Revisa si localStorage tiene un idioma ya selecionado, si tiene ingles y no esta viendo ingles lo redirecciona
-		if(window.localStorage.getItem("language") == "en" && !window.location.pathname.startsWith('/portfolio/en')) {
-			window.location.href = '/portfolio/en'
-		}
-	}
-</script>
-<style is:global>
-	@font-face {
-		font-family: "NotoSansMono";
-		src: url("/portfolio/fonts/NotoSansMono-VariableFont_wdth,wght.ttf")
-			format("truetype");
-		font-weight: 100 900;
-		font-stretch: 50% 200%;
-		font-style: normal;
-		font-display: swap;
-	}
-	@font-face {
-		font-family: "DotGothic16";
-		src: url("/portfolio/fonts/DotGothic16-Regular.ttf") format("truetype");
-		font-style: normal;
-		font-display: swap;
-	}
-	.font-noto {
-		font-family: NotoSansMono;
-	}
-	.font-dotgothic16 {
-		font-family: DotGothic16;
-	}
-	.text-logo {
-		background: #6de8ff;
-		background-clip: text;
-		-webkit-text-fill-color: transparent;
-	}
-	.chonky-underline-magenta::after {
-		transition: all 0.1s ease-in-out;
-		content: "";
-		position: absolute;
-		bottom: 7.5%;
-		z-index: -1;
-		height: 0.3em;
-		width: 104%;
-		left: -1%;
-		background: linear-gradient(
-			65deg,
-			#df058d 0%,
-			#df058d 100%,
-			rgba(255, 209, 0, 0) 100%
-		);
-	}
-	.chonky-drop-line::after {
-		bottom: -12.5%;
-	}
-	.chonky-underline-blue::after {
-		transition: all 0.1s ease-in-out;
-		content: "";
-		position: absolute;
-		bottom: 7.5%;
-		z-index: -1;
-		height: 0.3em;
-		width: 104%;
-		left: -1%;
-		background: linear-gradient(
-			65deg,
-			#2c49d8 0%,
-			#2c49d8 100%,
-			rgba(255, 209, 0, 0) 100%
-		);
-	}
-	.chonky-underline-orange::after {
-		transition: all 0.1s ease-in-out;
-		content: "";
-		position: absolute;
-		bottom: 7.5%;
-		z-index: -1;
-		height: 0.3em;
-		width: 104%;
-		left: -1%;
-		background: linear-gradient(
-			65deg,
-			#ff6b2b 0%,
-			#ff6b2b 100%,
-			rgba(255, 209, 0, 0) 100%
-		);
-	}
-	p {
-		margin-bottom: 1rem;
-	}
-	.hero-bg {
-		background: url(/portfolio/img/dotgrid.png);
-		background-repeat: no-repeat;
-		background-position: center;
-		/* background-size: cover; */
-		z-index: -10;
-	}
-	.grid-flares-bg {
-		background-image: url(/portfolio/img/grid-flares.png);
-	}
-	.grid-lines-bg {
-		background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(241 245 249 / 0.03)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e")
-	}
-	.bg-color-morph {
-		background-image: url('/portfolio/img/HeroBackground.png'); 
-		background-size: auto 100%;
-	}
-	.logo-text-color {
-		color: #6de8ff;
-	}
-</style>
