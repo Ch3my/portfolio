@@ -20,6 +20,20 @@ const astroLocale = Astro.currentLocale;
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/portfolio/favicon.svg" />
+		<link
+			rel="preload"
+			href="/portfolio/fonts/NotoSansMono-VariableFont_wdth,wght.ttf"
+			as="font"
+			type="font/ttf"
+			crossorigin
+		/>
+		<link
+			rel="preload"
+			href="/portfolio/fonts/DotGothic16-Regular.ttf"
+			as="font"
+			type="font/ttf"
+			crossorigin
+		/>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<ViewTransitions />
