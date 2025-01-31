@@ -1,6 +1,6 @@
 ---
 import NavBar from "@/components/NavBar";
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter  } from "astro:transitions";
 import "@/styles/globals.css";
 import "@/styles/animista.css";
 
@@ -38,7 +38,7 @@ const astroLocale = Astro.currentLocale;
 		/>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		<ViewTransitions />
+		<ClientRouter  />
 	</head>
 	<body class="dark:bg-slate-950 dark:text-slate-100 font-noto">
 		<div class="border-b p-2">
