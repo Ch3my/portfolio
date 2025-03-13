@@ -10,6 +10,7 @@ import OtraExpCarousel from "@/components/OtraExpCarousel";
 import Waves from "@/components/Waves.astro";
 import CrazyLine from "@/components/CrazyLine.astro";
 import HomeAccordion from "@/components/HomeAccordion";
+import SvgBlob from "@/components/SvgBlob.astro";
 
 const astroLocale = Astro.currentLocale;
 ---
@@ -21,18 +22,18 @@ const astroLocale = Astro.currentLocale;
 				<div class="flex flex-col md:grid grid-cols-2 gap-4">
 					<div>
 						<h1 class="text-7xl font-bold mb-10">
-							Full Stack <br />Developer
+							<span>Full Stack</span>
+							<br />
+							<span >Developer</span>
 						</h1>
-						<p
-							class="text-2xl bg-clip-text text-transparent"
-							style="background-image: linear-gradient(66.77deg, #d83333, #f041ff);"
-						>
-							Operational Logic, Design, and Construction
+						<p class="text-2xl bg-clip-text text-transparent"  style="background-image: linear-gradient(66.77deg, #d83333, #f041ff);">
+							Lógica operativa, Diseño y Construcción
 						</p>
-						<p>
-							Comprehensive approach in all stages of software
-							development, ensuring seamless execution and results
-							at every phase of the project.
+						<p class="pb-4">
+							Enfoque integral en todas las etapas del desarrollo
+							de software, garantizando una ejecución sin
+							interrupciones y resultados en cada etapa del
+							proyecto
 						</p>
 						<a
 							href="https://www.linkedin.com/in/jose-miguel-concha/"
@@ -81,7 +82,7 @@ const astroLocale = Astro.currentLocale;
 		</section>
 		<section class="py-16">
 			<div class="container mx-auto relative z-10">
-				<h2 class="text-5xl font-bold mb-10">Skill</h2>
+				<h2 class="text-5xl font-bold mb-10">Expertiz</h2>
 				<div
 					class="flex flex-col lg:grid grid-cols-3 border-2 border-slate-300
 				lg:divide-x-2 divide-slate-300"
@@ -89,18 +90,19 @@ const astroLocale = Astro.currentLocale;
 					<div class="grid p-6">
 						<h3 class="font-dotgothic16 text-4xl font-bold mb-4">
 							<span class="chonky-underline-orange relative"
-								>Operational</span
-							> logic
+								>Lógica</span
+							> operativa
 						</h3>
 						<p>
-							With experience in designing administrative
-							processes and KPIs, my focus is to improve
-							operational efficiency, reduce delivery times, and
-							maximize results.
+							Con experiencia en diseño de procesos
+							administrativos y KPIs, mi enfoque es mejorar la
+							eficiencia operativa, reducir tiempos de entrega y
+							maximizar resultados.
 						</p>
 						<p>
-							Experience in data analysis to inform business
-							decisions and design effective IT solutions
+							Experiencia en análisis de datos para informar
+							decisiones comerciales y diseñar soluciones
+							informáticas efectivas
 						</p>
 					</div>
 					<div class="grid p-6">
@@ -110,13 +112,14 @@ const astroLocale = Astro.currentLocale;
 							>
 						</h3>
 						<p>
-							Application development using Java, Play Framework,
-							JavaScript, NodeJS, SailsJS, MySQL.
+							Desarrollo de aplicaciones utilizando Java, Play
+							Framework, Javascript, NodeJS, SailsJS, MySQL.
 						</p>
 						<p>
-							I prioritize robust systems with high quality and
-							performance, currently managing over 50 simultaneous
-							users on mobile and desktop devices.
+							Priorizo sistemas robustos con alta calidad y
+							rendimiento, actualmente manejando más de 50
+							usuarios simultáneos en dispositivos móviles y de
+							escritorio.
 						</p>
 					</div>
 					<div class="grid p-6">
@@ -126,19 +129,22 @@ const astroLocale = Astro.currentLocale;
 							</span>
 						</h3>
 						<p>
-							I have worked with Vue.js, React, and React Native,
-							creating dynamic and responsive interfaces, as well
-							as native mobile applications.
+							He trabajado con Vue.js, React y React Native,
+							creando interfaces dinámicas y responsivas, así como
+							aplicaciones móviles nativas.
 						</p>
 						<p>
-							My goal is to maximize these tools to provide
-							exceptional and functional user experiences.
+							Mi objetivo es maximizar estas herramientas para
+							ofrecer experiencias de usuario excepcionales y
+							funcionales.
 						</p>
 					</div>
 				</div>
 			</div>
 		</section>
 		<section class="py-16">
+		<!-- <section class="py-16 relative bg-linear-to-b from-sky-950 from-60% to-transparent"> -->
+			<!-- <SvgBlob /> -->
 			<div class="container mx-auto">
 				<div class="grid grid-cols-3 mb-10">
 					<div class="col-span-2">
@@ -152,19 +158,20 @@ const astroLocale = Astro.currentLocale;
 								class="max-h-[40px]"
 							/>
 							<h2 class="text-5xl font-bold proyectos-h2">
-								Projects
+								Proyectos
 							</h2>
 						</div>
 						<p
 							class="mb-0 fade-in-fwd"
 							style="animation-timeline: view(70% 0%);"
 						>
-							All the projects presented here are the result of my
-							personal initiative and creativity, developed to
-							solve everyday problems without available solutions
-							in the market. They reflect my passion for
-							technological innovation and my ability to
-							successfully identify and seize opportunities.
+							Todos los proyectos presentados aquí son el
+							resultado de mi iniciativa personal y creatividad,
+							surgidos para resolver problemas cotidianos sin
+							soluciones disponibles en el mercado. Reflejan mi
+							pasión por la innovación tecnológica y mi capacidad
+							para identificar y aprovechar oportunidades con
+							éxito.
 						</p>
 					</div>
 					<div class="flex justify-self-center">
@@ -179,25 +186,25 @@ const astroLocale = Astro.currentLocale;
 				</div>
 				<div class="flex flex-col lg:grid grid-cols-6 gap-6">
 					<div
-						class="bg-slate-800 col-span-4 flex flex-col gap-2 justify-between p-6 hover:scale-105 transition-all
-						hover:bg-sky-950 slide-in-bck-bottom dark:highlight-white/5 relative rounded-lg"
+						class="bg-slate-800 col-span-4 flex flex-col gap-2 justify-between p-6 hover:scale-105 transition-all 
+						 hover:bg-sky-950 slide-in-bck-bottom dark:highlight-white/5 relative rounded-lg"
 						style="animation-timeline: view(90% 0%);"
 					>
 						<h3 class="font-dotgothic16 text-4xl font-bold mb-4">
 							SCPP
 						</h3>
 						<p>
-							Personal Budget Control System. It is the
-							comprehensive solution for efficiently and
-							conveniently managing your personal finances. With
-							its Android application and desktop version for
-							Windows, SCPP offers you the flexibility to record
-							your expenses, income, and savings anytime,
-							anywhere.
+							Sistema de Control de Presupuesto Personal. Es la
+							solución integral para gestionar tus finanzas
+							personales de manera eficiente y conveniente. Con su
+							aplicación para Android y su versión de escritorio
+							para Windows, SCPP te ofrece la flexibilidad para
+							registrar tus gastos, ingresos y ahorros en
+							cualquier momento y desde cualquier lugar.
 						</p>
 						<div class="flex gap-4 mb-4">
-							<a href="/portfolio/en/projects/scpp">
-								<Button>Read More</Button>
+							<a href="/portfolio/es/proyectos/scpp">
+								<Button>Leer Más</Button>
 							</a>
 						</div>
 						<div class="flex gap-1 flex-wrap">
@@ -230,13 +237,13 @@ const astroLocale = Astro.currentLocale;
 							Demucs
 						</h3>
 						<p>
-							Web interface and API enabling a separation model to
-							isolate drums, bass, and vocals from the rest of the
-							song accompaniment.
+							Interfaz Web y API que habilita modelo de separación
+							para dividir batería, bajo y voces del resto del
+							acompañamiento de una canción
 						</p>
 						<div class="flex gap-4 mb-4">
-							<a href="/portfolio/en/projects/demucs">
-								<Button>Read More</Button>
+							<a href="/portfolio/es/proyectos/demucs">
+								<Button>Leer Más</Button>
 							</a>
 
 							<a
@@ -281,14 +288,14 @@ const astroLocale = Astro.currentLocale;
 							Food Manager
 						</h3>
 						<p>
-							An application that facilitates efficient control
-							and management of food storage. Record food items
-							along with their expiration dates to maintain an
-							organized and updated inventory.
+							Aplicación que facilita el control y la gestión
+							eficiente del almacenamiento de alimentos. Registro
+							de alimentos junto con su fecha de vencimiento para
+							mantener un inventario organizado y actualizado.
 						</p>
 						<div class="flex gap-4 mb-4">
-							<a href="/portfolio/en/projects/food-manager">
-								<Button>Read More</Button>
+							<a href="/portfolio/es/proyectos/food-manager">
+								<Button>Leer Más</Button>
 							</a>
 							<a
 								href="https://github.com/Ch3my/FoodManager"
@@ -333,13 +340,13 @@ const astroLocale = Astro.currentLocale;
 							AI Youtube Briefer
 						</h3>
 						<p>
-							Transcribe a YouTube video and processes it with AI
-							to obtain a comprehensive summary of the content
-							with just one click.
+							Transcribe un video de Youtube y lo procesa con IA
+							para obtener un resumen completo del contenido con
+							un solo click
 						</p>
 						<div class="flex gap-4 mb-4">
-							<a href="/portfolio/en/projects/ai-youtube-briefer">
-								<Button>Read More</Button>
+							<a href="/portfolio/es/proyectos/ai-youtube-briefer">
+								<Button>Leer Más</Button>
 							</a>
 							<a
 								href="https://github.com/Ch3my/youtube-ai-briefer-v2-tauri"
@@ -390,12 +397,12 @@ const astroLocale = Astro.currentLocale;
 							Music Codex
 						</h3>
 						<p>
-							Your musical reference, finds the chords for all
-							scales without having to memorize them
+							Tu referencia musical, encuentra los acordes de
+							todas las escalas sin tener que memorizar
 						</p>
 						<div class="flex gap-4 mb-4">
-							<a href="/portfolio/en/projects/music-codex">
-								<Button>Read More</Button>
+							<a href="/portfolio/es/proyectos/music-codex">
+								<Button>Leer Más</Button>
 							</a>
 							<a
 								href="https://github.com/Ch3my/MusicBuddy"
@@ -444,11 +451,11 @@ const astroLocale = Astro.currentLocale;
 						class="text-5xl font-bold chonky-drop-line font-dotgothic16 mb-4
 						relative chonky-underline-magenta w-fit"
 					>
-						Contact me
+						Contactame
 					</h2>
 					<p>
-						Do you have an exciting project where you need help?
-						Contact me via message.
+						¿Tienes un proyecto emocionante en el que necesitas
+						ayuda? Contáctame a través de mensaje
 					</p>
 					<a
 						href="https://www.linkedin.com/in/jose-miguel-concha/"
@@ -488,9 +495,9 @@ const astroLocale = Astro.currentLocale;
 				</div>
 				<div>
 					<h2 class="text-5xl font-bold mb-4">
-						Additional Experience
+						Experiencia Adicional
 					</h2>
-					<OtraExpCarousel client:idle locale={astroLocale} />
+					<OtraExpCarousel client:idle locale={astroLocale}/>
 				</div>
 			</div>
 		</div>

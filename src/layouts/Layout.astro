@@ -1,6 +1,6 @@
 ---
 import NavBar from "@/components/NavBar";
-import { ClientRouter  } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import "@/styles/globals.css";
 import "@/styles/animista.css";
 
@@ -20,8 +20,14 @@ const astroLocale = Astro.currentLocale;
 		<meta name="description" content="Astro description" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/portfolio/favicon.svg" />
-		<script src="https://analytics.ahrefs.com/analytics.js" data-key="GWSnpLDnxWTFjudSR6Gntg" async></script>
-		<meta name="ahrefs-site-verification" content="acc5495e3315e4a0575724439f0f84a75039bb112a8b30e6f13d34dd2bbdeed7">
+		<script
+			src="https://analytics.ahrefs.com/analytics.js"
+			data-key="GWSnpLDnxWTFjudSR6Gntg"
+			async></script>
+		<meta
+			name="ahrefs-site-verification"
+			content="acc5495e3315e4a0575724439f0f84a75039bb112a8b30e6f13d34dd2bbdeed7"
+		/>
 		<link
 			rel="preload"
 			href="/portfolio/fonts/NotoSansMono-VariableFont_wdth,wght.ttf"
@@ -38,14 +44,14 @@ const astroLocale = Astro.currentLocale;
 		/>
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
-		<ClientRouter  />
+		<ClientRouter />
 	</head>
 	<body class="dark:bg-slate-950 dark:text-slate-100 font-noto">
 		<div class="border-b p-2">
 			<div class="container mx-auto">
 				<div class="flex justify-between">
 					<a
-						href="/portfolio"
+						href={`/portfolio/${astroLocale}`}
 						class="flex gap-4 items-center logo-href"
 					>
 						<img src={"/portfolio/logo.svg"} class="max-h-[40px]" />
@@ -53,12 +59,12 @@ const astroLocale = Astro.currentLocale;
 							>JoseM._</span
 						>
 					</a>
-					<NavBar client:load />
+					<NavBar client:load locale={astroLocale} />
 				</div>
 			</div>
 		</div>
 		<slot />
-		<input type="hidden" name="astro-locale" value={astroLocale} />
+		<!-- <input type="hidden" name="astro-locale" value={astroLocale} />
 		<script>
 			document.addEventListener("astro:page-load", () => {
 				// Guarda la local que astro entrego
@@ -91,7 +97,7 @@ const astroLocale = Astro.currentLocale;
 					}
 				}
 			});
-		</script>
+		</script> -->
 		<style is:global>
 			@font-face {
 				font-family: "NotoSansMono";

@@ -40,25 +40,29 @@ const components: { title: string; href: string; description: string }[] = [
     }
 ]
 
-export default function NavBar() {
-    const [language, setLanguage] = useState<string>("es");
+interface NavBarProps {
+    locale?: string;
+}
+
+export default function NavBar({ locale = "es" }: NavBarProps) {
+    // const [language, setLanguage] = useState<string>("es");
 
     const menuOptions: { [key: string]: string[] } = { es: ["Inicio"], en: ["Home"] };
 
-    useEffect(() => {
-        // Read language preference from localStorage
-        const savedLanguage = localStorage.getItem('language');
-        if (savedLanguage) {
-            setLanguage(savedLanguage);
-        }
-    }, []);
+    // useEffect(() => {
+    //     // Read language preference from localStorage
+    //     const savedLanguage = localStorage.getItem('language');
+    //     if (savedLanguage) {
+    //         setLanguage(savedLanguage);
+    //     }
+    // }, []);
     
     return (
         <NavigationMenu>
             <NavigationMenuList >
                 <NavigationMenuLink href={"/portfolio"}
                     className={navigationMenuTriggerStyle()}>
-                    {menuOptions[language][0]}
+                    {menuOptions[locale][0]}
                 </NavigationMenuLink>
                 {/* <NavigationMenuLink href="/#proyectos"
                     className={navigationMenuTriggerStyle()}>
@@ -81,7 +85,7 @@ export default function NavBar() {
                     </NavigationMenuContent>
                 </NavigationMenuItem> */}
             </NavigationMenuList>
-            <I18nSelector className={navigationMenuTriggerStyle()} />
+            <I18nSelector className={navigationMenuTriggerStyle()} currentLocale={locale} />
         </NavigationMenu>
     )
 }

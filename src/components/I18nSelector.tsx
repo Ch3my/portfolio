@@ -1,52 +1,52 @@
 import React, { useState, useEffect } from 'react';
 
+import {
+    Select,
+    SelectContent,
+    SelectGroup,
+    SelectItem,
+    SelectLabel,
+    SelectTrigger,
+    SelectValue,
+} from "@/components/ui/select"
+
 // Define props interface extending HTML attributes for select element
-interface I18nSelectorProps extends React.HTMLAttributes<HTMLSelectElement> { }
+interface I18nSelectorProps extends React.HTMLAttributes<HTMLSelectElement> {
+    currentLocale?: string
+}
 
-export default function I18nSelector(props: I18nSelectorProps) {
-    const [language, setLanguage] = useState("es");
+export default function I18nSelector({ currentLocale, className, ...props }: I18nSelectorProps) {
+    const [language, setLanguage] = useState(currentLocale);
 
-    useEffect(() => {
-        // Read language preference from localStorage
-        const savedLanguage = localStorage.getItem('language');
-        if (savedLanguage) {
-            setLanguage(savedLanguage);
-        }
-    }, []);
-
-    const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        const selectedLanguage = event.target.value;
-        setLanguage(selectedLanguage);
-
-        window.localStorage.setItem("language", selectedLanguage)
-
+    const handleChange = (value: string) => {
+        setLanguage(value);
         const currentPath = window.location.pathname;
-
-        if (selectedLanguage === 'en') {
+        if (value === 'en') {
             if (!currentPath.startsWith('/portfolio/en')) {
                 window.location.href = '/portfolio/en'
             }
-        } else if (selectedLanguage === 'es') {
+        } else if (value === 'es') {
             if (currentPath.startsWith('/portfolio/en')) {
-                window.location.href = '/portfolio';
+                window.location.href = '/portfolio/es';
             }
         }
-    };
+    }
 
     return (
         <div className='flex items-center'>
-            {/* <svg xmlns="http://www.w3.org/2000/svg" className="h-fit" width="24" height="24" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                <path d="M3 12a9 9 0 1 0 18 0a9 9 0 0 0 -18 0" />
-                <path d="M3.6 9h16.8" />
-                <path d="M3.6 15h16.8" />
-                <path d="M11.5 3a17 17 0 0 0 0 18" />
-                <path d="M12.5 3a17 17 0 0 1 0 18" />
-            </svg> */}
-            <select name="language" id="language" value={language} onChange={handleChange}  {...props}>
-                <option value="es">ES</option>
-                <option value="en">EN</option>
-            </select>
+
+            <Select value={language} onValueChange={handleChange}   >
+                <SelectTrigger >
+                    <SelectValue />
+                </SelectTrigger>
+                <SelectContent>
+                    <SelectGroup>
+                        <SelectLabel>Lang</SelectLabel>
+                        <SelectItem value="es">ES</SelectItem>
+                        <SelectItem value="en">EN</SelectItem>
+                    </SelectGroup>
+                </SelectContent>
+            </Select>
         </div>
     )
 }

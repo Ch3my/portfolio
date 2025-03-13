@@ -16,17 +16,20 @@ interface Data {
     [language: string]: LanguageContent[];
 }
 
-export default function () {
+interface AccordionProps {
+    locale?: string;
+}
 
-    const [language, setLanguage] = useState<string>("es");
+export default function AccordionComponent({ locale = "es" }: AccordionProps) {
+    const [language, setLanguage] = useState<string>(locale);
 
-    useEffect(() => {
-        // Read language preference from localStorage
-        const savedLanguage = localStorage.getItem('language');
-        if (savedLanguage) {
-            setLanguage(savedLanguage);
-        }
-    }, []);
+    // useEffect(() => {
+    //     // Read language preference from localStorage
+    //     const savedLanguage = localStorage.getItem('language');
+    //     if (savedLanguage) {
+    //         setLanguage(savedLanguage);
+    //     }
+    // }, []);
 
     let data: Data = {
         es: [{
