@@ -1,3 +1,9 @@
+---
+title: Roles de PM comparacion
+date: 2025-05-05
+slug: roles-pm-comparacion
+lang: es
+---
 # Desentrañando los roles de PM: Product, Project y Program Manager
 
 En el mundo del desarrollo de productos y la gestión de proyectos, los términos "Product Manager", "Project Manager" y "Program Manager" a menudo se confunden o se usan indistintamente. Sin embargo, cada uno de estos roles tiene responsabilidades únicas y juega un papel crucial en el éxito de una organización. En este artículo, exploraremos en detalle cada uno de estos roles, sus responsabilidades clave y cómo se complementan entre sí.

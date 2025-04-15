@@ -1,0 +1,23 @@
+---
+import { getCollection, render } from "astro:content";
+import Layout from "@/layouts/Layout.astro";
+
+export async function getStaticPaths() {
+    const pages = await getCollection("blog");
+    const enPages = pages.filter((page) => page.data.lang === "en");
+    return enPages.map((page) => ({
+        params: { lang: page.data.lang, slug: page.data.slug },
+        props: { page },
+    }));
+}
+
+const { page } = Astro.props;
+const { Content } = await render(page);
+---
+
+<Layout title={page.data.title}>
+    <article class="prose prose-slate xl:prose-lg dark:prose-invert mx-auto">
+        <Content />
+    </article>
+</Layout>
+
