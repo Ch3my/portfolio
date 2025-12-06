@@ -5,7 +5,7 @@ import {
     AccordionTrigger,
 } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 interface LanguageContent {
     title: string;
@@ -22,14 +22,6 @@ interface AccordionProps {
 
 export default function AccordionComponent({ locale = "es" }: AccordionProps) {
     const [language, setLanguage] = useState<string>(locale);
-
-    // useEffect(() => {
-    //     // Read language preference from localStorage
-    //     const savedLanguage = localStorage.getItem('language');
-    //     if (savedLanguage) {
-    //         setLanguage(savedLanguage);
-    //     }
-    // }, []);
 
     let data: Data = {
         es: [{

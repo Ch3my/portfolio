@@ -8,7 +8,7 @@ import {
     CarouselPreviousCustom
 } from "@/components/ui/carousel"
 import Autoplay from "embla-carousel-autoplay"
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 
 interface LanguageContent {
     title: string;
@@ -28,15 +28,8 @@ export default function CarouselComponent({ locale = "es" }: CarouselComponentPr
         Autoplay({ delay: 4000, stopOnInteraction: true })
     )
 
-    const [language, setLanguage] = useState<string>(locale);
+    const [language] = useState<string>(locale);
 
-    // useEffect(() => {
-    //     // Read language preference from localStorage
-    //     const savedLanguage = localStorage.getItem('language');
-    //     if (savedLanguage) {
-    //         setLanguage(savedLanguage);
-    //     }
-    // }, []);
 
     let data: Data = {
         es: [{

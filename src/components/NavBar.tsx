@@ -1,16 +1,11 @@
 import {
     NavigationMenu,
-    NavigationMenuContent,
-    NavigationMenuIndicator,
-    NavigationMenuItem,
     NavigationMenuLink,
     NavigationMenuList,
-    NavigationMenuTrigger,
-    NavigationMenuViewport,
     navigationMenuTriggerStyle
 } from "@/components/ui/navigation-menu"
 import { cn } from "@/lib/utils"
-import React, { useEffect, useState } from "react"
+import React from "react"
 import I18nSelector from "./I18nSelector";
 
 const components: { title: string; href: string; description: string }[] = [
@@ -45,17 +40,7 @@ interface NavBarProps {
 }
 
 export default function NavBar({ locale = "es" }: NavBarProps) {
-    // const [language, setLanguage] = useState<string>("es");
-
     const menuOptions: { [key: string]: string[] } = { es: ["Inicio"], en: ["Home"] };
-
-    // useEffect(() => {
-    //     // Read language preference from localStorage
-    //     const savedLanguage = localStorage.getItem('language');
-    //     if (savedLanguage) {
-    //         setLanguage(savedLanguage);
-    //     }
-    // }, []);
     
     return (
         <NavigationMenu>
