@@ -13,7 +13,7 @@ import CrazyLine from "@/components/CrazyLine.astro";
     <section class="py-16 relative">
         <div
             class="absolute top-48 left-96 lg:w-96 h-full bg-center bg-no-repeat -z-10"
-            style="background: url(/portfolio/img/dotgrid.png);"
+            style={`background: url(${import.meta.env.BASE_URL}img/dotgrid.png);`}
         >
         </div>
         <div class="container mx-auto">
@@ -31,7 +31,7 @@ import CrazyLine from "@/components/CrazyLine.astro";
                     </p>
                 </div>
                 <div class="aspect-video">
-                    <video src="/portfolio/video/scpp.mp4" autoplay muted
+                    <video src={`${import.meta.env.BASE_URL}video/scpp.mp4`} autoplay muted
                     ></video>
                 </div>
             </div>
@@ -42,7 +42,7 @@ import CrazyLine from "@/components/CrazyLine.astro";
         <div class="container mx-auto">
             <div class="flex flex-col-reverse md:grid grid-cols-3">
                 <DotLottieReact
-                    src="/portfolio/img/money-2.lottie"
+                    src={`${import.meta.env.BASE_URL}img/money-2.lottie`}
                     autoplay
                     client:visible
                     className="max-w-72 self-center"

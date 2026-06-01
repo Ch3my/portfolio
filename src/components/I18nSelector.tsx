@@ -21,13 +21,14 @@ export default function I18nSelector({ currentLocale, className, ...props }: I18
     const handleChange = (value: string) => {
         setLanguage(value);
         const currentPath = window.location.pathname;
+        const base = import.meta.env.BASE_URL;
         if (value === 'en') {
-            if (!currentPath.startsWith('/portfolio/en')) {
-                window.location.href = '/portfolio/en'
+            if (!currentPath.startsWith(`${base}en`)) {
+                window.location.href = `${base}en`
             }
         } else if (value === 'es') {
-            if (currentPath.startsWith('/portfolio/en')) {
-                window.location.href = '/portfolio/es';
+            if (currentPath.startsWith(`${base}en`)) {
+                window.location.href = `${base}es`;
             }
         }
     }

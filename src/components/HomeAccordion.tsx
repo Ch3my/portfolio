@@ -76,7 +76,7 @@ export default function AccordionComponent({ locale = "es" }: AccordionProps) {
                             Design and Develpment
                         </p>
                         <img
-                            src="/portfolio/img/byui-medallion.svg"
+                            src={`${import.meta.env.BASE_URL}img/byui-medallion.svg`}
                             alt="BYUI Emblem"
                             className="max-w-24"
                         />

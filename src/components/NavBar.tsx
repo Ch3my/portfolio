@@ -45,7 +45,7 @@ export default function NavBar({ locale = "es" }: NavBarProps) {
     return (
         <NavigationMenu>
             <NavigationMenuList >
-                <NavigationMenuLink href={"/portfolio/" + locale}
+                <NavigationMenuLink href={import.meta.env.BASE_URL + locale}
                     className={navigationMenuTriggerStyle()}>
                     {menuOptions[locale][0]}
                 </NavigationMenuLink>
