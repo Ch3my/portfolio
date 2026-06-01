@@ -3,7 +3,7 @@ import Layout from "@/layouts/Layout.astro";
 import { Image } from "astro:assets";
 import LaptopHero from "@/img/laptop-hero.png";
 import PhoneHero from "@/img/phone-hero.png";
-import { DotLottiePlayer } from "@dotlottie/react-player";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { Button } from "@/components/ui/button";
 
 import OtraExpCarousel from "@/components/OtraExpCarousel";
@@ -175,7 +175,7 @@ const astroLocale = Astro.currentLocale;
 						</p>
 					</div>
 					<div class="flex justify-self-center">
-						<DotLottiePlayer
+						<DotLottieReact
 							src="/portfolio/img/astronaut.lottie"
 							autoplay
 							loop

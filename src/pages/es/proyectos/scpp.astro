@@ -1,7 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Waves from "@/components/Waves.astro";
-import { DotLottiePlayer } from "@dotlottie/react-player";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { Image } from "astro:assets";
 import ScppArch from "@/img/scpp-arch.png";
 import ScppCover from "@/img/scpp-cover-transparent.png";
@@ -41,7 +41,7 @@ import CrazyLine from "@/components/CrazyLine.astro";
     <section class="pb-6">
         <div class="container mx-auto">
             <div class="flex flex-col-reverse md:grid grid-cols-3">
-                <DotLottiePlayer
+                <DotLottieReact
                     src="/portfolio/img/money-2.lottie"
                     autoplay
                     client:visible
