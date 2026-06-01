@@ -1,15 +1,14 @@
 import { defineConfig } from 'astro/config';
-// import tailwind from "@astrojs/tailwind";
 import tailwindcss from "@tailwindcss/vite";
-
-
 import react from "@astrojs/react";
 
-// https://astro.build/config
-// Parece que al ser un sitio statico los i18n no se ejecutan
+// Check if the build is running inside a GitHub Action
+const isGitHubPages = process.env.GITHUB_ACTIONS === 'true';
+
 export default defineConfig({
   site: 'https://ch3my.github.io',
-  base: 'portfolio',
+// If it's GitHub, use 'portfolio'. If it's Cloudflare, leave it blank (root).
+  base: isGitHubPages ? 'portfolio' : undefined,
   integrations: [react()],
   vite: {
     plugins: [tailwindcss()],
