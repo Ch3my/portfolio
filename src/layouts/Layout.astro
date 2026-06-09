@@ -1,5 +1,6 @@
 ---
 import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer.astro";
 import { ClientRouter } from "astro:transitions";
 import "@/styles/globals.css";
 import "@/styles/animista.css";
@@ -83,8 +84,8 @@ const astroLocale = Astro.currentLocale;
 						href={`${import.meta.env.BASE_URL}${astroLocale}`}
 						class="flex gap-4 items-center logo-href"
 					>
-						<img src={`${import.meta.env.BASE_URL}logo.svg`} class="max-h-[40px]" />
-						<span class="font-black text-2xl text-logo"
+						<img src={`${import.meta.env.BASE_URL}logo.svg`} class="max-h-10" />
+						<span class="font-black text-2xl font-dotgothic16 text-logo"
 							>JoseM._</span
 						>
 					</a>
@@ -93,40 +94,7 @@ const astroLocale = Astro.currentLocale;
 			</div>
 		</div>
 		<slot />
-		<!-- <input type="hidden" name="astro-locale" value={astroLocale} />
-		<script>
-			document.addEventListener("astro:page-load", () => {
-				// Guarda la local que astro entrego
-				if (window.localStorage) {
-					if (!window.localStorage.getItem("locale")) {
-						const localeElement = document.querySelector(
-							"[name='astro-locale']",
-						) as HTMLInputElement;
-						window.localStorage.setItem(
-							"locale",
-							localeElement.value,
-						);
-					}
-					// Revisa si localStorage tiene un idioma ya selecionado, si tiene ingles y no esta viendo ingles lo redirecciona
-					if (
-						window.localStorage.getItem("language") == "en" &&
-						!window.location.pathname.startsWith(import.meta.env.BASE_URL + "en")
-					) {
-						window.location.href = import.meta.env.BASE_URL + "en";
-					}
-					// Actualiza el HREF del logo para que sea ingles si corresponde ingles
-					if (window.localStorage.getItem("language") == "en") {
-						const logoHref = document.querySelector(
-							".logo-href",
-						) as HTMLAnchorElement;
-
-						if (logoHref) {
-							logoHref.href = import.meta.env.BASE_URL + "en";
-						}
-					}
-				}
-			});
-		</script> -->
+		<Footer locale={astroLocale} />
 		<style is:global>
 			.font-noto {
 				font-family: NotoSansMono;

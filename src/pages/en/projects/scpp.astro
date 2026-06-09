@@ -25,9 +25,16 @@ import CrazyLine from "@/components/CrazyLine.astro";
                         anywhere.
                     </p>
                 </div>
-                <div class="aspect-video">
-                    <video src={`${import.meta.env.BASE_URL}video/scpp.mp4`} autoplay muted
-                    ></video>
+                <div class="video-showcase self-center">
+                    <div class="video-titlebar">
+                        <div class="flex gap-1.5 items-center shrink-0">
+                            <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+                            <span class="w-3 h-3 rounded-full bg-yellow-400/80"></span>
+                            <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+                        </div>
+                        <span class="text-xs text-slate-400 absolute left-1/2 -translate-x-1/2 tracking-wide">SCPP — Budget Control</span>
+                    </div>
+                    <video src={`${import.meta.env.BASE_URL}video/scpp.mp4`} autoplay muted loop playsinline class="w-full block"></video>
                 </div>
             </div>
         </div>
@@ -79,12 +86,11 @@ import CrazyLine from "@/components/CrazyLine.astro";
                         financial tracking.
                     </p>
                     <p>
-                        The platform also offers a desktop application in C#
-                        with WinUI3 that replicates the functions of the mobile
-                        version and adds interaction with graphs and detailed
-                        visualization. It provides a comprehensive experience
-                        for financial analysis and management, allowing users to
-                        track their finances through their computer.
+                        The desktop client evolved from a native Windows app to
+                        a web-based interface built with React and shadcn/ui. This shift
+                        eliminated installation friction and brought automatic
+                        updates, letting both platforms share the same Node.js
+                        backend without any extra maintenance overhead.
                     </p>
                 </div>
                 <Image src={ScppArch} alt="" class="self-center" />
@@ -259,6 +265,25 @@ import CrazyLine from "@/components/CrazyLine.astro";
 </Layout>
 
 <style>
+    .video-showcase {
+        border: 1px solid rgba(109, 232, 255, 0.2);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow:
+            0 0 0 1px rgba(109, 232, 255, 0.05),
+            0 0 40px rgba(109, 232, 255, 0.08),
+            0 8px 32px rgba(0, 0, 0, 0.5);
+        background: #0f172a;
+    }
+    .video-titlebar {
+        background: rgba(15, 23, 42, 0.95);
+        border-bottom: 1px solid rgba(109, 232, 255, 0.12);
+        padding: 8px 12px;
+        display: flex;
+        align-items: center;
+        position: relative;
+        gap: 8px;
+    }
     /* .submarine-box{
  position: absolute;
   top: 50%;

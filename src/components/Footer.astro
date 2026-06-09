@@ -1,0 +1,222 @@
+---
+interface Props {
+  locale?: string;
+}
+
+const { locale = "es" } = Astro.props;
+const year = new Date().getFullYear();
+const baseUrl = import.meta.env.BASE_URL;
+const homeHref = `${baseUrl}${locale}`;
+
+const copy = {
+  es: {
+    description: "Creando experiencias digitales con código limpio y diseño pensado.",
+    navTitle: "Navegar",
+    projectsTitle: "Proyectos",
+    home: "Inicio",
+    copyright: "Todos los derechos reservados.",
+    builtWith: "Hecho con",
+  },
+  en: {
+    description: "Crafting digital experiences with clean code and thoughtful design.",
+    navTitle: "Navigate",
+    projectsTitle: "Projects",
+    home: "Home",
+    copyright: "All rights reserved.",
+    builtWith: "Built with",
+  },
+};
+
+const t = copy[locale as "es" | "en"] ?? copy.es;
+
+const projectsBase =
+  locale === "en" ? `${baseUrl}en/projects` : `${baseUrl}es/proyectos`;
+
+const projectLinks = [
+  { label: "SCPP",              href: `${projectsBase}/scpp` },
+  { label: "Demucs",            href: `${projectsBase}/demucs` },
+  { label: "Food Manager",      href: `${projectsBase}/food-manager` },
+  { label: "Music Codex",       href: `${projectsBase}/music-codex` },
+  { label: "AI YouTube Briefer",href: `${projectsBase}/ai-youtube-briefer` },
+];
+
+const navLinks = [
+  { label: t.home,    href: homeHref,                                            external: false },
+  { label: "GitHub",  href: "https://github.com/Ch3my",                          external: true  },
+  { label: "LinkedIn",href: "https://www.linkedin.com/in/jose-miguel-concha/",   external: true  },
+];
+---
+
+<footer class="relative grid-lines-bg dark:bg-slate-950">
+  <!-- Brand-color gradient accent line -->
+  <div
+    class="h-0.5 w-full"
+    style="background: linear-gradient(90deg, #df058d 0%, #2c49d8 50%, #ff6b2b 100%)"
+    aria-hidden="true"
+  ></div>
+
+  <div class="container mx-auto px-6 pt-10 pb-6">
+    <!-- Three-column grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 mb-10">
+
+      <!-- Column 1 — Brand -->
+      <div class="flex flex-col gap-5 sm:col-span-2 lg:col-span-1">
+        <a href={homeHref} class="flex items-center gap-3 group w-fit">
+          <img
+            src={`${baseUrl}logo.svg`}
+            class="h-9 opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-200"
+            alt="JoseM logo"
+          />
+          <span class="font-black text-2xl font-dotgothic16 text-logo">JoseM._</span>
+        </a>
+
+        <p class="text-slate-400 text-sm leading-relaxed max-w-sm">
+          {t.description}
+        </p>
+
+        <div class="flex items-center gap-2.5 w-fit">
+          <span
+            class="inline-block w-2 h-2 rounded-full shrink-0"
+            style="background: #df058d; box-shadow: 0 0 6px #df058d88"
+          ></span>
+          <span class="text-xs text-slate-500 font-dotgothic16 tracking-wide">Full-Stack Developer</span>
+        </div>
+      </div>
+
+      <!-- Column 2 — Projects -->
+      <div class="flex flex-col gap-5">
+        <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 font-dotgothic16">
+          {t.projectsTitle}
+        </h3>
+        <nav class="flex flex-col gap-2" aria-label="Projects navigation">
+          {projectLinks.map(({ label, href }) => (
+            <a
+              href={href}
+              class="text-slate-400 hover:text-slate-100 transition-colors duration-150 text-sm flex items-center gap-2 group w-fit"
+            >
+              <svg
+                class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity shrink-0"
+                style="color: #2c49d8"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+              {label}
+            </a>
+          ))}
+        </nav>
+      </div>
+
+      <!-- Column 3 — Navigate -->
+      <div class="flex flex-col gap-5">
+        <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-slate-400 font-dotgothic16">
+          {t.navTitle}
+        </h3>
+        <nav class="flex flex-col gap-2" aria-label="Footer navigation">
+          {navLinks.map(({ label, href, external }) => (
+            <a
+              href={href}
+              target={external ? "_blank" : undefined}
+              rel={external ? "noopener noreferrer" : undefined}
+              class="text-slate-400 hover:text-slate-100 transition-colors duration-150 text-sm flex items-center gap-2 group w-fit"
+            >
+              <svg
+                class="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity shrink-0"
+                style="color: #df058d"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+              {label}
+              {external && (
+                <svg
+                  class="w-3 h-3 text-slate-600 group-hover:text-slate-400 transition-colors"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                  <polyline points="15 3 21 3 21 9" />
+                  <line x1="10" y1="14" x2="21" y2="3" />
+                </svg>
+              )}
+            </a>
+          ))}
+        </nav>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="border-t border-slate-800 pt-5 flex flex-col sm:flex-row justify-between items-center gap-4">
+      <p class="text-xs text-slate-500 order-2 sm:order-1">
+        &copy; {year} José Miguel Concha &mdash; {t.copyright}
+      </p>
+
+      <div class="flex items-center gap-3 order-1 sm:order-2">
+        <!-- LinkedIn icon -->
+        <a
+          href="https://www.linkedin.com/in/jose-miguel-concha/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+          class="w-8 h-8 rounded border border-slate-700 hover:border-[#6de8ff] text-slate-400 hover:text-[#6de8ff] flex items-center justify-center transition-all duration-200 hover:scale-110"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" />
+            <path d="M8 11l0 5" />
+            <path d="M8 8l0 .01" />
+            <path d="M12 16l0 -5" />
+            <path d="M16 16v-3a2 2 0 0 0 -4 0" />
+          </svg>
+        </a>
+
+        <!-- GitHub icon -->
+        <a
+          href="https://github.com/Ch3my"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+          class="w-8 h-8 rounded border border-slate-700 hover:border-[#6de8ff] text-slate-400 hover:text-[#6de8ff] flex items-center justify-center transition-all duration-200 hover:scale-110"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+          </svg>
+        </a>
+
+        <span class="text-slate-700 select-none" aria-hidden="true">·</span>
+
+        <!-- Astro badge -->
+        <a
+          href="https://astro.build"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded border border-slate-700 text-slate-500 hover:border-slate-500 hover:text-slate-300 transition-all duration-200 text-xs font-dotgothic16"
+        >
+          <svg viewBox="0 0 85 107" class="w-3.5 h-3.5" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true">
+            <path d="M27.5 90L43 60L58.5 90C58.5 90 48.5 96 43 96C37.5 96 27.5 90 27.5 90Z" />
+            <path d="M10 95.5L43 15L76 95.5C76 95.5 60 106 43 106C26 106 10 95.5 10 95.5Z" fill-opacity="0.45" />
+          </svg>
+          Astro
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>

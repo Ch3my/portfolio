@@ -30,9 +30,16 @@ import CrazyLine from "@/components/CrazyLine.astro";
                         desde cualquier lugar.
                     </p>
                 </div>
-                <div class="aspect-video">
-                    <video src={`${import.meta.env.BASE_URL}video/scpp.mp4`} autoplay muted
-                    ></video>
+                <div class="video-showcase self-center">
+                    <div class="video-titlebar">
+                        <div class="flex gap-1.5 items-center shrink-0">
+                            <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
+                            <span class="w-3 h-3 rounded-full bg-yellow-400/80"></span>
+                            <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+                        </div>
+                        <span class="text-xs text-slate-400 absolute left-1/2 -translate-x-1/2 tracking-wide">SCPP — Budget Control</span>
+                    </div>
+                    <video src={`${import.meta.env.BASE_URL}video/scpp.mp4`} autoplay muted loop playsinline class="w-full block"></video>
                 </div>
             </div>
         </div>
@@ -86,13 +93,11 @@ import CrazyLine from "@/components/CrazyLine.astro";
                         el seguimiento financiero personal.
                     </p>
                     <p>
-                        La plataforma también ofrece una aplicación de
-                        escritorio en C# con WinUI3 que replica las funciones de
-                        la versión móvil y agrega interacción con gráficos y
-                        visualización detallada. Proporciona una experiencia
-                        completa para análisis y gestión financiera, permitiendo
-                        a los usuarios hacer un seguimiento a traves de la
-                        computadora.
+                        El cliente de escritorio evolucionó hacia una interfaz
+                        web construida con React y shadcn/ui, eliminando la necesidad de
+                        instalación y habilitando actualizaciones automáticas.
+                        Ambas plataformas comparten el mismo backend en Node.js,
+                        lo que simplifica considerablemente el mantenimiento.
                     </p>
                 </div>
                 <Image src={ScppArch} alt="" class="self-center" />
@@ -269,6 +274,26 @@ import CrazyLine from "@/components/CrazyLine.astro";
 </Layout>
 
 <style>
+    .video-showcase {
+        border: 1px solid rgba(109, 232, 255, 0.2);
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow:
+            0 0 0 1px rgba(109, 232, 255, 0.05),
+            0 0 40px rgba(109, 232, 255, 0.08),
+            0 8px 32px rgba(0, 0, 0, 0.5);
+        background: #0f172a;
+    }
+    .video-titlebar {
+        background: rgba(15, 23, 42, 0.95);
+        border-bottom: 1px solid rgba(109, 232, 255, 0.12);
+        padding: 8px 12px;
+        display: flex;
+        align-items: center;
+        position: relative;
+        gap: 8px;
+    }
+
     /* .submarine-box{
  position: absolute;
   top: 50%;

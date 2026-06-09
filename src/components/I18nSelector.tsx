@@ -18,19 +18,29 @@ interface I18nSelectorProps extends React.HTMLAttributes<HTMLSelectElement> {
 export default function I18nSelector({ currentLocale, className, ...props }: I18nSelectorProps) {
     const [language, setLanguage] = useState(currentLocale);
 
+    const segmentTranslations: Record<string, Record<string, string>> = {
+        en: { projects: 'proyectos' },
+        es: { proyectos: 'projects' },
+    };
+
     const handleChange = (value: string) => {
+        if (value === currentLocale) return;
         setLanguage(value);
-        const currentPath = window.location.pathname;
+
         const base = import.meta.env.BASE_URL;
-        if (value === 'en') {
-            if (!currentPath.startsWith(`${base}en`)) {
-                window.location.href = `${base}en`
-            }
-        } else if (value === 'es') {
-            if (currentPath.startsWith(`${base}en`)) {
-                window.location.href = `${base}es`;
-            }
-        }
+        const basePath = base.endsWith('/') ? base.slice(0, -1) : base;
+        const relativePath = window.location.pathname.startsWith(basePath)
+            ? window.location.pathname.slice(basePath.length)
+            : window.location.pathname;
+
+        const segments = relativePath.split('/').filter(Boolean);
+        // swap locale segment
+        if (segments[0] === currentLocale) segments[0] = value;
+        // swap translated path segments (e.g. projects <-> proyectos)
+        const map = segmentTranslations[currentLocale ?? 'es'] ?? {};
+        const mapped = segments.map(seg => map[seg] ?? seg);
+
+        window.location.href = base + mapped.join('/');
     }
 
     return (
