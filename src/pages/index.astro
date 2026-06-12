@@ -1,8 +1,8 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import { Image } from "astro:assets";
-import LaptopHero from "@/img/laptop-hero.png";
-import PhoneHero from "@/img/phone-hero.png";
+import HeroNew from "@/img/hero-new.jpg";
+import MusicCodex from "@/img/phone-hero.png";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { Button } from "@/components/ui/button";
 
@@ -10,75 +10,82 @@ import OtraExpCarousel from "@/components/OtraExpCarousel";
 import Waves from "@/components/Waves.astro";
 import CrazyLine from "@/components/CrazyLine.astro";
 import HomeAccordion from "@/components/HomeAccordion";
-import SvgBlob from "@/components/SvgBlob.astro";
 
 const astroLocale = Astro.currentLocale;
 ---
 
 <Layout title="Jose Concha - Full Stack Developer">
 	<main>
-		<section class="pt-16 pb-10 bg-cover bg-center grid-flares-bg">
+		<section class="pt-16 pb-0 bg-cover bg-center grid-flares-bg overflow-hidden">
 			<div class="container mx-auto grid-lines-bg">
-				<div class="flex flex-col md:grid grid-cols-2 gap-4">
-					<div>
-						<h1 class="text-5xl md:text-7xl font-bold mb-10">
-							<span>Full Stack</span>
-							<br />
-							<span >Developer</span>
-						</h1>
-						<p class="text-2xl bg-clip-text text-transparent"  style="background-image: linear-gradient(66.77deg, #d83333, #f041ff);">
-							Lógica operativa, Diseño y Construcción
-						</p>
-						<p class="pb-4">
-							Enfoque integral en todas las etapas del desarrollo
-							de software, garantizando una ejecución sin
-							interrupciones y resultados en cada etapa del
-							proyecto
-						</p>
-						<a
-							href="https://www.linkedin.com/in/jose-miguel-concha/"
-							target="_blank"
-						>
-							<Button className="flex justify-between gap-2">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									class="icon icon-tabler icon-tabler-brand-linkedin max-w-6"
-									width="44"
-									height="44"
-									viewBox="0 0 24 24"
-									stroke-width="1.5"
-									stroke="#2c3e50"
-									fill="none"
-									stroke-linecap="round"
-									stroke-linejoin="round"
-								>
-									<path
-										stroke="none"
-										d="M0 0h24v24H0z"
-										fill="none"></path>
-									<path
-										d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"
-									></path>
-									<path d="M8 11l0 5"></path>
-									<path d="M8 8l0 .01"></path>
-									<path d="M12 16l0 -5"></path>
-									<path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
-								</svg>
-								LinkedIn
-							</Button>
-						</a>
-					</div>
-					<div class="relative overflow-hidden z-10">
-						<Image src={LaptopHero} alt="" class="fade-in" />
-						<Image
-							src={PhoneHero}
-							alt=""
-							class="absolute bottom-0 z-10 slide-in-bck-bottom"
-						/>
-					</div>
+				<div class="flex flex-col items-center text-center max-w-3xl mx-auto mb-10">
+					<h1 class="text-5xl md:text-7xl font-bold mb-6">
+						<span>Full Stack</span>
+						<br />
+						<span>Developer</span>
+					</h1>
+					<p class="text-2xl bg-clip-text text-transparent mb-2" style="background-image: linear-gradient(66.77deg, #d83333, #f041ff);">
+						Lógica operativa, Diseño y Construcción
+					</p>
+					<p class="pb-6 text-center">
+						Enfoque integral en todas las etapas del desarrollo
+						de software, garantizando una ejecución sin
+						interrupciones y resultados en cada etapa del
+						proyecto
+					</p>
+					<a
+						href="https://www.linkedin.com/in/jose-miguel-concha/"
+						target="_blank"
+					>
+						<Button className="flex justify-between gap-2">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								class="icon icon-tabler icon-tabler-brand-linkedin max-w-6"
+								width="44"
+								height="44"
+								viewBox="0 0 24 24"
+								stroke-width="1.5"
+								stroke="#2c3e50"
+								fill="none"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							>
+								<path
+									stroke="none"
+									d="M0 0h24v24H0z"
+									fill="none"></path>
+								<path
+									d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z"
+								></path>
+								<path d="M8 11l0 5"></path>
+								<path d="M8 8l0 .01"></path>
+								<path d="M12 16l0 -5"></path>
+								<path d="M16 16v-3a2 2 0 0 0 -4 0"></path>
+							</svg>
+							LinkedIn
+						</Button>
+					</a>
 				</div>
 			</div>
-			<CrazyLine />
+			<div class="relative flex items-end justify-center gap-0">
+				<div class="absolute inset-0 z-10 pointer-events-none" style="background: linear-gradient(to bottom, transparent 80%, hsl(var(--background)) 100%);"></div>
+				<div class="relative w-3/4 md:w-3/5 shrink-0">
+					<div class="rounded-xl border border-slate-600/60 shadow-2xl shadow-black/60 overflow-hidden bg-slate-900">
+						<div class="flex items-center px-3 py-2 bg-[#1a1a2e] relative">
+							<div class="flex gap-2">
+								<span class="w-2 h-2 md:w-3 md:h-3 rounded-full bg-[#ff5f57]"></span>
+								<span class="w-2 h-2 md:w-3 md:h-3 rounded-full bg-[#febc2e]"></span>
+								<span class="w-2 h-2 md:w-3 md:h-3 rounded-full bg-[#28c840]"></span>
+							</div>
+						</div>
+						<Image src={HeroNew} alt="" class="w-full block" />
+					</div>
+				</div>
+				<div class="relative w-1/5 md:w-1/7 shrink-0 self-end ml-[-12.5%] md:ml-[-5%]">
+					<Image src={MusicCodex} alt="" class="w-full" />
+				</div>
+			</div>
+			<CrazyLine static />
 		</section>
 		<section class="py-16">
 			<div class="container mx-auto relative z-10">
