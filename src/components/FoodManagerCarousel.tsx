@@ -25,13 +25,13 @@ export default function () {
             }}>
             <CarouselContent>
                 <CarouselItem>
-                    <img src={`${import.meta.env.BASE_URL}img/food-manager-showcase-3.png`}></img>
+                    <img src={`${import.meta.env.BASE_URL}img/food-manager-showcase-1.png`}></img>
                 </CarouselItem>
+                {/* <CarouselItem>
+                    <img src={`${import.meta.env.BASE_URL}img/food-manager-showcase-3.png`}></img>
+                </CarouselItem> */}
                 <CarouselItem>
                     <img src={`${import.meta.env.BASE_URL}img/food-manager-showcase-2.png`}></img>
-                </CarouselItem>
-                <CarouselItem>
-                    <img src={`${import.meta.env.BASE_URL}img/food-manager-showcase-1.png`}></img>
                 </CarouselItem>
             </CarouselContent>
             <CarouselPrevious />

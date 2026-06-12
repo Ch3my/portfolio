@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 
 import OtraExpCarousel from "@/components/OtraExpCarousel";
 import Waves from "@/components/Waves.astro";
-import CrazyLine from "@/components/CrazyLine.astro";
+import ScatteredSquares from "@/components/ScatteredSquares.astro";
 import HomeAccordion from "@/components/HomeAccordion";
 
 const astroLocale = Astro.currentLocale;
@@ -16,8 +16,9 @@ const astroLocale = Astro.currentLocale;
 
 <Layout title="Jose Concha - Full Stack Developer">
 	<main>
-		<section class="pt-16 pb-0 bg-cover bg-center grid-flares-bg overflow-hidden">
-			<div class="container mx-auto grid-lines-bg">
+		<section class="pt-10 pb-0 bg-cover bg-center grid-flares-bg overflow-hidden relative">
+			<ScatteredSquares />
+			<div class="container mx-auto relative z-10">
 				<div class="flex flex-col items-center text-center max-w-3xl mx-auto mb-10">
 					<h1 class="text-5xl md:text-7xl font-bold mb-6">
 						<span>Full Stack</span>
@@ -85,7 +86,6 @@ const astroLocale = Astro.currentLocale;
 					<Image src={MusicCodex} alt="" class="w-full" />
 				</div>
 			</div>
-			<CrazyLine static />
 		</section>
 		<section class="py-16">
 			<div class="container mx-auto relative z-10">

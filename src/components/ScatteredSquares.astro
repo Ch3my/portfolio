@@ -1,0 +1,84 @@
+---
+---
+<div id="scattered-squares" class="absolute inset-0 pointer-events-none overflow-hidden" style="z-index: 0;">
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 1400 750"
+		preserveAspectRatio="xMidYTop slice"
+		class="w-full h-full"
+	>
+		<!-- Top-left cluster -->
+		<rect class="sq" x="0" y="0" width="90" height="80" />
+		<rect class="sq" x="90" y="0" width="58" height="55" />
+		<rect class="sq" x="0" y="80" width="55" height="115" />
+		<rect class="sq" x="55" y="80" width="62" height="80" />
+		<rect class="sq" x="55" y="160" width="58" height="82" />
+
+		<!-- Upper-left scattered -->
+		<rect class="sq" x="248" y="65" width="80" height="80" />
+		<rect class="sq" x="328" y="148" width="78" height="78" />
+
+		<!-- Lower-left isolated -->
+		<rect class="sq" x="415" y="320" width="78" height="78" />
+		<rect class="sq" x="335" y="422" width="78" height="78" />
+
+		<!-- Top-center -->
+		<rect class="sq" x="378" y="0" width="78" height="65" />
+		<rect class="sq" x="456" y="0" width="62" height="58" />
+		<rect class="sq" x="498" y="58" width="65" height="82" />
+		<rect class="sq" x="455" y="142" width="65" height="65" />
+
+		<!-- Top-right cluster -->
+		<rect class="sq" x="1087" y="0" width="92" height="80" />
+		<rect class="sq" x="1187" y="0" width="88" height="78" />
+		<rect class="sq" x="1350" y="0" width="100" height="85" />
+		<rect class="sq" x="1148" y="58" width="72" height="82" />
+		<rect class="sq" x="1228" y="58" width="88" height="88" />
+		<rect class="sq" x="1360" y="65" width="100" height="80" />
+
+		<!-- Right-mid cluster -->
+		<rect class="sq" x="908" y="218" width="70" height="80" />
+		<rect class="sq" x="978" y="218" width="72" height="65" />
+		<rect class="sq" x="1050" y="218" width="98" height="80" />
+		<rect class="sq" x="1148" y="218" width="80" height="65" />
+		<rect class="sq" x="1240" y="218" width="82" height="72" />
+		<rect class="sq" x="978" y="298" width="72" height="80" />
+		<rect class="sq" x="1050" y="298" width="80" height="80" />
+		<rect class="sq" x="1050" y="378" width="78" height="78" />
+		<rect class="sq" x="1130" y="298" width="78" height="75" />
+		<rect class="sq" x="1128" y="415" width="68" height="68" />
+
+		<!-- Lone lower-center -->
+		<rect class="sq" x="808" y="492" width="82" height="82" />
+	</svg>
+</div>
+
+<style>
+	#scattered-squares {
+		mask-image: linear-gradient(to bottom, black 0%, black 35%, transparent 80%);
+		-webkit-mask-image: linear-gradient(to bottom, black 0%, black 35%, transparent 80%);
+	}
+
+	.sq {
+		fill: rgba(8, 10, 30, 0.65);
+		stroke: rgba(60, 60, 200, 0.45);
+		stroke-width: 1.5;
+		animation: sqPulse 6s ease-in-out infinite;
+	}
+
+	@keyframes sqPulse {
+		0%, 100% { opacity: 0.35; }
+		50% { opacity: 0.9; }
+	}
+</style>
+
+<script>
+	function initSquares() {
+		document.querySelectorAll("#scattered-squares .sq").forEach((el) => {
+			(el as HTMLElement).style.animationDelay = `-${(Math.random() * 9).toFixed(2)}s`;
+			(el as HTMLElement).style.animationDuration = `${(4 + Math.random() * 6).toFixed(2)}s`;
+		});
+	}
+	initSquares();
+	document.addEventListener("astro:after-swap", initSquares, { once: false });
+</script>

@@ -1,0 +1,223 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { Atom, Code2 } from "lucide-react";
+import FoodManager1 from "@/img/food-manager-1.png";
+import { Image } from "astro:assets";
+import FoodManagerCarousel from "@/components/FoodManagerCarousel";
+---
+
+<style>
+    .hero-glow {
+        position: relative;
+        overflow: hidden;
+    }
+    .hero-glow::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 900px;
+        height: 900px;
+        border-radius: 50%;
+        background: radial-gradient(circle, #38207380 0%, transparent 70%);
+        filter: blur(60px);
+        pointer-events: none;
+        z-index: 0;
+    }
+    .hero-glow > * {
+        position: relative;
+        z-index: 1;
+    }
+</style>
+
+<Layout title="Apps React Native">
+    <!-- Hero -->
+    <section class="grid-lines-bg hero-glow">
+        <div
+            class="pt-16 pb-14 container mx-auto flex flex-col gap-10 items-center text-center"
+        >
+            <h1 class="text-4xl md:text-5xl font-bold">
+                Apps con React Native
+            </h1>
+            <p class="text-slate-300 prose max-w-prose">
+                Dos aplicaciones móviles creadas para resolver problemas cotidianos de forma simple y eficiente. Una ayuda a gestionar alimentos y evitar desperdicios; la otra pone la teoría musical al alcance de la mano. Sin complejidad. Solo herramientas prácticas para aprender y organizar mejor.
+            </p>
+            <div class="flex flex-wrap gap-3  items-center justify-center">
+                <span
+                    class="flex items-center gap-2 bg-sky-950 border border-sky-800 rounded-xl px-4 py-2 text-sm font-medium text-slate-200"
+                >
+                    <Atom />
+                    React Native
+                </span>
+                <span
+                    class="flex items-center gap-2 bg-sky-950 border border-sky-800 rounded-xl px-4 py-2 text-sm font-medium text-slate-200"
+                >
+                    <Code2 />
+                    TypeScript
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-10">
+        <div class="container mx-auto">
+            <div
+                class="border rounded-4xl px-10 flex flex-col gap-8 bg-radial from-[#361F72]/50 to-transparent"
+            >
+                <div>
+                    <div
+                        class="py-4 pl-5 mb-5 text-slate-400 text-sm tracking-widest uppercase border-b"
+                    >
+                        <span>1 / Proyectos</span>
+                    </div>
+                    <div class="grid md:grid-cols-3 items-center mt-12">
+                        <div class="grid">
+                            <p class="text-gray-500 font-medium">
+                                Control y Registro de Alimentos
+                            </p>
+                            <p class="font-dotgothic16 text-5xl">
+                                Food Manager
+                            </p>
+                        </div>
+                        <div class="md:col-span-2">
+                            Control y Registro de Almacenamiento de Alimentos. Garantiza la frescura y seguridad de los alimentos almacenados, evitando su caducidad y asegurando una rotación eficiente. Imprime listados directamente desde la App o exporta a PDF.
+                        </div>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-5 gap-10 items-center">
+                    <Image
+                        src={FoodManager1}
+                        alt=""
+                        class="w-full md:col-span-2"
+                    />
+                    <div class="md:col-span-3">
+                        <h3 class="text-4xl font-bold mb-6">
+                            El problema
+                        </h3>
+                        <p>El proceso de llevar un registro en papel para el almacenamiento de alimentos resulta complejo y poco eficiente. Con la necesidad constante de imprimir nuevos registros y la dificultad de hacer anotaciones de manera eficaz, el papel no proporciona indicadores claros sobre los productos próximos a vencer ni tampoco organiza los ítems de manera adecuada.</p>
+                        <p class="mt-4">Esto implicaba la realización de revisiones manuales periódicas, aumentando la posibilidad de que algunos registros pasaran desapercibidos o no fueran considerados, lo que podía resultar en la pérdida de alimentos y comprometer la calidad y seguridad del inventario.</p>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-5 gap-10">
+                    <div class="md:col-span-3">
+                        <h3 class="text-4xl font-bold mb-6">
+                            La arquitectura
+                        </h3>
+                        <p>Para resolver el problema, se desarrolló una aplicación sencilla para registrar los ítems almacenados con su código de identificación, descripción, fecha de vencimiento y notas.</p>
+                        <p class="mt-4">Se escogió utilizar <b>SUPABASE</b> para eliminar la necesidad de tener que construir un Backend y configurar una base de datos. Los datos a manejar son mínimos y cualquier opción liviana es suficiente. Por otro lado, es necesario que varios equipos compartan la información, por lo tanto no se puede utilizar una base de datos local.</p>
+                        <p class="mt-4">Se desarrolló utilizando React Native. Supabase proporciona un cliente para React Native, por lo tanto la integración de datos fue sencilla y rápida.</p>
+                    </div>
+                    <div class="md:col-span-2 flex justify-center">
+                        <FoodManagerCarousel client:visible />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-10">
+        <div class="container mx-auto">
+            <div
+                class="border rounded-4xl px-10 flex flex-col gap-8 bg-radial from-[#361F72]/50 to-transparent"
+            >
+                <div>
+                    <div
+                        class="py-4 pl-5 mb-5 text-slate-400 text-sm tracking-widest uppercase border-b"
+                    >
+                        <span>1 / Proyectos</span>
+                    </div>
+                    <div class="grid md:grid-cols-3 items-center mt-12">
+                        <div class="grid">
+                            <p class="text-gray-500 font-medium">
+                                Tu referencia Musical
+                            </p>
+                            <p class="font-dotgothic16 text-5xl">Music Codex</p>
+                        </div>
+                        <div class="col-span-2">
+                            Tu referencia musical, encuentra los acordes de todas las escalas sin tener que memorizar.
+                        </div>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-8 gap-6 md:gap-0">
+                    <div class="flex flex-col gap-4 md:col-span-3 md:mr-8 md:mt-4">
+                        <h3 class="text-4xl font-bold mb-6">El Problema</h3>
+                        <p>
+                            Durante el aprendizaje musical es frecuente olvidar
+                            conceptos, nomenclaturas o reglas teóricas.
+                        </p>
+                        <p>
+                            Esto obliga a buscar información en distintas
+                            fuentes, generando interrupciones en la práctica y
+                            ralentizando el proceso de aprendizaje.
+                        </p>
+                    </div>
+                    <!-- Phone mockup wrapping the video -->
+                    <div class="md:col-span-2 md:mb-2 flex justify-center items-start">
+                        <div class="relative" style="width: 220px;">
+                            <!-- Outer phone body -->
+                            <div
+                                class="bg-slate-800 rounded-3xl pt-2.5 px-2.5 pb-3 border-2 border-slate-600"
+                                style="box-shadow: 0 0 40px rgba(99,51,180,0.25), inset 0 0 0 1px rgba(255,255,255,0.05);"
+                            >
+                                <!-- Screen -->
+                                <div
+                                    class="bg-black rounded-2xl overflow-hidden relative"
+                                >
+                                    <!-- Dynamic Island -->
+                                    <div
+                                        class="absolute top-3 left-1/2 -translate-x-1/2 z-20 w-20 h-5.5 bg-black rounded-full border border-slate-800 flex items-center justify-center gap-2"
+                                    >
+                                        <div
+                                            class="w-1.5 h-1.5 rounded-full bg-slate-700"
+                                        >
+                                        </div>
+                                        <div
+                                            class="w-3 h-3 rounded-full bg-slate-700"
+                                        >
+                                        </div>
+                                    </div>
+                                    <video
+                                        src={`${import.meta.env.BASE_URL}video/music-codex-showcase.mp4`}
+                                        autoplay
+                                        muted
+                                        loop
+                                        class="w-full block"></video>
+                                </div>
+                            </div>
+                            <!-- Power button (right) -->
+                            <div
+                                class="absolute top-30 -right-2.25 w-1.75 h-10 bg-slate-700 rounded-r-md border border-slate-600"
+                            >
+                            </div>
+                            <!-- Volume up (left) -->
+                            <div
+                                class="absolute top-27 -left-2.25 w-1.75 h-7 bg-slate-700 rounded-l-md border border-slate-600"
+                            >
+                            </div>
+                            <!-- Volume down (left) -->
+                            <div
+                                class="absolute top-36 -left-2.25 w-1.75 h-7 bg-slate-700 rounded-l-md border border-slate-600"
+                            >
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="self-end flex flex-col gap-4 md:col-span-3 md:ml-8 md:mb-16"
+                    >
+                        <h3 class="text-4xl font-bold mb-6">La Arquitectura</h3>
+                        <p>
+                            La aplicación esta desarrollada con React Native
+                            usando Expo y Expo Router en Typescript.
+                        </p>
+                        <p>
+                            No depende de bases de datos ni acceso a servidores
+                            por lo que todo el contenido se encuentra dentro de
+                            la aplicación.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</Layout>
