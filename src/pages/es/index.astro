@@ -1,4 +1,4 @@
----
+﻿---
 import Layout from "@/layouts/Layout.astro";
 import { Image } from "astro:assets";
 import HeroNew from "@/img/hero-new.jpg";
@@ -16,7 +16,6 @@ import SCPPCard from "@/img/scpp-home-card.png";
 import AiBriefer from "@/img/ai-briefer-home-card.png";
 import FoodManager from "@/img/food-manager-home-card.png";
 import Blueprint from "@/img/simple-blueprint-home-card.png";
-import Footer from "@/components/Footer.astro";
 
 const astroLocale = Astro.currentLocale;
 ---
@@ -221,7 +220,10 @@ const astroLocale = Astro.currentLocale;
 					</div>
 				</div>
 				<div class="flex flex-col lg:grid grid-cols-3 gap-6">
-					<a href={`${import.meta.env.BASE_URL}es/proyectos/demucs`} class="rounded-3xl border group transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-neutral-400 dark:hover:border-neutral-500 cursor-pointer block">
+					<a
+						href={`${import.meta.env.BASE_URL}es/proyectos/demucs`}
+						class="rounded-3xl border group transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-neutral-400 dark:hover:border-neutral-500 cursor-pointer block"
+					>
 						<div class="h-80 overflow-hidden">
 							<Image
 								src={DemucsCard}
@@ -257,7 +259,10 @@ const astroLocale = Astro.currentLocale;
 							</p>
 						</div>
 					</a>
-					<a href={`${import.meta.env.BASE_URL}es/proyectos/scpp`} class="rounded-3xl border col-span-2 group transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-neutral-400 dark:hover:border-neutral-500 cursor-pointer block">
+					<a
+						href={`${import.meta.env.BASE_URL}es/proyectos/scpp`}
+						class="rounded-3xl border col-span-2 group transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-neutral-400 dark:hover:border-neutral-500 cursor-pointer block"
+					>
 						<div class="h-80 overflow-hidden">
 							<Image
 								src={SCPPCard}
@@ -299,7 +304,10 @@ const astroLocale = Astro.currentLocale;
 						</div>
 					</a>
 
-					<a href={`${import.meta.env.BASE_URL}es/proyectos/apps-react-native`} class="rounded-3xl border group transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-neutral-400 dark:hover:border-neutral-500 cursor-pointer block">
+					<a
+						href={`${import.meta.env.BASE_URL}es/proyectos/apps-react-native`}
+						class="rounded-3xl border group transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-neutral-400 dark:hover:border-neutral-500 cursor-pointer block"
+					>
 						<div class="h-80 overflow-hidden">
 							<Image
 								src={FoodManager}
@@ -336,7 +344,10 @@ const astroLocale = Astro.currentLocale;
 							</p>
 						</div>
 					</a>
-										<div class="rounded-3xl border group transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-neutral-400 dark:hover:border-neutral-500">
+					<a
+						href={`${import.meta.env.BASE_URL}es/proyectos/simple-blueprint`}
+						class="rounded-3xl border group transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-neutral-400 dark:hover:border-neutral-500 cursor-pointer block"
+					>
 						<div class="h-80 overflow-hidden">
 							<Image
 								src={Blueprint}
@@ -372,8 +383,11 @@ const astroLocale = Astro.currentLocale;
 								empieza a dibujar.
 							</p>
 						</div>
-					</div>
-					<a href={`${import.meta.env.BASE_URL}es/proyectos/ai-youtube-briefer`} class="rounded-3xl border group transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-neutral-400 dark:hover:border-neutral-500 cursor-pointer block">
+					</a>
+					<a
+						href={`${import.meta.env.BASE_URL}es/proyectos/ai-youtube-briefer`}
+						class="rounded-3xl border group transition-all duration-300 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-neutral-400 dark:hover:border-neutral-500 cursor-pointer block"
+					>
 						<div class="h-80 overflow-hidden">
 							<Image
 								src={AiBriefer}
@@ -409,7 +423,6 @@ const astroLocale = Astro.currentLocale;
 							</p>
 						</div>
 					</a>
-
 				</div>
 			</div>
 		</section>
