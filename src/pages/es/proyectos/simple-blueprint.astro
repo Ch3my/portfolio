@@ -1,0 +1,103 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Hero from "@/img/simple-blueprint-1.png";
+import Blueprint from "@/img/simple-blueprint-2.png";
+import TS from "@/img/ts-icon.png";
+import ReactIcon from "@/img/react-icon.png";
+import VueIcon from "@/img/vue-icon.png";
+import { Image } from "astro:assets";
+import Waves from "@/components/Waves.astro";
+---
+
+<Layout title="Simple Blueprint">
+    <section class="relative overflow-hidden grid-lines-bg hero-glow">
+        <div class="pointer-events-none absolute inset-0 z-0">
+            <div
+                class="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/4 w-125 h-125 bg-purple-600/30 rounded-full blur-[120px]"
+            >
+            </div>
+            <div
+                class="absolute bottom-0 right-8 w-87.5 h-87.5 bg-blue-500/20 rounded-full blur-[100px]"
+            >
+            </div>
+        </div>
+        <div
+            class="relative z-10 pt-16 pb-14 container mx-auto grid grid-cols-3 items-center"
+        >
+            <div class="col-span-2 grid gap-4">
+                <span class="text-gray-500 font-medium">Editor de Planos</span>
+                <h1 class="text-4xl md:text-5xl font-bold">Simple Blueprint</h1>
+                <p class="text-slate-300 prose max-w-prose">
+                    Un editor de planos rápido y sin complicaciones que corre
+                    completamente en tu navegador. Sin cuenta. Sin suscripción.
+                    Sin servidor. Ábrelo y empieza a dibujar.
+                </p>
+            </div>
+
+            <Image src={Hero} alt="" class="w-full" />
+        </div>
+    </section>
+    <section class="py-10">
+        <div class="container mx-auto">
+            <h2>El Problema</h2>
+            <p>
+                Las herramientas de diagramación y creación de planos suelen
+                depender de registros, suscripciones o servicios en la nube, lo
+                que añade fricción al proceso de trabajo. Además, muchas de
+                ellas priorizan la representación visual por sobre la precisión
+                de las dimensiones reales, dificultando la creación rápida de
+                esquemas arquitectónicos y distribuciones espaciales con medidas
+                exactas.
+            </p>
+            <p>
+                Para usuarios que necesitan realizar bocetos, planos
+                preliminares o diagramas técnicos de forma ágil, resulta
+                fundamental contar con una herramienta que funcione de manera
+                inmediata, permita trabajar sin conexión y mantenga siempre
+                visibles las dimensiones reales de cada elemento.
+            </p>
+
+            <h2>La Solución</h2>
+            <p>
+                Simple Blueprint. Guarda cada proyecto localmente en tu
+                navegador, auto-guarda mientras trabajas y exporta PNGs limpios
+                que podés pegar directamente en una presentación o mandarle a un
+                contratista.
+            </p>
+            <p>
+                Tiene una sola obsesión: las dimensiones reales importan. Cada
+                forma en el canvas tiene un tamaño físico en metros o
+                centímetros. Las etiquetas de dimensión se actualizan en tiempo
+                real mientras dibujas, así siempre sabes exactamente qué tan
+                grande es tu habitación — sin adivinar, sin hacer cuentas
+                mentales.
+            </p>
+        </div>
+    </section>
+    <section>
+        <div class="container mx-auto">
+            <div class="grid grid-cols-2 gap-4 items-center">
+                <Image src={Blueprint} alt="" class="w-full" />
+                <div class="flex flex-col gap-1">
+                    <h2 class="text-xl font-bold mb-4">La Arquitectura</h2>
+                    <p>
+                        Aplicación web desarrollada con React, TypeScript y
+                        Vite. Utiliza Zustand para la gestión de estado y
+                        almacena todos los proyectos localmente mediante
+                        localStorage, eliminando la necesidad de un backend.
+                    </p>
+                    <p>
+                        La exportación de planos se realiza directamente desde
+                        el navegador en formato PNG de alta resolución.
+                    </p>
+                    <div class="grid grid-cols-5">
+                        <Image src={TS} alt="" class="w-full" />
+                        <Image src={ReactIcon} alt="" class="w-full" />
+                        <Image src={VueIcon} alt="" class="w-full" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <Waves wavesOpacity={[0.5, 0.7, 0.9]} />
+</Layout>
