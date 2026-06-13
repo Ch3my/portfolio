@@ -7,6 +7,7 @@ import ReactIcon from "@/img/react-icon.png";
 import VueIcon from "@/img/vue-icon.png";
 import { Image } from "astro:assets";
 import Waves from "@/components/Waves.astro";
+import CrazyLine from "@/components/CrazyLine.astro";
 ---
 
 <Layout title="Simple Blueprint">
@@ -17,14 +18,14 @@ import Waves from "@/components/Waves.astro";
             >
             </div>
             <div
-                class="absolute bottom-0 right-8 w-87.5 h-87.5 bg-blue-500/20 rounded-full blur-[100px]"
+                class="absolute bottom-10 right-8 lg:right-1/4 w-48 h-48 bg-blue-500/20 rounded-full blur-[60px]"
             >
             </div>
         </div>
         <div
-            class="relative z-10 pt-16 pb-14 container mx-auto grid grid-cols-3 items-center"
+            class="relative z-10 pt-16 pb-14 container mx-auto grid md:grid-cols-3 items-center"
         >
-            <div class="col-span-2 grid gap-4">
+            <div class="md:col-span-2 grid gap-4">
                 <span class="text-gray-500 font-medium">Editor de Planos</span>
                 <h1 class="text-4xl md:text-5xl font-bold">Simple Blueprint</h1>
                 <p class="text-slate-300 prose max-w-prose">
@@ -33,52 +34,336 @@ import Waves from "@/components/Waves.astro";
                     Sin servidor. Ábrelo y empieza a dibujar.
                 </p>
             </div>
-
             <Image src={Hero} alt="" class="w-full" />
         </div>
     </section>
-    <section class="py-10">
+    <section class="py-16 relative">
         <div class="container mx-auto">
-            <h2>El Problema</h2>
-            <p>
-                Las herramientas de diagramación y creación de planos suelen
-                depender de registros, suscripciones o servicios en la nube, lo
-                que añade fricción al proceso de trabajo. Además, muchas de
-                ellas priorizan la representación visual por sobre la precisión
-                de las dimensiones reales, dificultando la creación rápida de
-                esquemas arquitectónicos y distribuciones espaciales con medidas
-                exactas.
-            </p>
-            <p>
-                Para usuarios que necesitan realizar bocetos, planos
-                preliminares o diagramas técnicos de forma ágil, resulta
-                fundamental contar con una herramienta que funcione de manera
-                inmediata, permita trabajar sin conexión y mantenga siempre
-                visibles las dimensiones reales de cada elemento.
-            </p>
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 rounded-xl border border-slate-800 overflow-hidden bg-slate-950 md:w-8/10 mx-auto"
+            >
+                <!-- Open issues / El Problema -->
+                <div class="border-r border-slate-800">
+                    <div
+                        class="flex items-center gap-2 px-5 py-3 bg-slate-900/80 border-b border-slate-800"
+                    >
+                        <svg
+                            class="text-rose-400 shrink-0"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="1" fill="currentColor"
+                            ></circle>
+                        </svg>
+                        <span class="text-sm font-semibold text-slate-200"
+                            >3 Open</span
+                        >
+                        <span class="text-xs text-slate-500 ml-1"
+                            >· El Problema</span
+                        >
+                        <span
+                            class="ml-auto inline-flex items-center gap-1 text-xs text-rose-400 bg-rose-950/40 border border-rose-900/50 px-2 py-0.5 rounded-full"
+                        >
+                            <span class="w-1.5 h-1.5 rounded-full bg-rose-400"
+                            ></span>
+                            bug
+                        </span>
+                    </div>
 
-            <h2>La Solución</h2>
-            <p>
-                Simple Blueprint. Guarda cada proyecto localmente en tu
-                navegador, auto-guarda mientras trabajas y exporta PNGs limpios
-                que podés pegar directamente en una presentación o mandarle a un
-                contratista.
-            </p>
-            <p>
-                Tiene una sola obsesión: las dimensiones reales importan. Cada
-                forma en el canvas tiene un tamaño físico en metros o
-                centímetros. Las etiquetas de dimensión se actualizan en tiempo
-                real mientras dibujas, así siempre sabes exactamente qué tan
-                grande es tu habitación — sin adivinar, sin hacer cuentas
-                mentales.
-            </p>
+                    <div
+                        class="group flex items-start gap-3 px-5 py-4 border-b border-slate-800/60 hover:bg-slate-900/40 transition-colors cursor-default"
+                    >
+                        <svg
+                            class="mt-0.5 shrink-0 text-rose-400"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="1" fill="currentColor"
+                            ></circle>
+                        </svg>
+                        <div class="min-w-0">
+                            <div class="flex items-center gap-2 flex-wrap">
+                                <span
+                                    class="text-sm font-medium text-slate-200 group-hover:text-white transition-colors"
+                                    >Registro obligatorio</span
+                                >
+                                <span
+                                    class="text-[10px] px-1.5 py-0.5 rounded-full border border-rose-900/60 text-rose-400 bg-rose-950/30"
+                                    >blocker</span
+                                >
+                            </div>
+                            <p
+                                class="text-xs text-slate-500 mt-1 mb-1 leading-relaxed"
+                            >
+                                Cuenta, suscripción o login antes de poder
+                                dibujar una sola línea.
+                            </p>
+                            <span class="text-[10px] text-slate-600"
+                                >#001 · opened by otras-herramientas</span
+                            >
+                        </div>
+                    </div>
+
+                    <div
+                        class="group flex items-start gap-3 px-5 py-4 border-b border-slate-800/60 hover:bg-slate-900/40 transition-colors cursor-default"
+                    >
+                        <svg
+                            class="mt-0.5 shrink-0 text-rose-400"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="1" fill="currentColor"
+                            ></circle>
+                        </svg>
+                        <div class="min-w-0">
+                            <div class="flex items-center gap-2 flex-wrap">
+                                <span
+                                    class="text-sm font-medium text-slate-200 group-hover:text-white transition-colors"
+                                    >No funciona sin internet</span
+                                >
+                                <span
+                                    class="text-[10px] px-1.5 py-0.5 rounded-full border border-rose-900/60 text-rose-400 bg-rose-950/30"
+                                    >bug</span
+                                >
+                            </div>
+                            <p
+                                class="text-xs text-slate-500 mt-1 mb-1 leading-relaxed"
+                            >
+                                Sin conexión no puedes acceder a tu propio
+                                trabajo.
+                            </p>
+                            <span class="text-[10px] text-slate-600"
+                                >#002 · opened by otras-herramientas</span
+                            >
+                        </div>
+                    </div>
+
+                    <div
+                        class="group flex items-start gap-3 px-5 py-4 hover:bg-slate-900/40 transition-colors cursor-default"
+                    >
+                        <svg
+                            class="mt-0.5 shrink-0 text-rose-400"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="1" fill="currentColor"
+                            ></circle>
+                        </svg>
+                        <div class="min-w-0">
+                            <div class="flex items-center gap-2 flex-wrap">
+                                <span
+                                    class="text-sm font-medium text-slate-200 group-hover:text-white transition-colors"
+                                    >Dimensiones inexactas</span
+                                >
+                                <span
+                                    class="text-[10px] px-1.5 py-0.5 rounded-full border border-amber-900/60 text-amber-400 bg-amber-950/30"
+                                    >ux</span
+                                >
+                            </div>
+                            <p
+                                class="text-xs text-slate-500 mt-1 mb-1 leading-relaxed"
+                            >
+                                La estética visual pisa a las medidas físicas
+                                reales.
+                            </p>
+                            <span class="text-[10px] text-slate-600"
+                                >#003 · opened by otras-herramientas</span
+                            >
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Closed / La Solución -->
+                <div>
+                    <div
+                        class="flex items-center gap-2 px-5 py-3 bg-slate-900/80 border-b border-slate-800"
+                    >
+                        <svg
+                            class="text-purple-400 shrink-0"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="m9 12 2 2 4-4"></path>
+                        </svg>
+                        <span class="text-sm font-semibold text-slate-200"
+                            >3 Closed</span
+                        >
+                        <span class="text-xs text-slate-500 ml-1"
+                            >· La Solución</span
+                        >
+                        <span
+                            class="ml-auto inline-flex items-center gap-1 text-xs text-purple-400 bg-purple-950/40 border border-purple-900/50 px-2 py-0.5 rounded-full"
+                        >
+                            <span class="w-1.5 h-1.5 rounded-full bg-purple-400"
+                            ></span>
+                            merged
+                        </span>
+                    </div>
+
+                    <div
+                        class="group flex items-start gap-3 px-5 py-4 border-b border-slate-800/60 hover:bg-slate-900/40 transition-colors cursor-default"
+                    >
+                        <svg
+                            class="mt-0.5 shrink-0 text-purple-400"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="m9 12 2 2 4-4"></path>
+                        </svg>
+                        <div class="min-w-0">
+                            <div class="flex items-center gap-2 flex-wrap">
+                                <span
+                                    class="text-sm font-medium text-slate-400 group-hover:text-slate-300 transition-colors"
+                                    >Registro obligatorio</span
+                                >
+                                <span
+                                    class="text-[10px] px-1.5 py-0.5 rounded-full border border-purple-900/60 text-purple-400 bg-purple-950/30"
+                                    >fix: local-first</span
+                                >
+                            </div>
+                            <p
+                                class="text-xs text-slate-500 mt-1 mb-1 leading-relaxed"
+                            >
+                                Todo corre en el navegador. Sin cuenta, sin
+                                servidor, sin fricción.
+                            </p>
+                            <span class="text-[10px] text-slate-600"
+                                >#001 · closed by Jose Concha</span
+                            >
+                        </div>
+                    </div>
+
+                    <div
+                        class="group flex items-start gap-3 px-5 py-4 border-b border-slate-800/60 hover:bg-slate-900/40 transition-colors cursor-default"
+                    >
+                        <svg
+                            class="mt-0.5 shrink-0 text-purple-400"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="m9 12 2 2 4-4"></path>
+                        </svg>
+                        <div class="min-w-0">
+                            <div class="flex items-center gap-2 flex-wrap">
+                                <span
+                                    class="text-sm font-medium text-slate-400 group-hover:text-slate-300 transition-colors"
+                                    >No funciona sin internet</span
+                                >
+                                <span
+                                    class="text-[10px] px-1.5 py-0.5 rounded-full border border-purple-900/60 text-purple-400 bg-purple-950/30"
+                                    >fix: offline</span
+                                >
+                            </div>
+                            <p
+                                class="text-xs text-slate-500 mt-1 mb-1 leading-relaxed"
+                            >
+                                Auto-guarda en localStorage. Funciona sin
+                                conexión, siempre disponible.
+                            </p>
+                            <span class="text-[10px] text-slate-600"
+                                >#002 · closed by Jose Concha</span
+                            >
+                        </div>
+                    </div>
+
+                    <div
+                        class="group flex items-start gap-3 px-5 py-4 hover:bg-slate-900/40 transition-colors cursor-default"
+                    >
+                        <svg
+                            class="mt-0.5 shrink-0 text-purple-400"
+                            width="16"
+                            height="16"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                        >
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="m9 12 2 2 4-4"></path>
+                        </svg>
+                        <div class="min-w-0">
+                            <div class="flex items-center gap-2 flex-wrap">
+                                <span
+                                    class="text-sm font-medium text-slate-400 group-hover:text-slate-300 transition-colors"
+                                    >Dimensiones inexactas</span
+                                >
+                                <span
+                                    class="text-[10px] px-1.5 py-0.5 rounded-full border border-purple-900/60 text-purple-400 bg-purple-950/30"
+                                    >feat: real-time</span
+                                >
+                            </div>
+                            <p
+                                class="text-xs text-slate-500 mt-1 mb-1 leading-relaxed"
+                            >
+                                Cada forma tiene tamaño físico en m/cm. Las
+                                etiquetas se actualizan mientras dibujas.
+                            </p>
+                            <span class="text-[10px] text-slate-600"
+                                >#003 · closed by Jose Concha</span
+                            >
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+        <CrazyLine static />
     </section>
     <section>
         <div class="container mx-auto">
-            <div class="grid grid-cols-2 gap-4 items-center">
+            <div class="grid md:grid-cols-3 gap-8 items-center">
                 <Image src={Blueprint} alt="" class="w-full" />
-                <div class="flex flex-col gap-1">
+                <div class="flex flex-col gap-4 md:col-span-2">
                     <h2 class="text-xl font-bold mb-4">La Arquitectura</h2>
                     <p>
                         Aplicación web desarrollada con React, TypeScript y
@@ -90,7 +375,7 @@ import Waves from "@/components/Waves.astro";
                         La exportación de planos se realiza directamente desde
                         el navegador en formato PNG de alta resolución.
                     </p>
-                    <div class="grid grid-cols-5">
+                    <div class="grid grid-cols-5 md:grid-cols-10">
                         <Image src={TS} alt="" class="w-full" />
                         <Image src={ReactIcon} alt="" class="w-full" />
                         <Image src={VueIcon} alt="" class="w-full" />
