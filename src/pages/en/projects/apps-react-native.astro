@@ -1,0 +1,222 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { Atom, Code2 } from "lucide-react";
+import FoodManager1 from "@/img/food-manager-1.png";
+import { Image } from "astro:assets";
+import FoodManagerCarousel from "@/components/FoodManagerCarousel";
+---
+
+<style>
+    .hero-glow {
+        position: relative;
+        overflow: hidden;
+    }
+    .hero-glow::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 900px;
+        height: 900px;
+        border-radius: 50%;
+        background: radial-gradient(circle, #38207380 0%, transparent 70%);
+        filter: blur(60px);
+        pointer-events: none;
+        z-index: 0;
+    }
+    .hero-glow > * {
+        position: relative;
+        z-index: 1;
+    }
+</style>
+
+<Layout title="Apps React Native">
+    <!-- Hero -->
+    <section class="grid-lines-bg hero-glow">
+        <div
+            class="pt-16 pb-14 container mx-auto flex flex-col gap-10 items-center text-center"
+        >
+            <h1 class="text-4xl md:text-5xl font-bold">
+                Apps with React Native
+            </h1>
+            <p class="text-slate-300 prose max-w-prose">
+                Two mobile apps built to solve everyday problems simply and efficiently. One helps manage food inventory and reduce waste; the other puts music theory right at your fingertips. No complexity. Just practical tools to learn and stay organized.
+            </p>
+            <div class="flex flex-wrap gap-3  items-center justify-center">
+                <span
+                    class="flex items-center gap-2 bg-sky-950 border border-sky-800 rounded-xl px-4 py-2 text-sm font-medium text-slate-200"
+                >
+                    <Atom />
+                    React Native
+                </span>
+                <span
+                    class="flex items-center gap-2 bg-sky-950 border border-sky-800 rounded-xl px-4 py-2 text-sm font-medium text-slate-200"
+                >
+                    <Code2 />
+                    TypeScript
+                </span>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-10">
+        <div class="container mx-auto">
+            <div
+                class="border rounded-4xl px-10 flex flex-col gap-8 bg-radial from-[#361F72]/50 to-transparent"
+            >
+                <div>
+                    <div
+                        class="py-4 pl-5 mb-5 text-slate-400 text-sm tracking-widest uppercase border-b"
+                    >
+                        <span>1 / Projects</span>
+                    </div>
+                    <div class="grid md:grid-cols-3 items-center mt-12">
+                        <div class="grid">
+                            <p class="text-gray-500 font-medium">
+                                Food Tracking and Management
+                            </p>
+                            <p class="font-dotgothic16 text-5xl">
+                                Food Manager
+                            </p>
+                        </div>
+                        <div class="md:col-span-2">
+                            Food Storage Tracking and Management. Ensures the freshness and safety of stored food items, preventing expiration and enabling efficient rotation. Print lists directly from the app or export to PDF.
+                        </div>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-5 gap-10 items-center">
+                    <Image
+                        src={FoodManager1}
+                        alt=""
+                        class="w-full md:col-span-2"
+                    />
+                    <div class="md:col-span-3">
+                        <h3 class="text-4xl font-bold mb-6">
+                            The Problem
+                        </h3>
+                        <p>Keeping paper-based records for food storage is a complex and inefficient process. The constant need to print new forms, combined with the difficulty of making accurate annotations, means paper offers no clear indicators for items nearing expiration nor any proper organization of stored goods.</p>
+                        <p class="mt-4">This led to frequent manual reviews, increasing the chance that some records would be overlooked or ignored — which could result in food loss and compromise the quality and safety of the entire inventory.</p>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-5 gap-10">
+                    <div class="md:col-span-3">
+                        <h3 class="text-4xl font-bold mb-6">
+                            The Architecture
+                        </h3>
+                        <p>To solve the problem, a simple app was built to log stored items with their ID code, description, expiration date, and notes.</p>
+                        <p class="mt-4"><b>SUPABASE</b> was chosen to eliminate the need to build a backend and configure a database. The data requirements are minimal so any lightweight option works, but since multiple teams need to share the same information, a local database was not an option.</p>
+                        <p class="mt-4">The app was built with React Native. Supabase provides a native React Native client, making data integration straightforward and fast.</p>
+                    </div>
+                    <div class="md:col-span-2 flex justify-center">
+                        <FoodManagerCarousel client:visible />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="mb-10">
+        <div class="container mx-auto">
+            <div
+                class="border rounded-4xl px-10 flex flex-col gap-8 bg-radial from-[#361F72]/50 to-transparent"
+            >
+                <div>
+                    <div
+                        class="py-4 pl-5 mb-5 text-slate-400 text-sm tracking-widest uppercase border-b"
+                    >
+                        <span>2 / Projects</span>
+                    </div>
+                    <div class="grid md:grid-cols-3 items-center mt-12">
+                        <div class="grid">
+                            <p class="text-gray-500 font-medium">
+                                Your Musical Reference
+                            </p>
+                            <p class="font-dotgothic16 text-5xl">Music Codex</p>
+                        </div>
+                        <div class="col-span-2">
+                            Your musical reference — find the chords for every scale without having to memorize them.
+                        </div>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-8 gap-6 md:gap-0">
+                    <div class="flex flex-col gap-4 md:col-span-3 md:mr-8 md:mt-4">
+                        <h3 class="text-4xl font-bold mb-6">The Problem</h3>
+                        <p>
+                            When learning music, it is common to forget
+                            concepts, nomenclature, or theoretical rules.
+                        </p>
+                        <p>
+                            This forces musicians to look things up across
+                            different sources, causing interruptions in practice
+                            and slowing down the learning process.
+                        </p>
+                    </div>
+                    <!-- Phone mockup wrapping the video -->
+                    <div class="md:col-span-2 md:mb-2 flex justify-center items-start">
+                        <div class="relative" style="width: 220px;">
+                            <!-- Outer phone body -->
+                            <div
+                                class="bg-slate-800 rounded-3xl pt-2.5 px-2.5 pb-3 border-2 border-slate-600"
+                                style="box-shadow: 0 0 40px rgba(99,51,180,0.25), inset 0 0 0 1px rgba(255,255,255,0.05);"
+                            >
+                                <!-- Screen -->
+                                <div
+                                    class="bg-black rounded-2xl overflow-hidden relative"
+                                >
+                                    <!-- Dynamic Island -->
+                                    <div
+                                        class="absolute top-3 left-1/2 -translate-x-1/2 z-20 w-20 h-5.5 bg-black rounded-full border border-slate-800 flex items-center justify-center gap-2"
+                                    >
+                                        <div
+                                            class="w-1.5 h-1.5 rounded-full bg-slate-700"
+                                        >
+                                        </div>
+                                        <div
+                                            class="w-3 h-3 rounded-full bg-slate-700"
+                                        >
+                                        </div>
+                                    </div>
+                                    <video
+                                        src={`${import.meta.env.BASE_URL}video/music-codex-showcase.mp4`}
+                                        autoplay
+                                        muted
+                                        loop
+                                        class="w-full block"></video>
+                                </div>
+                            </div>
+                            <!-- Power button (right) -->
+                            <div
+                                class="absolute top-30 -right-2.25 w-1.75 h-10 bg-slate-700 rounded-r-md border border-slate-600"
+                            >
+                            </div>
+                            <!-- Volume up (left) -->
+                            <div
+                                class="absolute top-27 -left-2.25 w-1.75 h-7 bg-slate-700 rounded-l-md border border-slate-600"
+                            >
+                            </div>
+                            <!-- Volume down (left) -->
+                            <div
+                                class="absolute top-36 -left-2.25 w-1.75 h-7 bg-slate-700 rounded-l-md border border-slate-600"
+                            >
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="self-end flex flex-col gap-4 md:col-span-3 md:ml-8 md:mb-16"
+                    >
+                        <h3 class="text-4xl font-bold mb-6">The Architecture</h3>
+                        <p>
+                            The app is built with React Native using Expo and
+                            Expo Router in TypeScript.
+                        </p>
+                        <p>
+                            It has no dependency on databases or server access —
+                            all content is bundled within the app itself.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</Layout>
