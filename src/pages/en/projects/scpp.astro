@@ -1,271 +1,597 @@
----
+﻿---
 import Layout from "@/layouts/Layout.astro";
-import Waves from "@/components/Waves.astro";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 import { Image } from "astro:assets";
-import ScppArch from "@/img/scpp-arch.png";
-import ScppCover from "@/img/scpp-cover-transparent.png";
-import ScppPhoneShowcase from "@/img/scpp-phone-showcase.png";
+import ReactIcon from "@/img/react-icon.png";
+import NodeIcon from "@/img/node-icon.png";
+import AndroidIcon from "@/img/android-icon.png";
+import ScppHero from "@/img/scpp-hero.png";
+import Scpp2 from "@/img/scpp-show-new.png";
 import CrazyLine from "@/components/CrazyLine.astro";
+import ScatteredSquares from "@/components/ScatteredSquares.astro";
 ---
 
-<Layout title="SCPP">
-    <section class="py-16 relative">
-        <div class="absolute top-48 left-96 lg:w-96 h-full hero-bg -z-10"></div>
-        <div class="container mx-auto">
-            <div class="flex flex-col md:grid grid-cols-2">
-                <div>
+<Layout title="Personal Budget System">
+    <section
+        class="pt-10 pb-0 bg-cover bg-center overflow-hidden relative"
+    >
+        <ScatteredSquares />
+        <div class="container mx-auto z-10 relative">
+            <div class="grid md:grid-cols-5 items-center justify-center gap-20">
+                <div class="md:col-span-3">
                     <h1 class="text-7xl font-bold mb-10 font-dotgothic16">
                         SCPP
                     </h1>
                     <p>
-                        Personal Budget Control System. With its Android app and
-                        Windows desktop version, SCPP offers you the flexibility
-                        to record your expenses, income, and savings anytime and
-                        anywhere.
+                        Available for Android and Windows, SCPP is a
+                        financial management tool that centralizes the
+                        control of expenses, income, and savings from any
+                        device.
                     </p>
                 </div>
-                <div class="video-showcase self-center">
+                <div class="video-wrapper mx-auto md:col-span-2">
+                    <div class="video-flare"></div>
+                <div class="video-showcase">
                     <div class="video-titlebar">
                         <div class="flex gap-1.5 items-center shrink-0">
-                            <span class="w-3 h-3 rounded-full bg-red-500/80"></span>
-                            <span class="w-3 h-3 rounded-full bg-yellow-400/80"></span>
-                            <span class="w-3 h-3 rounded-full bg-green-500/80"></span>
+                            <span class="w-3 h-3 rounded-full bg-red-500/80"
+                            ></span>
+                            <span class="w-3 h-3 rounded-full bg-yellow-400/80"
+                            ></span>
+                            <span class="w-3 h-3 rounded-full bg-green-500/80"
+                            ></span>
                         </div>
-                        <span class="text-xs text-slate-400 absolute left-1/2 -translate-x-1/2 tracking-wide">SCPP — Budget Control</span>
+                        <span
+                            class="text-xs text-slate-400 absolute left-1/2 -translate-x-1/2 tracking-wide"
+                            >SCPP — Budget Control</span
+                        >
                     </div>
-                    <video src={`${import.meta.env.BASE_URL}video/scpp.mp4`} autoplay muted loop playsinline class="w-full block"></video>
+                    <video
+                        src={`${import.meta.env.BASE_URL}video/scpp.mp4`}
+                        autoplay
+                        muted
+                        loop
+                        playsinline
+                        class="w-full block"></video>
+                </div>
                 </div>
             </div>
         </div>
-    </section>
-    <CrazyLine />
-    <section class="pb-6">
-        <div class="container mx-auto">
-            <div class="flex flex-col-reverse md:grid grid-cols-3">
-                <DotLottieReact
-                    src={`${import.meta.env.BASE_URL}img/money-2.lottie`}
-                    autoplay
-                    client:visible
-                    className="max-w-72 self-center"
-                />
-                <div class="col-span-2">
-                    <h2 class="text-5xl font-bold mb-10">The Problem</h2>
-                    <p>
-                        SCPP arose from the need for a simple solution to
-                        efficiently control expenses. It is a straightforward
-                        and up-to-date tool for accurate personal finance
-                        tracking.
-                    </p>
-                    <p>
-                        Although there are many applications on the market, none
-                        met the specific requirements sought due to their
-                        complexity or costly subscriptions. That's why I created
-                        a customized option for managing my finances.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="py-16">
-        <div class="container mx-auto">
-            <div class="flex flex-col md:grid grid-cols-3 gap-10">
-                <div class="col-span-2">
-                    <h2 class="text-5xl font-bold mb-10">Architecture</h2>
-                    <p>
-                        The architecture of SCPP is based on a Node.js API, a
-                        microservice that facilitates access to the MySQL
-                        database.
-                    </p>
-                    <p>
-                        SCPP includes a mobile application for Android developed
-                        in React Native. It allows you to view, add, and edit
-                        expense information, offers financial graphs, and
-                        provides search functions by category or keywords,
-                        delivering a comprehensive experience for personal
-                        financial tracking.
-                    </p>
-                    <p>
-                        The desktop client evolved from a native Windows app to
-                        a web-based interface built with React and shadcn/ui. This shift
-                        eliminated installation friction and brought automatic
-                        updates, letting both platforms share the same Node.js
-                        backend without any extra maintenance overhead.
-                    </p>
-                </div>
-                <Image src={ScppArch} alt="" class="self-center" />
-            </div>
-        </div>
-    </section>
-    <Waves wavesOpacity={[0.5, 0.7, 0.9]} />
-    <section class="bg-sky-950 py-10">
-        <div id="bubbles">
-            <div class="bubble x1"></div>
-            <div class="bubble x2"></div>
-            <div class="bubble x3"></div>
-            <div class="bubble x4"></div>
-            <div class="bubble x5"></div>
-            <div class="bubble x6"></div>
-            <div class="bubble x7"></div>
-            <div class="bubble x8"></div>
-            <div class="bubble x9"></div>
-            <div class="bubble x10"></div>
-        </div>
-        <div class="container mx-auto">
-            <div class="flex flex-col lg:grid grid-cols-3 gap-10">
-                <div class="col-span-2 backdrop-blur-md p-2">
-                    <h2 class="text-5xl font-bold mb-10">Evolution</h2>
-                    <p>
-                        The application has evolved significantly from its
-                        previous version. It was completely rewritten using the
-                        latest version of React Native, and based on previous
-                        experience, the design was optimized.
-                    </p>
-                    <p>
-                        This update allowed for the addition of new features,
-                        improved performance, and enhanced the development
-                        experience. As a result, the application is faster and
-                        more efficient, providing a better user experience in
-                        all areas.
-                    </p>
-                    <p>
-                        Over time, the need arose to store copies of important
-                        documents, such as vehicle maintenance records, more
-                        efficiently. This included the ability to attach photos
-                        to visually document each maintenance event, eliminating
-                        the reliance on handwritten notes or scattered Excel
-                        files. In response, a special section was implemented in
-                        SCPP that allows users to upload photos with dates and
-                        descriptions. This simplifies document management by
-                        centralizing them, making them easier to access, and
-                        providing a comprehensive solution for tracking and
-                        recording relevant activities.
-                    </p>
-                </div>
-                <div class="submarine-box items-center justify-end flex">
-                    <svg
-                        id="submarine"
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 677.21 358.19"
-                        class="hidden lg:block"
-                        ><defs
-                            ><style>
-                                .cls-1 {
-                                    fill: #d8bc8b;
-                                }
-                                .cls-1,
-                                .cls-2,
-                                .cls-3,
-                                .cls-4 {
-                                    stroke: #e79a7f;
-                                    stroke-miterlimit: 10;
-                                    stroke-width: 5px;
-                                }
-                                .cls-2 {
-                                    fill: #e9d196;
-                                }
-                                .cls-3 {
-                                    fill: #d4d8da;
-                                }
-                                .cls-4 {
-                                    fill: none;
-                                }
-                            </style></defs
-                        ><title>Untitled-5</title><path
-                            class="cls-1"
-                            d="M978.64,467.44l-36,.1a50,50,0,0,1-50-49.74l-.25-85.53a50,50,0,0,1,49.67-50l36-.1a10.13,10.13,0,0,1,10.12,10.08S964,353.3,964.08,374.82s24.63,82.47,24.63,82.47A10.13,10.13,0,0,1,978.64,467.44Z"
-                            transform="translate(-314 -139)"></path><path
-                            class="cls-2"
-                            d="M484.5,154.5h-53a10,10,0,0,0-10,10v6a10,10,0,0,0,10,10h35v90a12,12,0,0,0,12,12h4a12,12,0,0,0,12-12v-106A10,10,0,0,0,484.5,154.5Z"
-                            transform="translate(-314 -139)"></path><circle
-                            class="cls-1"
-                            cx="165.5"
-                            cy="157.5"
-                            r="51"></circle><path
-                            class="cls-1"
-                            d="M414,494.5H743.26c17.83,2.6,63.66-21.74,103.49-50l-513.4,1.59C350.93,475.26,380.59,494.5,414,494.5Z"
-                            transform="translate(-314 -139)"></path><path
-                            class="cls-2"
-                            d="M743.26,274.5H414c-53.64,0-97.53,49.5-97.53,110h0a119.2,119.2,0,0,0,16.85,61.6l513.4-1.59c12.71-9,24.81-18.43,35.19-27.49L882.4,339C838.09,308.17,762.18,274.5,743.26,274.5Z"
-                            transform="translate(-314 -139)"></path><path
-                            class="cls-1"
-                            d="M915,374.5c0-9.29-13.31-22.14-32.6-35.54L881.94,417C901.51,399.93,915,384.09,915,374.5Z"
-                            transform="translate(-314 -139)"></path><ellipse
-                            class="cls-3"
-                            cx="154.48"
-                            cy="218.24"
-                            rx="41.98"
-                            ry="41.76"></ellipse><ellipse
-                            class="cls-3"
-                            cx="284.27"
-                            cy="218.24"
-                            rx="41.98"
-                            ry="41.76"></ellipse><ellipse
-                            class="cls-3"
-                            cx="414.02"
-                            cy="217.26"
-                            rx="41.98"
-                            ry="41.76"></ellipse><path
-                            class="cls-4"
-                            d="M331.5,374.5"
-                            transform="translate(-314 -139)"></path><path
-                            class="cls-4"
-                            d="M387.75,297.78s-16.07,6.83-26.18,16.72-21.37,34.77-21.37,34.77"
-                            transform="translate(-314 -139)"></path><line
-                            class="cls-4"
-                            x1="20.61"
-                            y1="220.6"
-                            x2="18.39"
-                            y2="232.4"></line><rect
-                            class="cls-2"
-                            x="92.5"
-                            y="2.5"
-                            width="24"
-                            height="50"
-                            rx="12"
-                            ry="12"></rect><line
-                            class="cls-4"
-                            x1="567.5"
-                            y1="199.5"
-                            x2="567.5"
-                            y2="278.5"></line><line
-                            class="cls-4"
-                            x1="660.5"
-                            y1="162.5"
-                            x2="643.5"
-                            y2="210.5"></line><line
-                            class="cls-4"
-                            x1="661.96"
-                            y1="157.72"
-                            x2="663.04"
-                            y2="154.28"></line><line
-                            class="cls-4"
-                            x1="19.5"
-                            y1="307.5"
-                            x2="532.5"
-                            y2="305.5"></line></svg
-                    >
-                </div>
-            </div>
 
-            <div class="flex flex-col gap-10 justify-around lg:flex-row mt-10">
+        <div class="container mx-auto flex flex-col gap-24 mt-20 relative">
+            <!-- ── The Problem ──────────────────────────────────── -->
+            <div class="grid md:grid-cols-5 gap-10 lg:gap-20 items-center">
+                <!-- Hero image -->
                 <Image
-                    src={ScppCover}
-                    alt=""
-                    class="lg:max-w-[50%] h-full object-contain"
+                    src={ScppHero}
+                    alt="SCPP App Preview"
+                    class="w-full md:col-span-2"
                 />
-                <Image
-                    src={ScppPhoneShowcase}
-                    alt=""
-                    class="lg:max-w-[25%] h-full object-contain"
-                />
+
+                <!-- Pain points -->
+                <div class="flex flex-col gap-6 md:col-span-3">
+                    <div>
+                        <span
+                            class="text-xs font-mono text-cyan-400/80 tracking-widest uppercase"
+                            >The Problem</span
+                        >
+                        <h2 class="text-2xl font-bold mt-1">
+                            Why build it?
+                        </h2>
+                    </div>
+
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        SCPP was born from the need for a simple solution
+                        to track expenses and income efficiently. A direct,
+                        frictionless tool to keep financial records up to date.
+                    </p>
+
+                    <div class="flex flex-col gap-2">
+                        <div
+                            class="flex items-start gap-3 p-4 rounded-lg border border-slate-800 bg-slate-900/50 hover:border-slate-700 transition-colors group"
+                        >
+                            <div
+                                class="w-7 h-7 rounded-full bg-red-950/60 border border-red-900/50 flex items-center justify-center shrink-0 mt-0.5"
+                            >
+                                <svg
+                                    width="11"
+                                    height="11"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="text-red-400"
+                                    ><path d="M18 6L6 18M6 6l12 12"></path></svg
+                                >
+                            </div>
+                            <div>
+                                <p
+                                    class="text-sm font-medium text-slate-200 group-hover:text-white transition-colors"
+                                >
+                                    Expensive subscriptions
+                                </p>
+                                <p
+                                    class="text-xs text-slate-500 mt-0.5 leading-relaxed"
+                                >
+                                    Existing apps charge monthly for
+                                    basic tracking features.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex items-start gap-3 p-4 rounded-lg border border-slate-800 bg-slate-900/50 hover:border-slate-700 transition-colors group"
+                        >
+                            <div
+                                class="w-7 h-7 rounded-full bg-red-950/60 border border-red-900/50 flex items-center justify-center shrink-0 mt-0.5"
+                            >
+                                <svg
+                                    width="11"
+                                    height="11"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="text-red-400"
+                                    ><path d="M18 6L6 18M6 6l12 12"></path></svg
+                                >
+                            </div>
+                            <div>
+                                <p
+                                    class="text-sm font-medium text-slate-200 group-hover:text-white transition-colors"
+                                >
+                                    Complex interfaces
+                                </p>
+                                <p
+                                    class="text-xs text-slate-500 mt-0.5 leading-relaxed"
+                                >
+                                    Too many unnecessary features that
+                                    complicate daily logging.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="flex items-start gap-3 p-4 rounded-lg border border-slate-800 bg-slate-900/50 hover:border-slate-700 transition-colors group"
+                        >
+                            <div
+                                class="w-7 h-7 rounded-full bg-red-950/60 border border-red-900/50 flex items-center justify-center shrink-0 mt-0.5"
+                            >
+                                <svg
+                                    width="11"
+                                    height="11"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="text-red-400"
+                                    ><path d="M18 6L6 18M6 6l12 12"></path></svg
+                                >
+                            </div>
+                            <div>
+                                <p
+                                    class="text-sm font-medium text-slate-200 group-hover:text-white transition-colors"
+                                >
+                                    No customization
+                                </p>
+                                <p
+                                    class="text-xs text-slate-500 mt-0.5 leading-relaxed"
+                                >
+                                    No tool matched the specific
+                                    requirements I was looking for.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        So I built a custom solution that fit
+                        exactly what was needed.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 relative">
+        <CrazyLine static />
+        <div class="container mx-auto flex flex-col gap-20">
+            <!-- ── The Architecture ──────────────────────────────── -->
+            <div class="flex flex-col gap-10">
+                <div class="text-center">
+                    <span
+                        class="text-xs font-mono text-cyan-400/80 tracking-widest uppercase"
+                        >The Architecture</span
+                    >
+                    <h2 class="text-2xl font-bold mt-1">How SCPP works</h2>
+                    <p
+                        class="text-sm text-slate-400 mt-3 max-w-lg mx-auto leading-relaxed"
+                    >
+                        A shared Node.js backend acts as a
+                        microservice for both clients, centralizing
+                        access to the MySQL database.
+                    </p>
+                </div>
+
+                <!-- Architecture flow diagram -->
+                <div
+                    class="relative rounded-xl border border-slate-800 bg-slate-950/80 p-6 md:p-8 overflow-hidden"
+                >
+                    <div
+                        class="absolute inset-0 opacity-20 rounded-xl"
+                        style="background-image: radial-gradient(circle, rgba(148,163,184,0.25) 1px, transparent 1px); background-size: 28px 28px;"
+                    >
+                    </div>
+
+                    <div
+                        class="relative flex flex-col md:flex-row md:items-stretch gap-4 md:gap-0"
+                    >
+                        <!-- Client tier -->
+                        <div class="flex flex-col gap-1 md:flex-1">
+                            <p
+                                class="text-[10px] font-mono text-slate-600 tracking-widest uppercase mb-3"
+                            >
+                                Clients
+                            </p>
+                            <div class="flex flex-col gap-3 flex-1">
+                                <div
+                                    class="rounded-lg border border-slate-800 bg-slate-900 p-4 flex items-start gap-3 hover:border-slate-700 transition-colors"
+                                >
+                                    <div
+                                        class="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center shrink-0"
+                                    >
+                                        <Image
+                                            src={AndroidIcon}
+                                            alt="Android"
+                                            class="w-5 h-5 object-contain"
+                                        />
+                                    </div>
+                                    <div class="min-w-0">
+                                        <p
+                                            class="text-sm font-semibold text-slate-200"
+                                        >
+                                            Android App
+                                        </p>
+                                        <p
+                                            class="text-[11px] text-slate-500 mt-0.5"
+                                        >
+                                            React Native
+                                        </p>
+                                        <div class="flex gap-1 mt-2 flex-wrap">
+                                            <span
+                                                class="text-[10px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-400"
+                                                >Expenses</span
+                                            >
+                                            <span
+                                                class="text-[10px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-400"
+                                                >Charts</span
+                                            >
+                                            <span
+                                                class="text-[10px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-400"
+                                                >Search</span
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div
+                                    class="rounded-lg border border-slate-800 bg-slate-900 p-4 flex items-start gap-3 hover:border-slate-700 transition-colors"
+                                >
+                                    <div
+                                        class="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center shrink-0"
+                                    >
+                                        <Image
+                                            src={ReactIcon}
+                                            alt="React"
+                                            class="w-5 h-5 object-contain"
+                                        />
+                                    </div>
+                                    <div class="min-w-0">
+                                        <p
+                                            class="text-sm font-semibold text-slate-200"
+                                        >
+                                            Web Client
+                                        </p>
+                                        <p
+                                            class="text-[11px] text-slate-500 mt-0.5"
+                                        >
+                                            React + shadcn/ui
+                                        </p>
+                                        <div class="flex gap-1 mt-2 flex-wrap">
+                                            <span
+                                                class="text-[10px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-400"
+                                                >No install</span
+                                            >
+                                            <span
+                                                class="text-[10px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-400"
+                                                >Auto-updates</span
+                                            >
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Arrow connector 1 -->
+                        <div
+                            class="flex items-center justify-center py-2 md:py-0 md:self-stretch md:flex-col md:gap-2 md:px-4"
+                        >
+                            <div
+                                class="hidden md:block flex-1 w-px bg-linear-to-b from-transparent via-slate-700/60 to-transparent"
+                            >
+                            </div>
+                            <div
+                                class="w-6 h-6 rounded-full border border-slate-700 bg-slate-950 flex items-center justify-center shrink-0"
+                            >
+                                <svg
+                                    width="10"
+                                    height="10"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="text-slate-500 rotate-90 md:rotate-0"
+                                    ><polyline points="9 18 15 12 9 6"
+                                    ></polyline></svg
+                                >
+                            </div>
+                            <div
+                                class="hidden md:block flex-1 w-px bg-linear-to-b from-transparent via-slate-700/60 to-transparent"
+                            >
+                            </div>
+                        </div>
+
+                        <!-- API tier -->
+                        <div class="flex flex-col gap-1 md:flex-1">
+                            <p
+                                class="text-[10px] font-mono text-slate-600 tracking-widest uppercase mb-3"
+                            >
+                                Backend
+                            </p>
+                            <div
+                                class="rounded-lg border border-cyan-900/50 bg-slate-900 p-4 flex items-start gap-3 flex-1 shadow-[0_0_25px_rgba(6,182,212,0.07)] hover:border-cyan-800/60 transition-colors"
+                            >
+                                <div
+                                    class="w-8 h-8 rounded-lg bg-cyan-950/40 border border-cyan-900/50 flex items-center justify-center shrink-0"
+                                >
+                                    <Image
+                                        src={NodeIcon}
+                                        alt="Node.js"
+                                        class="w-5 h-5 object-contain"
+                                    />
+                                </div>
+                                <div class="min-w-0">
+                                    <p
+                                        class="text-sm font-semibold text-slate-200"
+                                    >
+                                        REST API
+                                    </p>
+                                    <p
+                                        class="text-[11px] text-slate-500 mt-0.5"
+                                    >
+                                        Node.js · Microservice
+                                    </p>
+                                    <div class="flex gap-1 mt-2 flex-wrap">
+                                        <span
+                                            class="text-[10px] px-1.5 py-0.5 rounded bg-cyan-950/40 border border-cyan-900/40 text-cyan-400"
+                                            >Shared</span
+                                        >
+                                        <span
+                                            class="text-[10px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-400"
+                                            >MySQL driver</span
+                                        >
+                                    </div>
+                                    <p
+                                        class="text-xs text-slate-500 mt-3 leading-relaxed"
+                                    >
+                                        Centralizes data access for both
+                                        platforms, simplifying
+                                        maintenance.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Arrow connector 2 -->
+                        <div
+                            class="flex items-center justify-center py-2 md:py-0 md:self-stretch md:flex-col md:gap-2 md:px-4"
+                        >
+                            <div
+                                class="hidden md:block flex-1 w-px bg-linear-to-b from-transparent via-slate-700/60 to-transparent"
+                            >
+                            </div>
+                            <div
+                                class="w-6 h-6 rounded-full border border-slate-700 bg-slate-950 flex items-center justify-center shrink-0"
+                            >
+                                <svg
+                                    width="10"
+                                    height="10"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    class="text-slate-500 rotate-90 md:rotate-0"
+                                    ><polyline points="9 18 15 12 9 6"
+                                    ></polyline></svg
+                                >
+                            </div>
+                            <div
+                                class="hidden md:block flex-1 w-px bg-linear-to-b from-transparent via-slate-700/60 to-transparent"
+                            >
+                            </div>
+                        </div>
+
+                        <!-- DB tier -->
+                        <div class="flex flex-col gap-1 md:flex-1">
+                            <p
+                                class="text-[10px] font-mono text-slate-600 tracking-widest uppercase mb-3"
+                            >
+                                Database
+                            </p>
+                            <div
+                                class="rounded-lg border border-slate-800 bg-slate-900 p-4 flex items-start gap-3 hover:border-slate-700 transition-colors"
+                            >
+                                <div
+                                    class="w-8 h-8 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center shrink-0"
+                                >
+                                    <svg
+                                        width="16"
+                                        height="16"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="1.5"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="text-slate-400"
+                                    >
+                                        <ellipse cx="12" cy="5" rx="9" ry="3"
+                                        ></ellipse>
+                                        <path
+                                            d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"
+                                        ></path>
+                                        <path
+                                            d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"
+                                        ></path>
+                                    </svg>
+                                </div>
+                                <div class="min-w-0">
+                                    <p
+                                        class="text-sm font-semibold text-slate-200"
+                                    >
+                                        MySQL
+                                    </p>
+                                    <p
+                                        class="text-[11px] text-slate-500 mt-0.5"
+                                    >
+                                        Relational Database
+                                    </p>
+                                    <div class="flex gap-1 mt-2 flex-wrap">
+                                        <span
+                                            class="text-[10px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-400"
+                                            >Assets</span
+                                        >
+                                        <span
+                                            class="text-[10px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-400"
+                                            >Categories</span
+                                        >
+                                        <span
+                                            class="text-[10px] px-1.5 py-0.5 rounded bg-slate-800 text-slate-400"
+                                            >Documents</span
+                                        >
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="pb-20">
+        <div class="container mx-auto">
+            <div class="grid md:grid-cols-5 gap-10 lg:gap-20 items-center">
+                <Image src={Scpp2} alt="SCPP new version" class="w-full md:col-span-2" />
+
+                <div class="flex flex-col gap-12 md:col-span-3">
+                    <div>
+                        <span
+                            class="text-xs font-mono text-cyan-400/80 tracking-widest uppercase"
+                            >The Evolution</span
+                        >
+                        <h2 class="text-2xl font-bold mt-1">What changed</h2>
+                    </div>
+
+                    <p class="text-sm text-slate-400 leading-relaxed -mt-6">
+                        Continuous use surfaced new needs that the
+                        initial design didn't account for. What started as
+                        minor adjustments became a much more complete
+                        second iteration.
+                    </p>
+
+                    <!-- Numbered narrative — no boxes, pure type + subtle thread -->
+                    <div class="relative flex flex-col gap-10 pl-5">
+                        <div
+                            class="absolute left-0 top-1 bottom-1 w-px bg-linear-to-b from-cyan-500/50 via-slate-700/40 to-transparent"
+                        ></div>
+
+                        <div class="flex flex-col gap-1.5">
+                            <span
+                                class="text-[11px] font-mono text-cyan-400/60 tracking-widest"
+                                >01</span
+                            >
+                            <h3 class="text-lg font-semibold text-white">
+                                Full rewrite
+                            </h3>
+                            <p class="text-sm text-slate-400 leading-relaxed">
+                                Migrated to the latest version of React Native
+                                with a redesigned layout informed by
+                                accumulated experience.
+                            </p>
+                        </div>
+
+                        <div class="flex flex-col gap-1.5">
+                            <span
+                                class="text-[11px] font-mono text-cyan-400/60 tracking-widest"
+                                >02</span
+                            >
+                            <h3 class="text-lg font-semibold text-white">
+                                Better performance
+                            </h3>
+                            <p class="text-sm text-slate-400 leading-relaxed">
+                                Faster and more efficient app, with a better
+                                development experience and smoother performance
+                                across all areas.
+                            </p>
+                        </div>
+
+                        <div class="flex flex-col gap-1.5">
+                            <span
+                                class="text-[11px] font-mono text-cyan-400/60 tracking-widest"
+                                >03</span
+                            >
+                            <h3 class="text-lg font-semibold text-white">
+                                Document management
+                            </h3>
+                            <p class="text-sm text-slate-400 leading-relaxed">
+                                New section to attach photos with date and
+                                description, centralizing the tracking of
+                                important records.
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 </Layout>
 
 <style>
+    .video-wrapper {
+        position: relative;
+    }
+    .video-flare {
+        position: absolute;
+        inset: -60px;
+        background: radial-gradient(ellipse at center, rgba(167, 80, 255, 0.85) 0%, rgba(139, 40, 255, 0.65) 30%, rgba(109, 20, 200, 0.4) 55%, rgba(88, 28, 180, 0.15) 72%, transparent 85%);
+        filter: blur(48px);
+        border-radius: 50%;
+        z-index: 0;
+        pointer-events: none;
+    }
     .video-showcase {
+        position: relative;
+        z-index: 1;
         border: 1px solid rgba(109, 232, 255, 0.2);
         border-radius: 8px;
         overflow: hidden;
@@ -283,248 +609,5 @@ import CrazyLine from "@/components/CrazyLine.astro";
         align-items: center;
         position: relative;
         gap: 8px;
-    }
-    /* .submarine-box{
- position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display:block;
-} */
-    svg {
-        height: 150px;
-    }
-    #submarine {
-        animation: MoveUpDown 10s easeInOut infinite;
-        -webkit-animation: MoveUpDown 10s ease-In-Out infinite;
-        transform-origin: 50% 50%;
-        overflow: hidden;
-    }
-    #bubbles {
-        height: 50%;
-        padding: 150px 0;
-        position: absolute;
-        /* height: 100%; */
-        width: 100%;
-        overflow: hidden;
-        /* top: 50%; */
-        /* left: 0; */
-    }
-    .bubble {
-        width: 30px;
-        height: 30px;
-        background: lightblue;
-        border-radius: 200px;
-        -moz-border-radius: 200px;
-        -webkit-border-radius: 200px;
-        position: absolute;
-    }
-
-    .x1 {
-        -webkit-transform: scale(0.9);
-        -moz-transform: scale(0.9);
-        transform: scale(0.9);
-        opacity: 0.2;
-        -webkit-animation:
-            moveBubblesX 15s linear infinite,
-            moveBubblesY 6s ease-in-out infinite alternate;
-        -moz-animation:
-            moveBubblesX 15s linear infinite,
-            moveBubblesY 6s ease-in-out infinite alternate;
-        -o-animation:
-            moveBubblesX 15s linear infinite,
-            moveBubblesY 6s ease-in-out infinite alternate;
-    }
-
-    .x2 {
-        left: 200px;
-        -webkit-transform: scale(0.6);
-        -moz-transform: scale(0.6);
-        transform: scale(0.6);
-        opacity: 0.5;
-        -webkit-animation:
-            moveBubblesX 25s linear infinite,
-            moveBubblesY 8s ease-in-out infinite alternate;
-        -moz-animation:
-            moveBubblesX 25s linear infinite,
-            moveBubblesY 8s ease-in-out infinite alternate;
-        -o-animation:
-            moveBubblesX 25s linear infinite,
-            moveBubblesY 8s ease-in-out infinite alternate;
-    }
-    .x3 {
-        left: 350px;
-        -webkit-transform: scale(0.8);
-        -moz-transform: scale(0.8);
-        transform: scale(0.8);
-        opacity: 0.3;
-        -webkit-animation:
-            moveBubblesX 20s linear infinite,
-            moveBubblesY 4s ease-in-out infinite alternate;
-        -moz-animation:
-            moveBubblesX 20s linear infinite,
-            moveBubblesY 4s ease-in-out infinite alternate;
-        -o-animation:
-            moveBubblesX 20s linear infinite,
-            moveBubblesY 4s ease-in-out infinite alternate;
-    }
-
-    .x4 {
-        left: 470px;
-        -webkit-transform: scale(0.75);
-        -moz-transform: scale(0.75);
-        transform: scale(0.75);
-        opacity: 0.35;
-        -webkit-animation:
-            moveBubblesX 18s linear infinite,
-            moveBubblesY 3s ease-in-out infinite alternate;
-        -moz-animation:
-            moveBubblesX 18s linear infinite,
-            moveBubblesY 3s ease-in-out infinite alternate;
-        -o-animation:
-            moveBubblesX 18s linear infinite,
-            moveBubblesY 3s ease-in-out infinite alternate;
-    }
-    .x5 {
-        left: 150px;
-        -webkit-transform: scale(0.8);
-        -moz-transform: scale(0.8);
-        transform: scale(0.8);
-        opacity: 0.3;
-        -webkit-animation:
-            moveBubblesX 17s linear infinite,
-            moveBubblesY 5s ease-in-out infinite alternate;
-        -moz-animation:
-            moveBubblesX 17s linear infinite,
-            moveBubblesY 5s ease-in-out infinite alternate;
-        -o-animation:
-            moveBubblesX 17s linear infinite,
-            moveBubblesY 5s ease-in-out infinite alternate;
-    }
-
-    .x6 {
-        -webkit-transform: scale(0.9);
-        -moz-transform: scale(0.9);
-        transform: scale(0.9);
-        opacity: 0.2;
-        -webkit-animation:
-            moveBubblesX 15s linear infinite,
-            moveBubblesYOpposite 4s ease-in-out infinite alternate;
-        -moz-animation:
-            moveBubblesX 15s linear infinite,
-            moveBubblesYOpposite 4s ease-in-out infinite alternate;
-        -o-animation:
-            moveBubblesX 15s linear infinite,
-            moveBubblesYOpposite 4s ease-in-out infinite alternate;
-    }
-
-    .x7 {
-        left: 200px;
-        -webkit-transform: scale(0.6);
-        -moz-transform: scale(0.6);
-        transform: scale(0.6);
-        opacity: 0.5;
-        -webkit-animation:
-            moveBubblesX 21s linear infinite,
-            moveBubblesYOpposite 3s ease-in-out infinite alternate;
-        -moz-animation:
-            moveBubblesX 21s linear infinite,
-            moveBubblesYOpposite 3s ease-in-out infinite alternate;
-        -o-animation:
-            moveBubblesX 21s linear infinite,
-            moveBubblesYOpposite 3s ease-in-out infinite alternate;
-    }
-    .x8 {
-        left: 350px;
-        -webkit-transform: scale(0.8);
-        -moz-transform: scale(0.8);
-        transform: scale(0.8);
-        opacity: 0.3;
-        -webkit-animation:
-            moveBubblesX 16s linear infinite,
-            moveBubblesYOpposite 6s ease-in-out infinite alternate;
-        -moz-animation:
-            moveBubblesX 16s linear infinite,
-            moveBubblesYOpposite 6s ease-in-out infinite alternate;
-        -o-animation:
-            moveBubblesX 16s linear infinite,
-            moveBubblesYOpposite 6s ease-in-out infinite alternate;
-    }
-
-    .x9 {
-        left: 470px;
-        -webkit-transform: scale(0.75);
-        -moz-transform: scale(0.75);
-        transform: scale(0.75);
-        opacity: 0.35;
-        -webkit-animation:
-            moveBubblesX 24s linear infinite,
-            moveBubblesYOpposite 5s ease-in-out infinite alternate;
-        -moz-animation:
-            moveBubblesX 24s linear infinite,
-            moveBubblesYOpposite 5s ease-in-out infinite alternate;
-        -o-animation:
-            moveBubblesX 24s linear infinite,
-            moveBubblesYOpposite 5s ease-in-out infinite alternate;
-    }
-    .x10 {
-        left: 150px;
-        -webkit-transform: scale(0.8);
-        -moz-transform: scale(0.8);
-        transform: scale(0.8);
-        opacity: 0.3;
-        -webkit-animation:
-            moveBubblesX 17s linear infinite,
-            moveBubblesYOpposite 5s ease-in-out infinite alternate;
-        -moz-animation:
-            moveBubblesX 17s linear infinite,
-            moveBubblesYOpposite 5s ease-in-out infinite alternate;
-        -o-animation:
-            moveBubblesX 17s linear infinite,
-            moveBubblesYOpposite 5s ease-in-out infinite alternate;
-    }
-    @keyframes MoveUpDown {
-        0% {
-            transform: none;
-        }
-        25% {
-            transform: translateY(-50px) translateX(20px) rotate(5deg);
-        }
-        50% {
-            transform: translateY(25px) translateX(-25px) rotate(-5deg);
-        }
-        75% {
-            transform: translateY(-50px) translateX(25px) rotate(-5deg);
-        }
-        100% {
-            transform: translateY(0px) translateX(0px) rotate(0deg);
-        }
-    }
-
-    @keyframes moveBubblesX {
-        0% {
-            left: -1%;
-        }
-        100% {
-            left: 101%;
-        }
-    }
-
-    @keyframes moveBubblesY {
-        0% {
-            margin-top: 0px;
-        }
-        100% {
-            margin-top: 150px;
-        }
-    }
-
-    @keyframes moveBubblesYOpposite {
-        0% {
-            margin-top: 0px;
-        }
-        100% {
-            margin-top: -100px;
-        }
     }
 </style>
