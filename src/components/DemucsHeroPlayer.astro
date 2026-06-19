@@ -1,0 +1,352 @@
+---
+---
+<div class="dhp-card">
+    <div class="dhp-top">
+        <img
+            src={`${import.meta.env.BASE_URL}img/alan-walker-fire.jpg`}
+            alt="Album Cover"
+            class="dhp-art"
+        />
+        <div class="dhp-meta">
+            <p id="dhp-title">Select a track</p>
+            <p id="dhp-artist">Demucs</p>
+        </div>
+    </div>
+
+    <div class="dhp-progress-wrap">
+        <div class="dhp-progress-bar">
+            <div id="dhp-progress-fill" class="dhp-progress-fill"></div>
+        </div>
+        <div class="dhp-times">
+            <span id="dhp-current">0:00</span>
+            <span id="dhp-duration">0:31</span>
+        </div>
+    </div>
+
+    <div class="dhp-controls">
+        <button id="dhp-prev" aria-label="Previous">
+            <svg width="20" height="16" viewBox="0 0 24 19" fill="none">
+                <path d="M23.2248 0L7.03964 9.5L23.2248 19L23.2248 0Z"></path>
+                <rect width="4.63633" height="18.5453" transform="matrix(-1 0 0 1 4.63633 0)"></rect>
+            </svg>
+        </button>
+        <button id="dhp-play" class="dhp-play-btn" aria-label="Play">
+            <svg class="dhp-icon-play" width="16" height="18" viewBox="0 0 17 19" fill="none">
+                <path d="M0 0L16.1852 9.5L1.88952e-07 19L0 0Z"></path>
+            </svg>
+            <svg class="dhp-icon-pause hidden" width="16" height="18" viewBox="0 0 17 19" fill="none">
+                <path d="M0 6.54013e-07H4.75V19H0V6.54013e-07Z"></path>
+                <path d="M11.4 0H16.15V19H11.4V0Z"></path>
+            </svg>
+        </button>
+        <button id="dhp-next" aria-label="Next">
+            <svg width="20" height="16" viewBox="0 0 24 19" fill="none">
+                <path d="M0 0L16.1852 9.5L1.88952e-07 19L0 0Z"></path>
+                <rect x="18.5885" width="4.63633" height="18.5453"></rect>
+            </svg>
+        </button>
+    </div>
+
+    <div class="dhp-tracks">
+        <p class="dhp-tracks-label">Tracks</p>
+        <ul id="dhp-playlist"></ul>
+    </div>
+</div>
+
+<script>
+    const audio = new Audio();
+    let currentIndex = 0;
+    let isPlaying = false;
+
+    const songs = [
+        { id: 0, title: "Vocals",  artist: "Demucs", src: `${import.meta.env.BASE_URL}audio/demucs-sample/vocals.mp3`  },
+        { id: 1, title: "Drums",   artist: "Demucs", src: `${import.meta.env.BASE_URL}audio/demucs-sample/drums.mp3`   },
+        { id: 2, title: "Bass",    artist: "Demucs", src: `${import.meta.env.BASE_URL}audio/demucs-sample/bass.mp3`    },
+    ];
+
+    const titleEl       = document.getElementById("dhp-title")         as HTMLElement;
+    const artistEl      = document.getElementById("dhp-artist")        as HTMLElement;
+    const progressFill  = document.getElementById("dhp-progress-fill") as HTMLElement;
+    const currentEl     = document.getElementById("dhp-current")       as HTMLElement;
+    const durationEl    = document.getElementById("dhp-duration")      as HTMLElement;
+    const playBtn       = document.getElementById("dhp-play")          as HTMLButtonElement;
+    const prevBtn       = document.getElementById("dhp-prev")          as HTMLButtonElement;
+    const nextBtn       = document.getElementById("dhp-next")          as HTMLButtonElement;
+    const playlistEl    = document.getElementById("dhp-playlist")      as HTMLElement;
+    const iconPlay      = playBtn.querySelector(".dhp-icon-play")      as SVGElement;
+    const iconPause     = playBtn.querySelector(".dhp-icon-pause")     as SVGElement;
+
+    const fmt = (s: number) => {
+        const m = Math.floor(s / 60);
+        const sec = Math.floor(s % 60).toString().padStart(2, "0");
+        return `${m}:${sec}`;
+    };
+
+    const setUI = (song: typeof songs[0]) => {
+        titleEl.textContent  = song.title;
+        artistEl.textContent = song.artist;
+        document.querySelectorAll(".dhp-song-btn").forEach((el, i) => {
+            el.classList.toggle("dhp-active", i === currentIndex);
+        });
+    };
+
+    const setPlayState = (playing: boolean) => {
+        isPlaying = playing;
+        iconPlay.classList.toggle("hidden", playing);
+        iconPause.classList.toggle("hidden", !playing);
+    };
+
+    const load = (index: number) => {
+        currentIndex = index;
+        const song = songs[index];
+        audio.src = song.src;
+        audio.load();
+        setUI(song);
+        progressFill.style.width = "0%";
+        currentEl.textContent = "0:00";
+    };
+
+    const play = () => { audio.play(); setPlayState(true); };
+    const pause = () => { audio.pause(); setPlayState(false); };
+
+    playBtn.addEventListener("click", () => {
+        if (audio.src === "" || audio.src === window.location.href) {
+            load(0);
+            play();
+        } else if (isPlaying) {
+            pause();
+        } else {
+            play();
+        }
+    });
+
+    prevBtn.addEventListener("click", () => {
+        const idx = (currentIndex - 1 + songs.length) % songs.length;
+        load(idx);
+        play();
+    });
+
+    nextBtn.addEventListener("click", () => {
+        const idx = (currentIndex + 1) % songs.length;
+        load(idx);
+        play();
+    });
+
+    audio.addEventListener("timeupdate", () => {
+        if (!audio.duration) return;
+        const pct = (audio.currentTime / audio.duration) * 100;
+        progressFill.style.width = `${pct}%`;
+        currentEl.textContent = fmt(audio.currentTime);
+    });
+
+    audio.addEventListener("loadedmetadata", () => {
+        durationEl.textContent = fmt(audio.duration);
+    });
+
+    audio.addEventListener("ended", () => {
+        const next = (currentIndex + 1) % songs.length;
+        load(next);
+        play();
+    });
+
+    // Click on progress bar to seek
+    document.querySelector(".dhp-progress-bar")!.addEventListener("click", (e) => {
+        const bar = e.currentTarget as HTMLElement;
+        const rect = bar.getBoundingClientRect();
+        const pct = (( e as MouseEvent).clientX - rect.left) / rect.width;
+        audio.currentTime = pct * audio.duration;
+    });
+
+    // Render playlist
+    playlistEl.innerHTML = songs.map((s, i) => `
+        <li>
+            <button class="dhp-song-btn${i === currentIndex ? " dhp-active" : ""}" data-index="${i}">
+                <span>${s.title}</span>
+                <span class="dhp-song-artist">— ${s.artist}</span>
+            </button>
+        </li>
+    `).join("");
+
+    playlistEl.querySelectorAll(".dhp-song-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const idx = parseInt((btn as HTMLElement).dataset.index!);
+            load(idx);
+            play();
+        });
+    });
+
+    load(0);
+</script>
+
+<style>
+    .dhp-card {
+        background: rgba(15, 15, 30, 0.88);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 1rem;
+        padding: 1rem;
+        width: 220px;
+        color: #dfdfe2;
+        font-size: 0.8rem;
+    }
+
+    .dhp-top {
+        display: flex;
+        gap: 0.6rem;
+        align-items: center;
+        margin-bottom: 0.75rem;
+    }
+
+    .dhp-art {
+        width: 52px;
+        height: 52px;
+        object-fit: cover;
+        border-radius: 0.4rem;
+        flex-shrink: 0;
+    }
+
+    .dhp-meta {
+        overflow: hidden;
+    }
+
+    #dhp-title {
+        font-size: 0.85rem;
+        font-weight: 600;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin: 0;
+    }
+
+    #dhp-artist {
+        font-size: 0.7rem;
+        color: #f1be32;
+        margin: 2px 0 0;
+    }
+
+    .dhp-progress-wrap {
+        margin-bottom: 0.6rem;
+    }
+
+    .dhp-progress-bar {
+        background: rgba(255,255,255,0.15);
+        border-radius: 99px;
+        height: 4px;
+        cursor: pointer;
+        margin-bottom: 0.25rem;
+    }
+
+    .dhp-progress-fill {
+        background: #f1be32;
+        border-radius: 99px;
+        height: 100%;
+        width: 0%;
+        transition: width 0.1s linear;
+    }
+
+    .dhp-times {
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.65rem;
+        color: rgba(255,255,255,0.45);
+    }
+
+    .dhp-controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .dhp-controls button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.25rem;
+        color: #dfdfe2;
+        display: flex;
+        align-items: center;
+    }
+
+    .dhp-controls button svg {
+        fill: #dfdfe2;
+        transition: fill 0.15s;
+    }
+
+    .dhp-controls button:hover svg {
+        fill: #f1be32;
+    }
+
+    .dhp-play-btn {
+        background: #f1be32 !important;
+        border-radius: 50% !important;
+        width: 36px;
+        height: 36px;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        padding: 0 !important;
+    }
+
+    .dhp-play-btn svg {
+        fill: #0f0f1e !important;
+    }
+
+    .dhp-play-btn:hover {
+        background: #e0ad20 !important;
+    }
+
+    .dhp-tracks-label {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: rgba(255,255,255,0.4);
+        margin: 0 0 0.4rem;
+    }
+
+    #dhp-playlist {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+
+    .dhp-song-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: #dfdfe2;
+        font-size: 0.75rem;
+        padding: 0.3rem 0.5rem;
+        border-radius: 0.4rem;
+        width: 100%;
+        text-align: left;
+        display: flex;
+        gap: 0.3rem;
+        transition: background 0.15s;
+    }
+
+    .dhp-song-btn:hover {
+        background: rgba(255,255,255,0.08);
+    }
+
+    .dhp-song-btn.dhp-active {
+        background: rgba(241, 190, 50, 0.15);
+        color: #f1be32;
+    }
+
+    .dhp-song-btn.dhp-active .dhp-song-artist {
+        color: rgba(241, 190, 50, 0.6);
+    }
+
+    .dhp-song-artist {
+        color: rgba(255,255,255,0.4);
+    }
+
+    .hidden {
+        display: none !important;
+    }
+</style>
