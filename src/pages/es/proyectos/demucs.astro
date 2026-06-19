@@ -1,12 +1,9 @@
 ---
 import Layout from "@/layouts/Layout.astro";
-import { Button } from "@/components/ui/button";
-import DemucsSamples from "@/components/DemucsSamples.astro";
 import { Image } from "astro:assets";
 import Demucs2 from "@/img/demucs-new-2.png";
 import PythonIcon from "@/img/python-icon.png";
 import VueIcon from "@/img/vue-icon-2.png";
-import DemucsLangGraph from "@/img/demucs-lang-graph.jpg";
 import ScatteredSquares from "@/components/ScatteredSquares.astro";
 import DemucsHeroPlayer from "@/components/DemucsHeroPlayer.astro";
 import { Lock, Music, Gauge } from "lucide-react";
@@ -18,7 +15,7 @@ import CrazyLine from "@/components/CrazyLine.astro";
         class="py-10 bg-cover bg-center grid-flares-bg overflow-hidden relative"
     >
         <ScatteredSquares />
-        <div class="container mx-auto">
+        <div class="container mx-auto relative z-10">
             <div class="grid md:grid-cols-3">
                 <div class="md:col-span-2">
                     <h1 class="text-7xl font-bold mb-10 font-dotgothic16">
